@@ -13,6 +13,33 @@
         "clear": true,
         "showReuseMessage": false
       }
+    },
+    {
+      "label": "Tiinex: preview @tiinex/playthings release bump",
+      "type": "shell",
+      "command": "npm run release:preview",
+      "group": "none",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true,
+        "showReuseMessage": false
+      }
+    },
+    {
+      "label": "Tiinex: release @tiinex/playthings (auto)",
+      "type": "shell",
+      "command": "npm run release",
+      "group": "none",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true,
+        "showReuseMessage": false,
+        "focus": true
+      }
     }
   ]
 }

@@ -10,11 +10,12 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
 const context=createContext({TextEncoder,TextDecoder,structuredClone}); // deliberately no process, Buffer, DOM or require
 const cache=new Map();
 async function load(filename) {
-  if(cache.has(filename)) return cache.get(filename);
-  assert.ok(filename.startsWith(path.join(root,'src/verses/playthings')+path.sep));
-  const mod=new SourceTextModule(await fs.readFile(filename,'utf8'),{context,identifier:filename,
-    importModuleDynamically(){throw new Error('Dynamic host import not allowed in browser-boundary fixture');}});
-  cache.set(filename,mod);return mod;
+  if(!cache.has(filename)) cache.set(filename,(async()=>{
+    assert.ok(filename.startsWith(path.join(root,'src/verses/playthings')+path.sep));
+    return new SourceTextModule(await fs.readFile(filename,'utf8'),{context,identifier:filename,
+      importModuleDynamically(){throw new Error('Dynamic host import not allowed in browser-boundary fixture');}});
+  })());
+  return cache.get(filename);
 }
 const main=await load(path.join(root,'src/verses/playthings/index.mjs'));
 await main.link((specifier,ref)=>{

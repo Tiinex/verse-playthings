@@ -1,7 +1,7 @@
 {
   "name": "@tiinex/playthings",
   "version": "0.1.0-dev.0",
-  "private": true,
+  "private": false,
   "description": "Deterministic Playthings engine and companion tooling; React Verse integration is pending.",
   "type": "module",
   "main": "./src/verses/playthings/index.mjs",
@@ -39,13 +39,21 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Tiinex/playthings.git"
+    "url": "git+https://github.com/Tiinex/playthings.git"
   },
   "scripts": {
     "test": "node tools/playthings/test-runtime.mjs",
     "test:runtime": "node tools/playthings/test-runtime.mjs",
     "test:package": "node tools/playthings/test-package.mjs",
-    "check": "npm run test:runtime && npm run test:package",
-    "prepublishOnly": "node -e \"throw new Error('Publication is blocked pending Core/App, React and release qualification')\""
+    "check": "npm run test:runtime && npm run test:package && npm run test:release",
+    "prepublishOnly": "node tools/playthings/publish-guard.mjs",
+    "release": "node tools/playthings/release.mjs",
+    "release:preview": "node tools/playthings/release.mjs --dry-run",
+    "test:release": "node tools/playthings/test-release.mjs",
+    "publish:bootstrap": "node tools/playthings/bootstrap-publish.mjs"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }

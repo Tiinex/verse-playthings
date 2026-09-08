@@ -11,7 +11,7 @@ A deterministic Tiinex story/world engine, intended to become a React Verse thro
 - `@tiinex/playthings/node` is the separate Node-only PNG codec/compiler entrypoint.
 - There is intentionally **no `@tiinex/playthings/react` export yet**. We will add a real React adapter, peer dependencies and App integration together, not an empty component or speculative host API.
 
-The package is `0.1.0-dev.0` and `private: true`. It can be packed and installed locally; publication is blocked. APIs are experimental and may change when Refactor Anchor supplies the qualified consumer contract. No external runtime dependencies or build/transpilation step are currently required. Node 22.16.0 / npm 10.9.2 are the tested toolchain, not a claim of a complete cross-platform/browser matrix.
+The source package is `0.1.0-dev.0` and is now release-enabled, but this repository state does **not** claim that any npm version has been published. Publication is guarded: the one-time registry bootstrap must be explicit, and normal publication is only accepted from the GitHub Release workflow. APIs remain experimental and may change when Refactor Anchor supplies the qualified consumer contract. No external runtime dependencies or build/transpilation step are currently required.
 
 ## Run qualification
 
@@ -20,15 +20,25 @@ From the source repository:
 ```sh
 npm test
 npm run test:package
+npm run test:release
 ```
 
-`npm test` runs the headless fixtures. `npm run test:package` performs an actual offline `npm pack`, installs that tarball into an isolated consumer, exercises package-name imports and checks that no source symlink or private-path import is necessary. It also evaluates the browser-facing module graph in a VM without Node/DOM globals. That is not a rendered-browser acceptance test.
+`npm test` runs the headless fixtures. `npm run test:package` performs an actual offline `npm pack`, installs that tarball into an isolated consumer, exercises package-name imports and checks that no source symlink or private-path import is necessary. It also evaluates the browser-facing module graph in a VM without Node/DOM globals. `npm run test:release` checks the release policy, publish workflow and fail-closed publish guard. None of these are rendered-browser acceptance tests.
 
 The Python graphics regression remains:
 
 ```sh
 PYTHONDONTWRITEBYTECODE=1 python tools/playthings/generative_visual/tests/test_motion_sheet_tool.py
 ```
+
+
+## Release preparation
+
+The repository contains a guarded npm release path without adding a token to GitHub. See [RELEASING.md](RELEASING.md) for the one-time registry bootstrap, npm Trusted Publisher settings and the normal VS Code release flow.
+
+The normal VS Code task is **`Tiinex: release @tiinex/playthings (auto)`**. It derives major/minor/patch from explicit release markers, breaking/feature commit intent and changes to the public package surface, then asks for confirmation before creating any release side effect. A separate preview task is read-only. Before 1.0, automatically detected breaking changes advance the minor version; 1.0.0 requires explicit major intent.
+
+A published GitHub Release triggers `.github/workflows/publish.yml`, which verifies that `vX.Y.Z` exactly matches `package.json`, runs package qualification and publishes through npm Trusted Publishing / GitHub OIDC. No `NPM_TOKEN` is part of this workflow. The first prerelease must still be published once under the `dev` dist-tag so npm has a package to which the trusted publisher can be attached.
 
 ## Minimal headless use
 

@@ -15,7 +15,9 @@ const env={...process.env,npm_config_cache:path.join(scratch,'cache'),npm_config
 function run(command,args,cwd){const result=spawnSync(command,args,{cwd,env,encoding:'utf8',timeout:60000,maxBuffer:8*1024*1024});if(result.error||result.status!==0)throw new Error(result.error?.message??`${command} failed (${result.status}): ${result.stdout}\n${result.stderr}`);return result.stdout;}
 try {
  const pkg=JSON.parse(await fs.readFile(path.join(root,'package.json'),'utf8'));
- assert.equal(pkg.name,'@tiinex/playthings');assert.equal(pkg.private,true);assert.equal(pkg.type,'module');
+ assert.equal(pkg.name,'@tiinex/playthings');assert.equal(pkg.private,false);assert.equal(pkg.type,'module');
+ assert.equal(pkg.publishConfig?.access,'public');assert.equal(pkg.publishConfig?.registry,'https://registry.npmjs.org/');
+ assert.equal(pkg.repository?.url,'git+https://github.com/Tiinex/playthings.git');
  assert.ok(!pkg.exports['./react'],'Do not export a pretend React adapter');
  assert.ok(!pkg.dependencies&&!pkg.peerDependencies,'Do not invent dependencies before their consumers exist');
  const browser=JSON.parse(run(process.execPath,['--experimental-vm-modules','tools/playthings/test-browser-boundary.mjs'],root));
