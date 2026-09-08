@@ -2,7 +2,7 @@
 
 ## Boundary
 
-Everything here is an **internal Playthings fixture/adapter API**, not the public npm API and not an alternative Tiinex schema. No code imports React, Core, App or Site. Do not add raw Markdown parsing, display-name identity guessing, file-path ancestry or filesystem timestamps here. A later Core adapter must supply qualified identities, explicit Parent relations, actor projections and declared historical times.
+The experimental npm entrypoints now expose these **Playthings-owned fixture/adapter APIs**. They are not the future Core/App consumer contract and not an alternative Tiinex schema. No code imports React, Core, App or Site. Do not add raw Markdown parsing, display-name identity guessing, file-path ancestry or filesystem timestamps here. A later Core adapter must supply qualified identities, explicit Parent relations, actor projections and declared historical times.
 
 `story` consumes neutral records: `id`, explicit `parentId` (null = known parentless; omitted = unknown), numeric `historicalTimeMs`, authors, and optional already-qualified participant or Handoff endpoint arrays. `actionStatus` is supplied by the adapter, not guessed from a schema name. Explicit participant arrays, including empty arrays, suppress Authors fallback. Handoff endpoints describe a declaration, never recipient acceptance. Unknown/planned/cancelled actions remain artifact introductions, not completed work.
 
@@ -28,6 +28,10 @@ Everything here is an **internal Playthings fixture/adapter API**, not the publi
 Pace ratios, dwell times, camera speed, fork dwell, movement cost/speed, footprint aspect ratio and circulation allowance are explicit tuning options. They have not been visually accepted. A graph cost is a declared traversal-distance proxy; no meter/second measurement of the source world is asserted.
 
 The layout module is a collection of primitives, **not** the final nested building assembler. It does not choose sibling floor order, infer rooms, read PNG masks, or assign geography from filenames. NESW masks come from topology; generated image slot order is not assumed correct.
+
+## Candidate package/companion/scene continuation
+
+See the local READMEs in `companions`, `world` and `scene` for the newly qualified candidate atlas mechanics, recursive demand and staged scene/store. A private npm package now exposes these modules; actual tarball installation is tested. No production-ready React/API or graphical acceptance is implied.
 
 ## Next boundary
 

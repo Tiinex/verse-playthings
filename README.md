@@ -1,56 +1,96 @@
 # Tiinex Playthings
 
-Playthings is a React-compatible Tiinex Verse for projecting artifact history into a deterministic, moddable world without introducing Playthings-specific semantic artifacts.
+A deterministic Tiinex story/world engine, intended to become a React Verse through the future Core/App host boundary.
 
-This repository is being bootstrapped as a separate package boundary from `Tiinex/site`. The boundary is intentionally distributive rather than architectural: source paths mirror Site conventions where practical so Playthings can be consumed as an npm package or, if needed, moved into a Site tree with minimal structural change.
+## What can I use today?
 
-## Current state
+**A locally installable, experimental headless npm package. Not a playable Verse yet.**
 
-The first **host-neutral, headless foundations** are implemented. There is no public npm/React entrypoint, Core/App adapter, renderer or playable Verse yet.
+- `@tiinex/playthings` exports the `time`, `story`, `observation`, `world`, `companions` and `scene` namespaces.
+- Matching subpaths, such as `@tiinex/playthings/scene`, expose those modules without importing the whole root barrel.
+- `@tiinex/playthings/node` is the separate Node-only PNG codec/compiler entrypoint.
+- There is intentionally **no `@tiinex/playthings/react` export yet**. We will add a real React adapter, peer dependencies and App integration together, not an empty component or speculative host API.
 
-- Historical/presentation playback, continuous fast-forward rate ramps and observation budgets.
-- Neutral story fixtures: contribution changes, explicit participants/endpoints, historical identity discovery, frontier ghosts, backtrack/fork and reactivation.
-- Deterministic navigation across explicit surfaces, doors and stairs; immutable link-state changes and bounded route search.
-- Stateless visual variation, capacity estimates, stable existing placement reservations and NESW topology masks.
-- A headless integration fixture combines ghost/backtrack, a door, a staircase and elastic observation. It is not a rendered tavern or proof of Core/App integration.
+The package is `0.1.0-dev.0` and `private: true`. It can be packed and installed locally; publication is blocked. APIs are experimental and may change when Refactor Anchor supplies the qualified consumer contract. No external runtime dependencies or build/transpilation step are currently required. Node 22.16.0 / npm 10.9.2 are the tested toolchain, not a claim of a complete cross-platform/browser matrix.
 
-Run the dependency-free JavaScript tests from the repository root:
+## Run qualification
 
-`node tools/playthings/test-runtime.mjs`
+From the source repository:
 
-The graphics regression script uses the existing Python/Pillow tooling:
+```sh
+npm test
+npm run test:package
+```
 
-`PYTHONDONTWRITEBYTECODE=1 python tools/playthings/generative_visual/tests/test_motion_sheet_tool.py`
+`npm test` runs the headless fixtures. `npm run test:package` performs an actual offline `npm pack`, installs that tarball into an isolated consumer, exercises package-name imports and checks that no source symlink or private-path import is necessary. It also evaluates the browser-facing module graph in a VM without Node/DOM globals. That is not a rendered-browser acceptance test.
 
-Read [the runtime foundation boundary](src/verses/playthings/runtime/README.md) before consuming internal exports.
+The Python graphics regression remains:
 
-## Package boundary
+```sh
+PYTHONDONTWRITEBYTECODE=1 python tools/playthings/generative_visual/tests/test_motion_sheet_tool.py
+```
 
-The intended long-term split is:
+## Minimal headless use
 
-- `@tiinex/core`: host-neutral Tiinex semantic projections and the planned general Companion Resource Resolver/provider contract;
-- `@tiinex/app`: planned Viewer/React foundation, Verse host/mount boundary and companion-provider composition;
-- `Tiinex/site`: thin deployment, configuration and overrides above App/Core; read-only in this Playthings planning checkpoint;
-- `Tiinex/playthings`: Playthings runtime, world/timeline projection, presentation, React entrypoint, and default Playthings graphics;
-- user Workspaces: artifact-local `.playthings.*.png` companions for moddable overrides.
+After installing a local pack in a consumer:
 
-Playthings must not depend on Site internals or assume that companion files physically live in the Site repository. Companion lookup will use qualified artifact/schema identity plus registered asset providers.
+```js
+import { createStoryPlan } from '@tiinex/playthings/story';
+import { createNavigationWorld } from '@tiinex/playthings/world';
+import { createScenePlan, createSceneStore } from '@tiinex/playthings/scene';
 
-## Active frontier
+const story = createStoryPlan([
+  { id: 'example', parentId: null, historicalTimeMs: 0, authors: ['A'] },
+]);
+const world = createNavigationWorld({
+  surfaces: [{ id: 'courtyard', width: 8, height: 8 }],
+});
+const plan = createScenePlan(story, {
+  world,
+  locations: { example: { surfaceId: 'courtyard', x: 2, y: 2 } },
+  playback: { endHistoricalMs: 0 },
+});
+const store = createSceneStore(plan);
+const unsubscribe = store.subscribe(() => console.log(store.getSnapshot()));
+store.tick(16); // Caller drives presentation; no timers start inside the library.
+store.setPaused(true);
+unsubscribe();
+store.dispose();
+```
 
-Start with the [Runtime Productization master Task](.topics/viewer/playthings/development/runtime/001-playthings-runtime-productization-task.trace.md) and its [bounded implementation authorization](.topics/viewer/playthings/development/runtime/001-4-bounded-host-neutral-foundation-implementation-authorization-decision.trace.md).
+These are Playthings-owned fixture/adapter inputs, **not a replacement Tiinex schema or the future Core/App API**. The example contains explicit fictional fixture values, not inferred artifact semantics.
 
-The latest [headless foundation integration evidence](.topics/viewer/playthings/development/runtime/integration/001-1-1-headless-foundation-integration-evidence.trace.md) records executable coverage and the remaining gates. Earlier designer scenarios remain design material; they are not all claimed to be implemented or tested.
+## Implemented boundaries
 
-Refactor Anchor still owns the qualified Core/App consumer exports and host integration. Site, Business and Docs are read-only context in this lane. Only the uploaded Playthings full-source snapshot is the writable baseline.
+Historical/presentation clocks, elastic observation, story/frontier/ghost transitions and explicit navigation remain independent of React. The new [scene layer](src/verses/playthings/runtime/scene/README.md) stages camera/actors while keeping authoritative history separate from the order in which it is shown. Its manually driven external store keeps snapshots stable between updates.
 
-Deliveries to Sigma use a complete Tiinex Handoff carrier, not a source overlay. The [delivery decision](.topics/viewer/playthings/processes/003-sigma-full-source-delivery-contract-decision.trace.md) explains replacement safety and ignored-file boundaries.
+The [spatial demand planner](src/verses/playthings/runtime/world/README.md) computes recursive common-zone/capacity requests and preserves prior Root reservations. It is **not** a complete automatic room/door/stair assembler. Unresolved sibling-surface order is reported rather than guessed from filenames.
 
-## Mirrored paths
+The [companion layer](src/verses/playthings/runtime/companions/README.md) implements a **candidate** atlas profile, bounded PNG decoding and explicit cell compilation. Valid dimensions do not certify semantic pixels. Existing accepted artwork is unchanged; no Root atlas has been promoted by this implementation.
 
-Future default schema companions may live under `src/schemas/...` using the same relative schema hierarchy as Site, but Playthings does not copy schema authority merely to place graphics there.
+## Package ownership
 
-Playthings-specific development provenance belongs under `.topics/viewer/playthings/`.
+- Core owns Tiinex semantics and the planned general companion resolver/provider contracts.
+- App owns the planned React Verse lifecycle and provider composition.
+- Site owns deployment and configuration. It remains read-only for this lane.
+- Playthings owns its world/story/time/presentation and PNG defaults.
+- User workspaces may supply artifact-local PNG companions.
+
+Source remains under `src/verses/playthings/...`. Future final PNG defaults retain the mirrored `src/schemas/...` hierarchy without copying schema authority. No `reference/`, private Core imports or required per-artifact Playthings metadata sidecars are introduced.
+
+## Distribution versus source delivery
+
+The small npm tarball contains runtime modules, documentation, license/notice and future promoted PNG defaults only. It deliberately excludes `.topics`, tests and authoring images.
+
+**The npm tarball is not a replacement-safe source snapshot.** Source deliveries to Sigma remain full Tiinex Anchor-to-Sigma Handoff packages, including unchanged source and lineage. Dependency workspaces are read-only context, never implicit apply targets.
+
+## Planning and remaining work
+
+Start with the [master Task](.topics/viewer/playthings/development/runtime/001-playthings-runtime-productization-task.trace.md). Current implementation evidence is in each domain's lineage; the master is not marked complete just because headless tests pass.
+
+Core/App imports, companion provider composition/append, renderer, actual React mount, fullscreen, Root Gate host actions, dynamic building navigation, final atlas approval/promotion and human visual acceptance remain pending. There is no standalone demo.
+
+The developer-only reseal helper now requires an explicit qualified integrity module via `--integrity-module`; it does not import an absent Site source file or silently copy Core. Run its `--help` for the local tooling contract.
 
 ## License
 

@@ -25,7 +25,15 @@ export function createObservationPlan(events, options = {}) {
   let camera = position(options.cameraStart);
   for (const group of groups) {
     let cursor = 0;
-    for (const event of group.events) {
+    // Optional exact visit order, supplied by a story adapter. This changes only
+    // presentation; all members still become semantically available together.
+    const order = options.presentationOrderByGroup?.[group.id];
+    if (order !== undefined && (!Array.isArray(order) || order.length !== group.events.length ||
+        new Set(order).size !== order.length || order.some(id => !group.events.some(e => e.id === id)))) {
+      throw new TypeError('Presentation order must be an exact group permutation');
+    }
+    const ordered = order ? order.map(id => group.events.find(e => e.id === id)) : group.events;
+    for (const event of ordered) {
       const scene = getScene(event.id) ?? {};
       const target = position(scene.location);
       const presentationWorkMs = requireFinite(scene.presentationWorkMs ?? 0, 'presentationWorkMs', 0);

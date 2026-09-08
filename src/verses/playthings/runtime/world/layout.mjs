@@ -38,6 +38,8 @@ export function placeFootprints(requests, options = {}) {
   const gap = requireInteger(options.gap ?? 1, 'gap');
   const maxRadius = requireInteger(options.maxRadius ?? 256, 'maxRadius');
   const maxCandidates = requireInteger(options.maxCandidates ?? 100_000, 'maxCandidates', 1);
+  const maxTotalCandidates = requireInteger(options.maxTotalCandidates ?? 200_000, 'maxTotalCandidates', 1);
+  let totalChecked = 0;
   const previous = (options.previous ?? []).map(rect).sort((a, b) => compareIds(a.id, b.id));
   if (new Set(previous.map(r => r.id)).size !== previous.length) throw new TypeError('Duplicate previous placement');
   for (let i = 0; i < previous.length; i++) for (let j = i + 1; j < previous.length; j++) {
@@ -65,7 +67,7 @@ export function placeFootprints(requests, options = {}) {
         for (let y = -r + 1; y < r; y++) candidates.push([-r, y], [r, y]);
       }
       for (const candidate of candidates) {
-        if (++checked > maxCandidates) break search;
+        if (++checked > maxCandidates || ++totalChecked > maxTotalCandidates) break search;
         const [x, y] = rotate(candidate), current = { id, x, y, width, height };
         if (!placements.some(p => overlaps(current, p, gap))) { found = current; break search; }
       }

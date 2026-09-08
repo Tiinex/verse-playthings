@@ -1,0 +1,51 @@
+{
+  "name": "@tiinex/playthings",
+  "version": "0.1.0-dev.0",
+  "private": true,
+  "description": "Deterministic Playthings engine and companion tooling; React Verse integration is pending.",
+  "type": "module",
+  "main": "./src/verses/playthings/index.mjs",
+  "exports": {
+    ".": "./src/verses/playthings/index.mjs",
+    "./time": "./src/verses/playthings/runtime/time/index.mjs",
+    "./story": "./src/verses/playthings/runtime/story/index.mjs",
+    "./world": "./src/verses/playthings/runtime/world/index.mjs",
+    "./observation": "./src/verses/playthings/runtime/observation/index.mjs",
+    "./companions": "./src/verses/playthings/runtime/companions/index.mjs",
+    "./scene": "./src/verses/playthings/runtime/scene/index.mjs",
+    "./node": {
+      "node": "./src/verses/playthings/node/index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src/verses/playthings/**/*.mjs",
+    "src/verses/playthings/**/README.md",
+    "src/schemas/**/*.playthings.character.png",
+    "src/schemas/**/*.playthings.verb.png",
+    "src/schemas/**/*.playthings.blueprint.png",
+    "src/schemas/**/*.playthings.portrait.png",
+    "src/schemas/**/*.playthings.tiles.png",
+    "src/schemas/**/*.playthings.structure.png",
+    "src/schemas/**/*.playthings.props.png",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22.16.0"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tiinex/playthings.git"
+  },
+  "scripts": {
+    "test": "node tools/playthings/test-runtime.mjs",
+    "test:runtime": "node tools/playthings/test-runtime.mjs",
+    "test:package": "node tools/playthings/test-package.mjs",
+    "check": "npm run test:runtime && npm run test:package",
+    "prepublishOnly": "node -e \"throw new Error('Publication is blocked pending Core/App, React and release qualification')\""
+  }
+}

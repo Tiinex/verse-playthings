@@ -1,7 +1,23 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
-import { canonicalC14nV2SelfState, sealC14nV2Self } from '../../src/integrity/integrity.c14nV2.js';
+import { pathToFileURL } from 'node:url';
+
+// Developer tooling only: use an explicitly supplied, qualified Tiinex integrity
+// implementation. No copied Core implementation and no Site-relative runtime import.
+const args = process.argv.slice(2);
+if (args.includes('--help')) {
+  console.log('Usage: node tools/playthings/reseal-local-lineage.mjs <workspace> --integrity-module <qualified-local-module.mjs-or-js> [--check]');
+  process.exit(0);
+}
+const moduleFlag = args.indexOf('--integrity-module');
+if (moduleFlag < 0 || !args[moduleFlag + 1] || args[moduleFlag + 1].startsWith('--')) {
+  console.error('An explicit qualified Tiinex --integrity-module is required; no Core/Site path is guessed.');
+  process.exit(2);
+}
+const modulePath = path.resolve(args[moduleFlag + 1]);
+const { canonicalC14nV2SelfState, sealC14nV2Self } = await import(pathToFileURL(modulePath).href);
+if (typeof canonicalC14nV2SelfState !== 'function' || typeof sealC14nV2Self !== 'function') throw new TypeError('Qualified module lacks the required integrity operations');
 
 const root = path.resolve(process.argv[2] || '.');
 function walk(d){ let out=[]; for(const e of fs.readdirSync(d,{withFileTypes:true})){ const p=path.join(d,e.name); if(e.isDirectory()) out=out.concat(walk(p)); else if(/\.(trace|workspace)\.md$/i.test(e.name)) out.push(p); } return out; }
@@ -26,6 +42,20 @@ function updateTargetValues(p,text){
   return { text: lines.join('\n'), changed };
 }
 const files=walk(path.join(root,'.topics'));
+if (args.includes('--check')) {
+  const findings=[];
+  for (const p of files) {
+    const text=fs.readFileSync(p,'utf8');
+    const state=canonicalC14nV2SelfState(text);
+    if (state.state!=='verified') findings.push({path:path.relative(root,p),kind:'self-integrity',state:state.state});
+    // Compare values, not whitespace style; already verified artifacts stay byte-stable.
+    const updated=updateTargetValues(p,text).text;
+    const values=t=>[...t.matchAll(/^\s+-\s+Value:\s*(\S+)\s*$/gm)].map(m=>m[1]);
+    if (JSON.stringify(values(text))!==JSON.stringify(values(updated))) findings.push({path:path.relative(root,p),kind:'local-target-integrity'});
+  }
+  console.log(JSON.stringify({status:findings.length?'findings':'clean',files:files.length,findings},null,2));
+  process.exit(findings.length?2:0);
+}
 let totalWrites=0;
 for(let pass=0; pass<20; pass++){
   let writes=0;

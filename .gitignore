@@ -11,3 +11,6 @@ test-environment-full-conversation.md
 # Local Python graphics-tool caches are not source.
 __pycache__/
 *.py[cod]
+
+# Local npm packs are build output, not source or handoff payloads.
+*.tgz
