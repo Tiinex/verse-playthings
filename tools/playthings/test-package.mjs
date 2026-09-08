@@ -18,8 +18,11 @@ try {
  assert.equal(pkg.name,'@tiinex/playthings');assert.equal(pkg.private,false);assert.equal(pkg.type,'module');
  assert.equal(pkg.publishConfig?.access,'public');assert.equal(pkg.publishConfig?.registry,'https://registry.npmjs.org/');
  assert.equal(pkg.repository?.url,'git+https://github.com/Tiinex/playthings.git');
- assert.ok(!pkg.exports['./react'],'Do not export a pretend React adapter');
- assert.ok(!pkg.dependencies&&!pkg.peerDependencies,'Do not invent dependencies before their consumers exist');
+ assert.equal(pkg.exports['./react'],'./src/verses/playthings/react/index.mjs');
+ assert.equal(pkg.exports['./app'],'./src/verses/playthings/app/index.mjs');
+ assert.ok(!pkg.dependencies,'Headless runtime has no production dependencies');
+ assert.equal(pkg.peerDependencies.react,'19.2.7');
+ assert.equal(pkg.peerDependenciesMeta.react.optional,true);
  const browser=JSON.parse(run(process.execPath,['--experimental-vm-modules','tools/playthings/test-browser-boundary.mjs'],root));
  const packed=JSON.parse(run(npm,['pack','--json','--offline','--ignore-scripts','--pack-destination',scratch],root))[0];
  const tar=path.join(scratch,packed.filename);
@@ -31,7 +34,7 @@ try {
  for(const required of ['package.json','LICENSE','NOTICE','README.md',...Object.values(pkg.exports).flatMap(v=>typeof v==='string'?[v]:Object.values(v)).map(v=>v.replace(/^\.\//,''))]) assert.ok(packed.files.some(f=>f.path===required),`Missing packed export/document ${required}`);
  const consumer=path.join(scratch,'consumer');await fs.mkdir(consumer);
  await fs.writeFile(path.join(consumer,'package.json'),JSON.stringify({name:'playthings-offline-consumer',version:'0.0.0',private:true,type:'module'}));
- run(npm,['install',tar,'--offline','--ignore-scripts','--no-audit','--no-fund','--package-lock=false'],consumer);
+ run(npm,['install',tar,'--offline','--ignore-scripts','--no-audit','--no-fund','--package-lock=false','--legacy-peer-deps'],consumer);
  const installed=path.join(consumer,'node_modules/@tiinex/playthings');
  assert.equal((await fs.lstat(installed)).isSymbolicLink(),false);
  assert.equal(await fs.realpath(installed),installed);
@@ -54,7 +57,8 @@ try {
  assert.deepEqual(decodePng(encodePng(compiled)).data,compiled.data);
  assert.equal(validateAtlas({channel:'structure',width:256,height:192}).status,'valid');
  await assert.rejects(()=>import('@tiinex/playthings/src/verses/playthings/runtime/shared/values.mjs'),{code:'ERR_PACKAGE_PATH_NOT_EXPORTED'});
- await assert.rejects(()=>import('@tiinex/playthings/react'),{code:'ERR_PACKAGE_PATH_NOT_EXPORTED'});
+ const adapter=await import('@tiinex/playthings/app'); assert.equal(adapter.createPlaythingsVerse().id,'playthings');
+ await assert.rejects(()=>import('@tiinex/playthings/react'),{code:'ERR_MODULE_NOT_FOUND'}); // React is intentionally absent from this headless consumer
  console.log('Installed-package consumer PASS');
  `;
  await fs.writeFile(path.join(consumer,'consumer.mjs'),program);

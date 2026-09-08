@@ -14,3 +14,7 @@ __pycache__/
 
 # Local npm packs are build output, not source or handoff payloads.
 *.tgz
+
+.release/
+node_modules/
+*.tgz

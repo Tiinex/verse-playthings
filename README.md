@@ -105,3 +105,9 @@ The developer-only reseal helper now requires an explicit qualified integrity mo
 ## License
 
 Apache License 2.0. See `LICENSE` and `NOTICE`.
+
+
+## 2026-09-08 integration frontier
+
+Master-only automatic versioning/publication is implemented through the single Core Node release helper. See `docs/NPM-PUBLISH.md`; release is disabled until `TIINEX_ENABLE_NPM_PUBLISH` and the npm environment are configured. No registry publication was performed by Anchor.
+The `./app` and `./react` entrypoints now exist. Earlier statements below/above that React integration is pending describe the pre-adapter checkpoint. See `docs/APP-INTEGRATION.md` for the exact current boundary and remaining browser/product gates.

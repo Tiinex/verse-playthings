@@ -1,8 +1,8 @@
 {
   "name": "@tiinex/playthings",
-  "version": "0.1.0-dev.0",
+  "version": "0.1.0",
   "private": false,
-  "description": "Deterministic Playthings engine and companion tooling; React Verse integration is pending.",
+  "description": "Experimental Tiinex Playthings runtime and React Verse adapter over App read-only contracts.",
   "type": "module",
   "main": "./src/verses/playthings/index.mjs",
   "exports": {
@@ -16,7 +16,9 @@
     "./node": {
       "node": "./src/verses/playthings/node/index.mjs"
     },
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./app": "./src/verses/playthings/app/index.mjs",
+    "./react": "./src/verses/playthings/react/index.mjs"
   },
   "files": [
     "src/verses/playthings/**/*.mjs",
@@ -45,15 +47,31 @@
     "test": "node tools/playthings/test-runtime.mjs",
     "test:runtime": "node tools/playthings/test-runtime.mjs",
     "test:package": "node tools/playthings/test-package.mjs",
-    "check": "npm run test:runtime && npm run test:package && npm run test:release",
+    "check": "npm run test:runtime && npm run test:package && npm run test:release && npm run test:adapter",
     "prepublishOnly": "node tools/playthings/publish-guard.mjs",
-    "release": "node tools/playthings/release.mjs",
-    "release:preview": "node tools/playthings/release.mjs --dry-run",
+    "release": "node tools/release.mjs preview",
+    "release:preview": "node tools/release.mjs preview",
     "test:release": "node tools/playthings/test-release.mjs",
-    "publish:bootstrap": "node tools/playthings/bootstrap-publish.mjs"
+    "publish:bootstrap": "node tools/release.mjs bootstrap",
+    "release:prepare": "node tools/release.mjs prepare",
+    "release:publish": "node tools/release.mjs publish",
+    "test:adapter": "node --test test/app-adapter.test.mjs"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "peerDependencies": {
+    "react": "19.2.7"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@tiinex/core": "0.1.1",
+    "react": "19.2.7",
+    "@tiinex/app": "0.1.1"
   }
 }

@@ -28,9 +28,9 @@
       }
     },
     {
-      "label": "Tiinex: release @tiinex/playthings (auto)",
+      "label": "Tiinex: preview master auto-release (no publication)",
       "type": "shell",
-      "command": "npm run release",
+      "command": "npm run release:preview",
       "group": "none",
       "problemMatcher": [],
       "presentation": {

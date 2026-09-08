@@ -1,48 +1,39 @@
-name: Publish npm package
-
+name: Publish npm
 on:
-  release:
-    types: [published]
-
+  push:
+    branches: [master]
+  workflow_dispatch:
 permissions:
   contents: read
-  id-token: write
-
 concurrency:
-  group: npm-publish-${{ github.event.release.tag_name }}
+  group: npm-${{ github.repository }}
   cancel-in-progress: false
-
 jobs:
   publish:
-    if: ${{ !github.event.release.prerelease }}
+    if: vars.TIINEX_ENABLE_NPM_PUBLISH == 'true' && github.ref == 'refs/heads/master' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
     runs-on: ubuntu-latest
     environment: npm
+    timeout-minutes: 25
+    permissions:
+      contents: read
+      id-token: write
     env:
-      PLAYTHINGS_RELEASE_TAG: ${{ github.event.release.tag_name }}
+      TIINEX_ENABLE_NPM_PUBLISH: ${{ vars.TIINEX_ENABLE_NPM_PUBLISH }}
     steps:
-      - name: Check out release tag
-        uses: actions/checkout@v7
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          ref: ${{ github.event.release.tag_name }}
-
-      - name: Set up Node
-        uses: actions/setup-node@v7
+          fetch-depth: 0
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
         with:
           node-version: '24'
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: https://registry.npmjs.org
           package-manager-cache: false
-
-      - name: Ensure OIDC-capable npm
-        run: npm install --global 'npm@^11.5.1'
-
-      - name: Install exact dependencies
-        run: npm ci --ignore-scripts
-
-      - name: Verify release identity
-        run: node tools/playthings/verify-release.mjs --tag "$PLAYTHINGS_RELEASE_TAG"
-
-      - name: Qualify package
-        run: npm run check
-
-      - name: Publish to npm through trusted publishing
-        run: npm publish --access public
+      - run: npm install --global npm@11.6.2
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npm run check
+      - name: Plan automatic version and pack the exact tested source commit
+        run: node tools/release.mjs prepare
+      - name: Publish exact archive through OIDC, or skip idempotently
+        run: node tools/release.mjs publish
