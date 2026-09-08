@@ -65,6 +65,11 @@ test('root reservations preserve old houses, and growth conflicts are visible',(
  assert.ok(grown.findings.some(f=>f.code==='growth-needs-repacking'));assert.deepEqual(grown.rootReservations,one.rootReservations);
  assert.throws(()=>planSpatialDemand([],{historicalTimeMs:0,previousHistoricalTimeMs:1,previousRootPlacements:one.rootReservations}));
 });
+test('later top-level history cannot reshuffle earlier Root reservations even when its id sorts first',()=>{
+ const early=planSpatialDemand([record('z-old',null,true,true,{historicalTimeMs:0})],{historicalTimeMs:0});
+ const later=planSpatialDemand([record('z-old',null,true,true,{historicalTimeMs:0}),record('a-later',null,true,true,{historicalTimeMs:1})],{historicalTimeMs:1});
+ assert.deepEqual(later.rootReservations.find(r=>r.id==='z-old'),early.rootReservations[0]);
+});
 test('invalid budgets, ambiguous identifiers and depth overflow cannot fabricate placements',()=>{
  assert.throws(()=>planSpatialDemand([record('x',null),record('x',null)],{historicalTimeMs:0}));
  assert.throws(()=>planSpatialDemand([record('@playthings:world',null)],{historicalTimeMs:0}));

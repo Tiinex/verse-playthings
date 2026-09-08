@@ -1,13 +1,14 @@
-# App ↔ Playthings — landed source contract, 2026-09-08
+# App ↔ Playthings — landed source contract, 2026-09-09
 
 Exact candidate composition: Core 0.1.1, App 0.1.1, Playthings 0.1.0.
-The prior source-independent headless engine remains intact. Its 139 runtime tests
-are preserved. A real React entrypoint and a small history/portrait view now bridge it
-into App. This is an integration surface, NOT completion of the full world renderer.
+The source-independent headless engine remains intact. The App adapter now exposes both
+the current bounded Root-only renderer model and a separately qualified spatial-world
+candidate. This is still an integration surface, NOT completion of the final spatial
+renderer.
 
 ## Public entrypoints
 
-- `@tiinex/playthings/app`: createPlaythingsVerse, createAppVerseModel, sampleAppVerse.
+- `@tiinex/playthings/app`: createPlaythingsVerse, createAppVerseModel, sampleAppVerse, sampleAppScene.
 - `@tiinex/playthings/react`: default/PlaythingsVerse React function component.
 - Existing time/story/world/observation/companions/scene/node exports remain unchanged.
 - `@tiinex/app/viewer`: mountTiinexApp(element, config).
@@ -25,41 +26,56 @@ The current App VerseHost passes `applicationData`, `getPlaythingsStoryRecords`,
 requires matching IDs, enforces a record budget, then calls the existing
 createStoryPlan. It does not re-parse artifacts or invent missing Parents/actors.
 
-The view supports empty Workspace guidance, bounded historical-position selection,
-frontier/actor depiction, portrait resources, exit and fullscreen request. Historical
-presentation uses source-declared times; missing timestamps are omitted with an
-explicit count. Story findings remain available without claiming semantic authority.
-Snapshots remain owned by App. Viewer stays mounted, hidden while external Verse is
-shown, so returning does not recreate source state. No mutation/automation is added.
+When `resolveCompanions` is available, the model also builds `spatialCandidate` through
+the Playthings world chain. Exact artifact resources and exact-schema defaults may
+activate `tiles` / `structure` / `props`; ancestor-schema, Root and fallback resources
+cannot activate them. Resolution authority remains Core/App-owned. The resulting ready
+candidate can contain rectangular enclosures, real wall barriers/doors, multiple
+surfaces, passages and stairs. `semanticPixelsQualified` remains false: pixels are not
+read as hidden geometry.
+
+The current React view intentionally still renders the deterministic Root-only SVG
+scaffold. Semantic story, qualified spatial candidate and active presentation geometry
+remain separate until the multi-surface renderer/camera cutover is itself qualified.
+The scaffold's artifact placement is a stable presentation hash only: collisions stack
+visibly, later history cannot move earlier placements, and renderer budget overflow is
+explicit. Historical presentation uses source-declared times; missing timestamps remain
+explicit. Snapshots remain owned by App. Viewer stays mounted, hidden while external
+Verse is shown, so returning does not recreate source state. No mutation/automation is
+added.
 
 ## Companion reads
 
 Portrait lookup requests playthings/portrait for the exact loaded artifact owner.
+Spatial capability lookup requests Playthings `tiles`, `structure` and `props` through
+the same host resolver and applies a stricter activation gate described above.
 App composes workspace-local and explicitly registered package/deployment providers.
 Resolution remains in Core; Playthings does not implement a competing resolver.
-Ambiguous or missing resources are not replaced with invented source facts. Successful
-reads are inspected with Playthings' existing bounded PNG/CRC inspector, turned into
-an object URL and revoked on change/unmount. Aborted/stale effects cannot repaint the
-new selection. Metadata presence alone is not loaded byte availability.
+Ambiguous or blocked resources fail closed. Portrait bytes are inspected with
+Playthings' existing bounded PNG/CRC inspector, turned into an object URL and revoked
+on change/unmount. Aborted/stale effects cannot repaint the new selection. Metadata
+presence alone is not loaded byte availability.
 
-No default PNG resources were supplied in the current Playthings source; this pass
-adds no fabricated art. Schema-default and override registries remain explicit
-host/provider configuration using the existing mirrored src/schemas convention.
+No default PNG resources were supplied in the current Playthings source; this pass adds
+no fabricated art. Schema-default and override registries remain explicit host/provider
+configuration using the existing mirrored src/schemas convention.
 
 ## What is verified vs pending
 
-Local: installed npm tarballs; headless App/Core → actual story engine; exact Parent
-and empty history cases; `.topics/.relations` artifact portrait using a real PNG;
-updates/unloaded resources; package exports and no source symlinks; master-release
-policy and real Git/npm staging tests with simulated registry responses.
+Local source qualification covers the runtime suite, offline installed-package consumer,
+master-only release-policy suite and App-adapter tests against the carried Core 0.1.1 and
+App 0.1.1 source snapshots. Adapter coverage includes the real Core companion resolver
+feeding exact spatial capabilities into a geometry-qualified Playthings candidate.
+World tests cover fail-closed fallback activation, bounded nested packing, append-stable
+enclosure/entry placement under surface growth, real door barriers, container passages
+and multi-surface stair navigation.
 
-Pending external execution: pinned React/Vite bundle and rendered browser tests,
-real GitHub OIDC/account configuration and npm publication. Network DNS is absent in
-the Anchor container. The Site workflow and Core source-set qualification tool run
-those real tests when dependencies can be obtained; no fake React/Vite is substituted.
+Pending external execution: pinned React/Vite bundle and rendered browser tests, real
+GitHub OIDC/account configuration and npm publication. No registry publication is
+claimed here. Refactor Anchor retains Turn 2; Playthings does not mutate Core/App/Site.
 
-Next Playthings Anchor should start from the carried successor Handoff, run the
-source-set qualification, then develop the actual scene/world renderer according to
-the existing Playthings plan. The minimal history view is scaffolding, not a redesign
-of that plan. No new world schemas, authority rules, or per-artifact Playthings
-metadata were introduced. Refactor Anchor retains Turn 2; VS Code stays later.
+The next renderer step is **candidate → active multi-surface renderer**: preserve the
+semantic/presentation boundary, carry continuity state where settled geometry must
+survive growth, qualify camera behavior across surfaces, and only then retire the
+Root-only scaffold. Final atlas approval/promotion and human visual acceptance remain
+separate gates.

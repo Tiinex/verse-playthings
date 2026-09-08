@@ -12,7 +12,7 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
 const scratch=await fs.mkdtemp(path.join(os.tmpdir(),'playthings-package-'));
 const npm=process.platform==='win32'?'npm.cmd':'npm';
 const env={...process.env,npm_config_cache:path.join(scratch,'cache'),npm_config_offline:'true',npm_config_audit:'false',npm_config_fund:'false',npm_config_update_notifier:'false'};
-function run(command,args,cwd){const result=spawnSync(command,args,{cwd,env,encoding:'utf8',timeout:60000,maxBuffer:8*1024*1024});if(result.error||result.status!==0)throw new Error(result.error?.message??`${command} failed (${result.status}): ${result.stdout}\n${result.stderr}`);return result.stdout;}
+function run(command,args,cwd){const result=spawnSync(command,args,{cwd,env,encoding:'utf8',timeout:60000,maxBuffer:8*1024*1024,shell:process.platform==='win32'&&command===npm});if(result.error||result.status!==0)throw new Error(result.error?.message??`${command} failed (${result.status}): ${result.stdout}\n${result.stderr}`);return result.stdout;}
 try {
  const pkg=JSON.parse(await fs.readFile(path.join(root,'package.json'),'utf8'));
  assert.equal(pkg.name,'@tiinex/playthings');assert.equal(pkg.private,false);assert.equal(pkg.type,'module');

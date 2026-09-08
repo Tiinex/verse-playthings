@@ -47,7 +47,12 @@ export function placeFootprints(requests, options = {}) {
   }
   const seen = new Set(), findings = [], placements = [...previous];
   const existing = new Map(previous.map(r => [r.id, r]));
-  for (const request of [...requests].sort((a, b) => compareIds(a.id, b.id))) {
+  const orderedRequests=[...requests].sort((a,b)=>{
+    const ao=a.order===undefined?0:requireFinite(a.order,'request.order');
+    const bo=b.order===undefined?0:requireFinite(b.order,'request.order');
+    return ao-bo||compareIds(a.id,b.id);
+  });
+  for (const request of orderedRequests) {
     const id = requireId(request.id);
     if (seen.has(id)) throw new TypeError('Duplicate footprint request'); seen.add(id);
     const width = requireInteger(request.width, 'width', 1), height = requireInteger(request.height, 'height', 1);
@@ -76,6 +81,53 @@ export function placeFootprints(requests, options = {}) {
     else findings.push({ id, code: 'placement-budget-exceeded', severity: 'warning' });
   }
   return freeze({ placements: placements.sort((a, b) => compareIds(a.id, b.id)), findings });
+}
+
+/**
+ * Deterministic bounded packing inside one explicit containing rectangle.
+ * Existing placements are immutable reservations. Request `order` is a
+ * presentation insertion key (normally historical introduction time), never a
+ * semantic ranking.
+ */
+export function placeFootprintsWithin(requests, options = {}) {
+  if(!Array.isArray(requests))throw new TypeError('Footprint requests must be an array');
+  const seed=requireId(options.seed??'playthings-contained-layout','seed');
+  const x=requireInteger(options.x??0,'x',-Number.MAX_SAFE_INTEGER),y=requireInteger(options.y??0,'y',-Number.MAX_SAFE_INTEGER);
+  const width=requireInteger(options.width,'width',1),height=requireInteger(options.height,'height',1);
+  const margin=requireInteger(options.margin??1,'margin'),gap=requireInteger(options.gap??1,'gap');
+  const maxCandidates=requireInteger(options.maxCandidates??100_000,'maxCandidates',1);
+  const maxTotalCandidates=requireInteger(options.maxTotalCandidates??200_000,'maxTotalCandidates',1);
+  if(width<=margin*2||height<=margin*2)throw new RangeError('Containing rectangle is smaller than its margins');
+  const inside=r=>r.x>=x+margin&&r.y>=y+margin&&r.x+r.width<=x+width-margin&&r.y+r.height<=y+height-margin;
+  const previous=(options.previous??[]).map(rect).sort((a,b)=>compareIds(a.id,b.id));
+  if(new Set(previous.map(r=>r.id)).size!==previous.length)throw new TypeError('Duplicate previous placement');
+  for(const r of previous)if(!inside(r))throw new RangeError('Previous placement is outside containing rectangle');
+  for(let i=0;i<previous.length;i++)for(let j=i+1;j<previous.length;j++)if(overlaps(previous[i],previous[j],gap))throw new RangeError('Previous reservations overlap');
+  const existing=new Map(previous.map(r=>[r.id,r])),placements=[...previous],findings=[],seen=new Set();let totalChecked=0;
+  const ordered=[...requests].sort((a,b)=>{
+    const ao=a.order===undefined?0:requireFinite(a.order,'request.order'),bo=b.order===undefined?0:requireFinite(b.order,'request.order');
+    return ao-bo||compareIds(a.id,b.id);
+  });
+  for(const request of ordered) {
+    const id=requireId(request.id);if(seen.has(id))throw new TypeError('Duplicate footprint request');seen.add(id);
+    const rw=requireInteger(request.width,'width',1),rh=requireInteger(request.height,'height',1);
+    const old=existing.get(id);
+    if(old){if(rw>old.width||rh>old.height)findings.push({id,code:'growth-needs-repacking',severity:'warning'});continue;}
+    const minX=x+margin,minY=y+margin,maxX=x+width-margin-rw,maxY=y+height-margin-rh;
+    if(maxX<minX||maxY<minY){findings.push({id,code:'contained-placement-too-large',severity:'warning'});continue;}
+    const turn=Math.floor(variation(seed,id,'contained-placement')*2);let found=null,checked=0;
+    const xs=Array.from({length:maxX-minX+1},(_,i)=>minX+i),ys=Array.from({length:maxY-minY+1},(_,i)=>minY+i);
+    // Scan from stable minimum edges. Growing a presentation surface only adds
+    // candidates after earlier choices instead of moving settled rectangles.
+    const outer=turn%2===0?ys:xs,inner=turn%2===0?xs:ys;
+    search:for(const a of outer)for(const b of inner){
+      if(++checked>maxCandidates||++totalChecked>maxTotalCandidates)break search;
+      const candidate=turn%2===0?{id,x:b,y:a,width:rw,height:rh}:{id,x:a,y:b,width:rw,height:rh};
+      if(!placements.some(p=>overlaps(candidate,p,gap))){found=candidate;break search;}
+    }
+    if(found)placements.push(found);else findings.push({id,code:'contained-placement-budget-exceeded',severity:'warning'});
+  }
+  return freeze({placements:placements.sort((a,b)=>compareIds(a.id,b.id)),findings});
 }
 
 /** Produces a mask from topology, never guesses it from an authored sprite. */

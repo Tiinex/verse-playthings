@@ -20,11 +20,20 @@ test('pathfinding crosses door and stairs into another floor', () => {
 test('closed door removes the actual passage, not merely its image', () => {
   assert.equal(findPath(tavernWorld(false), c(0, 2), c(4, 2, 'upper')).status, 'unreachable');
 });
+test('explicit wall barriers block cardinal edges without blocking either cell', () => {
+  const world=createNavigationWorld({surfaces:[floor('ground',3,2)],barriers:[{from:c(1,0),to:c(2,0)},{from:c(1,1),to:c(2,1)}]});
+  assert.equal(findPath(world,c(0,0),c(1,0)).status,'found');
+  assert.equal(findPath(world,c(0,0),c(2,0)).status,'unreachable');
+  assert.throws(()=>createNavigationWorld({surfaces:[floor('ground',2,1)],barriers:[{from:c(0,0),to:c(1,0)}],links:[{id:'conflict',kind:'door',from:c(0,0),to:c(1,0)}]}),/conflicts/);
+});
 test('reopening creates a new immutable world; old routes do not magically update', () => {
-  const original = tavernWorld(false), updated = withLinkState(original, 'door', true);
+  const base=tavernWorld(false);
+  const original=createNavigationWorld({surfaces:base.surfaces,barriers:[{from:c(0,0),to:c(0,1)}],links:base.links});
+  const updated = withLinkState(original, 'door', true);
   assert.equal(findPath(original, c(0, 2), c(4, 2, 'upper')).status, 'unreachable');
   assert.equal(findPath(updated, c(0, 2), c(4, 2, 'upper')).status, 'found');
   assert.equal(original.links.find(l => l.id === 'door').enabled, false);
+  assert.deepEqual(updated.barriers,original.barriers);
 });
 test('closed stairs produce unreachable rather than a teleport fallback', () => {
   const world = withLinkState(tavernWorld(), 'stairs', false);

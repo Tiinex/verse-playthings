@@ -2,6 +2,10 @@ import { compareIds, freeze, requireFinite, requireId, requireInteger } from '..
 
 const key = cell => JSON.stringify([cell.surfaceId, cell.x, cell.y]);
 const pairKey = (a, b) => JSON.stringify([key(a), key(b)]);
+const barrierKey = (a, b) => {
+  const ak = key(a), bk = key(b);
+  return ak < bk ? JSON.stringify([ak, bk]) : JSON.stringify([bk, ak]);
+};
 const cardinal = [[0, -1], [1, 0], [0, 1], [-1, 0]];
 const indexes = new WeakMap();
 function copyCell(c) {
@@ -25,7 +29,7 @@ export function createNavigationWorld(input) {
     blocked: (s.blocked ?? []).map(c => ({ x: requireInteger(c.x, 'blocked.x'), y: requireInteger(c.y, 'blocked.y') })) }))
     .sort((a, b) => compareIds(a.id, b.id));
   if (new Set(surfaces.map(s => s.id)).size !== surfaces.length) throw new TypeError('Duplicate surface id');
-  const idx = { surfaces: new Map(surfaces.map(s => [s.id, s])), blocked: new Set(), outgoing: new Map(), overrides: new Map() };
+  const idx = { surfaces: new Map(surfaces.map(s => [s.id, s])), blocked: new Set(), barriers: new Set(), outgoing: new Map(), overrides: new Map() };
   for (const s of surfaces) {
     s.blocked.sort((a, b) => a.y - b.y || a.x - b.x);
     for (const b of s.blocked) {
@@ -34,6 +38,19 @@ export function createNavigationWorld(input) {
       if (idx.blocked.has(k)) throw new TypeError('Duplicate blocked cell');
       idx.blocked.add(k);
     }
+  }
+  const barriers = (input.barriers ?? []).map((barrier) => {
+    const from = copyCell(barrier.from), to = copyCell(barrier.to);
+    if (from.surfaceId !== to.surfaceId || Math.abs(from.x - to.x) + Math.abs(from.y - to.y) !== 1) {
+      throw new RangeError('Navigation barriers must separate adjacent cardinal cells on one surface');
+    }
+    if (!walkable(idx, from) || !walkable(idx, to)) throw new RangeError('Barrier endpoint is not walkable');
+    return { from, to };
+  }).sort((a, b) => compareIds(barrierKey(a.from, a.to), barrierKey(b.from, b.to)));
+  for (const barrier of barriers) {
+    const bk = barrierKey(barrier.from, barrier.to);
+    if (idx.barriers.has(bk)) throw new TypeError('Duplicate navigation barrier');
+    idx.barriers.add(bk);
   }
   const links = (input.links ?? []).map(link => {
     const from = copyCell(link.from), to = copyCell(link.to);
@@ -52,6 +69,7 @@ export function createNavigationWorld(input) {
   }).sort((a, b) => compareIds(a.id, b.id));
   if (new Set(links.map(l => l.id)).size !== links.length) throw new TypeError('Duplicate link id');
   for (const l of links) {
+    if (idx.barriers.has(barrierKey(l.from, l.to))) throw new TypeError('Navigation link conflicts with a barrier');
     for (const [from, to, allowed] of [[l.from, l.to, true], [l.to, l.from, l.bidirectional]]) {
       const pk = pairKey(from, to);
       if (idx.overrides.has(pk)) throw new TypeError('Conflicting navigation links for one directed edge');
@@ -63,7 +81,7 @@ export function createNavigationWorld(input) {
       }
     }
   }
-  const world = freeze({ kind: 'playthings-navigation-world', surfaces, links });
+  const world = freeze({ kind: 'playthings-navigation-world', surfaces, barriers, links });
   indexes.set(world, idx);
   return world;
 }
@@ -72,13 +90,13 @@ export function withLinkState(world, linkId, enabled) {
   index(world);
   if (typeof enabled !== 'boolean') throw new TypeError('enabled must be boolean');
   if (!world.links.some(l => l.id === linkId)) throw new RangeError('Unknown link');
-  return createNavigationWorld({ surfaces: world.surfaces, links: world.links.map(l => l.id === linkId ? { ...l, enabled } : l) });
+  return createNavigationWorld({ surfaces: world.surfaces, barriers: world.barriers, links: world.links.map(l => l.id === linkId ? { ...l, enabled } : l) });
 }
 function neighbours(idx, cell) {
   const result = [...(idx.outgoing.get(key(cell)) ?? [])];
   for (const [dx, dy] of cardinal) {
     const to = { ...cell, x: cell.x + dx, y: cell.y + dy };
-    if (!walkable(idx, to) || idx.overrides.has(pairKey(cell, to))) continue;
+    if (!walkable(idx, to) || idx.barriers.has(barrierKey(cell, to)) || idx.overrides.has(pairKey(cell, to))) continue;
     result.push({ from: cell, to, cost: 1, kind: 'walk', linkId: null });
   }
   return result.sort((a, b) => compareIds(key(a.to), key(b.to)) || compareIds(a.linkId ?? '', b.linkId ?? ''));

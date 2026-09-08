@@ -49,7 +49,7 @@ export function planSpatialDemand(input,options={}) {
   const spatial=new Map([[rootId,root]]),assignments=[];
   for(const n of visible) if(chains.has(n.id)&&n.capabilities.baseType!=='non-spatial') {
     const ancestor=chains.get(n.id).slice(1).find(id=>all.get(id).capabilities.baseType!=='non-spatial')??rootId;
-    spatial.set(n.id,{id:n.id,parentSpatialId:ancestor,capabilities:n.capabilities,directArtifactIds:[],commonDemandArea:n.displayArea,children:[]});
+    spatial.set(n.id,{id:n.id,parentSpatialId:ancestor,historicalTimeMs:n.historicalTimeMs,capabilities:n.capabilities,directArtifactIds:[],commonDemandArea:n.displayArea,children:[]});
   }
   for(const n of visible) {
     if(!chains.has(n.id)) {assignments.push({artifactId:n.id,spatialHomeId:null,status:'unresolved'});continue;}
@@ -84,7 +84,7 @@ export function planSpatialDemand(input,options={}) {
     return node;
   }
   measure(root);
-  const requests=root.children.map(id=>({id,width:spatial.get(id).footprint.width,height:spatial.get(id).footprint.height}));
+  const requests=root.children.map(id=>({id,width:spatial.get(id).footprint.width,height:spatial.get(id).footprint.height,order:spatial.get(id).historicalTimeMs}));
   if(options.previousRootPlacements?.length) {
     const priorTime=requireFinite(options.previousHistoricalTimeMs,'previousHistoricalTimeMs');
     if(priorTime>time)throw new RangeError('Future reservations cannot be reused in historical playback');
