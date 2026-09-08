@@ -160,8 +160,8 @@ The token means preserve the current result, create return Evidence/Handoff/pack
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Complete Root Named Companion Suite](001-root-complete-named-companion-suite-task.trace.md)
-  - Value: RqniHuKSyszG7r8bjgcnCgL0ouuQlPZR4Tx0lYB04Yw
+  - Value: -o0uD6-qJN2vM8nJhALqG4xAFDs86VQ1qPbaqpWHmmY
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:2-0xMkwvNyMk_jyjKAqMTzWIYgMLmDwkdMUhDhvYEr8
+  - Value:H5Rm3MpYLryFdKUC1YcvlsysIpeE3EuMzASId93ALQI

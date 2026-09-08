@@ -93,8 +93,8 @@ All four routes are intended for one shared multi-route Handoff package and four
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Tiles Dynamic Family Template](../001-1-playthings-tiles-dynamic-family-template-decision.trace.md)
-  - Value: PM60_QoYA8hQ-PeEf4kWkCAM0n6VXyZtBPX3yvZ7vyw
+  - Value: p35qww9XTK551BluG6AwfTF2Z49n0JgngZ_RlDx9kYU
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:RqniHuKSyszG7r8bjgcnCgL0ouuQlPZR4Tx0lYB04Yw
+  - Value:-o0uD6-qJN2vM8nJhALqG4xAFDs86VQ1qPbaqpWHmmY

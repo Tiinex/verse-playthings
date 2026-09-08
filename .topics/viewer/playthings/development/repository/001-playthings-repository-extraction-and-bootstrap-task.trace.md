@@ -37,7 +37,7 @@ Create a new local `Tiinex/playthings` Workspace that initially contains only re
 - [Playthings Refined Runtime Rebase Handoff](../001-3-anchor-to-anchor-playthings-refined-runtime-rebase-handoff.trace.md).
 - [Playthings Visual Production And Asset Lifecycle](../../processes/001-playthings-visual-production-and-asset-lifecycle-process.trace.md).
 - Sigma-reviewed Site Playthings source checkpoint `tiinex-site-playthings-full-source-2026-09-08-r4.zip`, SHA-256 `402f5addd7c333d8f0cb622646b985f649b2aa998e14750816553a0bed033ae9`.
-- Refactor Anchor feedback carried as `002-1-refactor-anchor-package-boundary-input-01.md`.
+- Refactor Anchor feedback carried as `001-1-refactor-anchor-package-boundary-input-01.md`.
 - Complete Docs and Business Workspace snapshots from the preceding qualified Handoff checkpoint.
 
 ## Constraints
@@ -62,8 +62,8 @@ Create a new local `Tiinex/playthings` Workspace that initially contains only re
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Refined Runtime Rebase — Anchor To Anchor](../001-3-anchor-to-anchor-playthings-refined-runtime-rebase-handoff.trace.md)
-  - Value: xrJElEa6oWKZ8wVIUxpT05NnX2_MQ5kyicaoIYcZp58
+  - Value: V7KP8WXOIYaBPfnWERqtUR1J4KX-2K4MQ91iTShvRAQ
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:EifyeF8roZEmMmvuCw6ptMkI9Gps4yYBzh_HZld8qco
+  - Value:-0DaXw40HAIydajw2XlN534LPtIdfNEFX2Cai69bAGc

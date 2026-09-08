@@ -4,9 +4,9 @@
 - Parent
   - Parent Schema: [tiinex.decision.v1](https://github.com/Tiinex/docs/blob/e713557f8be630967571d11a73f9ecd05ae329ce/.topics/.schemas/core/decision/tiinex.decision.v1.schema.md)
   - Created At: 2026-09-08 13:24:00
-  - Trace: [Playthings Core / Site Package Boundary](002-1-playthings-core-site-package-boundary-decision.trace.md)
+  - Trace: [Playthings Core / Site Package Boundary](001-1-playthings-core-site-package-boundary-decision.trace.md)
   - Origin:
-    - [relative](002-1-playthings-core-site-package-boundary-decision.trace.md)
+    - [relative](001-1-playthings-core-site-package-boundary-decision.trace.md)
 - Current
   - Current Schema: [tiinex.evidence.v1](https://github.com/Tiinex/docs/blob/089427470f04336dfcc100c4dcf6289d51bf0291/.topics/.schemas/core/evidence/tiinex.evidence.v1.schema.md)
   - Created At: 2026-09-08 13:31:00
@@ -38,7 +38,7 @@
 - Known Source: Sigma-reviewed Site Playthings source checkpoint `tiinex-site-playthings-full-source-2026-09-08-r4.zip`.
 - Source SHA-256: `402f5addd7c333d8f0cb622646b985f649b2aa998e14750816553a0bed033ae9`.
 - Prior Handoff Package SHA-256: `301f9f547d176c6fbd5e04f8f1335a1eea297e62a1d6ac1c3bbc244d592447bd`.
-- Refactor Anchor Input: [002-1-refactor-anchor-package-boundary-input-01.md](002-1-refactor-anchor-package-boundary-input-01.md), SHA-256 `c693ebba07338eb942f4560282886272db8199f918c9bcb449a33f39e497050e`.
+- Refactor Anchor Input: [001-1-refactor-anchor-package-boundary-input-01.md](001-1-refactor-anchor-package-boundary-input-01.md), SHA-256 `c693ebba07338eb942f4560282886272db8199f918c9bcb449a33f39e497050e`.
 - Preservation Basis: Sigma approved the refined Site checkpoint and requested extraction into a standalone Playthings Workspace after Refactor Anchor confirmed package-boundary compatibility.
 - Provenance Limits: this Evidence does not claim a remote `Tiinex/playthings` commit already exists or that the Site refactor branch has merged Core extraction.
 
@@ -60,7 +60,7 @@
 
 - Supported Claim Or Question: whether a minimal standalone Playthings repository can carry all current Playthings lineage/tooling without starting runtime implementation and while remaining portable beside Site, Docs, and Business Workspaces.
 - Evidence Role: repository extraction/bootstrap qualification.
-- Target Artifact: [Playthings Core / Site Package Boundary](002-1-playthings-core-site-package-boundary-decision.trace.md).
+- Target Artifact: [Playthings Core / Site Package Boundary](001-1-playthings-core-site-package-boundary-decision.trace.md).
 - Review Context: pre-repository/bootstrap Handoff checkpoint.
 
 ## Evidence Material
@@ -109,9 +109,9 @@ Root file digests at capture time:
 # Continuity Integrity
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
-  - Towards: [Playthings Core / Site Package Boundary](002-1-playthings-core-site-package-boundary-decision.trace.md)
-  - Value: Z_t9eA3XCSuERkK28092PbAj8fhjm2Qnj89jfxdzlbM
+  - Towards: [Playthings Core / Site Package Boundary](001-1-playthings-core-site-package-boundary-decision.trace.md)
+  - Value: JOE8Ck6SoevYzLmavc1HlS9wKHCi89zFzbwmCjepJ4g
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:55R92yV8liHQQB0GFnEFlebOWboZy02vSgDzGrtxQws
+  - Value:UHsGN4v14XYkh2iIc0e-kaS5KskWilE-7C3UMqRa23g

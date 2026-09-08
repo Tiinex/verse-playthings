@@ -105,8 +105,8 @@ Exact preserved source references:
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Root Verb — Anchor To Pilot](001-1-anchor-to-pilot-root-verb-generation-handoff.trace.md)
-  - Value: SIxZYAk5bFipaCiS_RJ-E23VXEWxPjcjCzqZrQjKyt0
+  - Value: 3oKeb_u3VXqsS4js5p8eKNgS5nFleO_tzztPk-If8Kk
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:zCBJjq7i-Cv8rNv-luIxxdtQBQK1o-v3B1f70CzS3W0
+  - Value:btMjUFaULv9AQ1ajgsPr_TLAOBMyXLyMYWPCX7R_8j0

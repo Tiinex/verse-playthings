@@ -52,8 +52,8 @@ SHA-256 6f245bfe30d64e0169ef525389f6f83d8d1bbfae1e6e32cd859dac7a81e8eb0b
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Named Sheet Companion Contract](../001-playthings-named-sheet-companion-contract-decision.trace.md)
-  - Value: QuPNE0d_FmAMjqlXBXXva_rxFfJp56YghfMy20q44gU
+  - Value: V37RnLIwlhlk35dQsvodGNBYpJCmUFGBy2GeLZ3vZXo
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:eAWnOhFwqwRhUnfBuMtoBt2skgTfRuvuH1QkG1DwKv4
+  - Value:_ayZXDS1bEpsvrxxqqhjNfOkLESSIRW8V1S24p07SC8

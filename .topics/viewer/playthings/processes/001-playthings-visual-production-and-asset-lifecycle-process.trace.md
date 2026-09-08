@@ -179,8 +179,8 @@ Delete/reduce by default once no longer needed:
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Legacy Viewer Playthings Lineage Reduction Evidence](../development/001-1-1-legacy-viewer-playthings-lineage-reduction-evidence.trace.md)
-  - Value: fdEHauNZ47bEaVl7kZ5r0aFTXZFXLz53LWieNIKLh7I
+  - Value: hx-uKFq2KLbe6i64pDCDnskQWPMpIRhI4OlbuWIb-Uo
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:65ZqjWKpo7Zg52byxqXCrNKp_Z4zWidCRJsvUcDQH94
+  - Value:gk9cbJ7PzaqytVT2YF77OULTrRXhwnef-POdjJ9vl7I

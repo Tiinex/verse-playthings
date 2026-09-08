@@ -75,8 +75,8 @@ Only types actually owned by that schema need to exist; missing channels resolve
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Visual Production And Asset Lifecycle](../processes/001-playthings-visual-production-and-asset-lifecycle-process.trace.md)
-  - Value: 65ZqjWKpo7Zg52byxqXCrNKp_Z4zWidCRJsvUcDQH94
+  - Value: gk9cbJ7PzaqytVT2YF77OULTrRXhwnef-POdjJ9vl7I
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:BsO6llq_hNdWEmDxFqGB2r5MwVgmIr7ZNBmWFe3BSws
+  - Value:zOKth-EzKklyKdT3_tM43TFJLttZFCOxCl1izLgB7ms

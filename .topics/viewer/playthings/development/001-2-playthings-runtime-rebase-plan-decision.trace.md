@@ -96,8 +96,8 @@ No renderer/world-assembler refactor is part of the repository cleanup checkpoin
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Root Named Companion Source Suite State](../graphics/root/001-5-root-named-companion-source-suite-state-decision.trace.md)
-  - Value: wx8ByquJ32MX-JZwAqSAPx_NmRj91_ZGKUMSe4qrgzU
+  - Value: Mp5VMIlIZup6iYUTMLjMW039zz2A4y1Xy7JZlmO8nYM
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:1cWhO_nlZi056pOYjpGysaO9cwbgxUJCSBE3ZKC1lIE
+  - Value:3JpmxVMfbVw4VtwIjQcmRbEHGpW-IjS4JowbZVPZakQ

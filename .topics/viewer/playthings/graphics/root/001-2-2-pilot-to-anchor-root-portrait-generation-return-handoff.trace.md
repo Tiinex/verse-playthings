@@ -117,8 +117,8 @@
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Root Portrait / Root Gate — Anchor To Pilot](001-2-anchor-to-pilot-root-portrait-generation-handoff.trace.md)
-  - Value: D5YvxEu9aGXCZnYt2dJdV5NvADmkkjEbSZOtqB54ZjI
+  - Value: 7wxGki17-xzybSX-ikkgDg1Shq40eGLpKNmCr2CbGb4
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:AnWRag2QeR3ROGbJmixRlnoO7glRg4uV11YqgLnkBsI
+  - Value:6swZVIzcJy3zjHBeAM2JAq9AY2b_3QPex2T0VU2KUgQ

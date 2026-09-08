@@ -4,9 +4,9 @@
 - Parent
   - Parent Schema: [tiinex.evidence.v1](https://github.com/Tiinex/docs/blob/089427470f04336dfcc100c4dcf6289d51bf0291/.topics/.schemas/core/evidence/tiinex.evidence.v1.schema.md)
   - Created At: 2026-09-08 13:31:00
-  - Trace: [Playthings Repository Bootstrap Evidence](002-2-playthings-repository-bootstrap-evidence.trace.md)
+  - Trace: [Playthings Repository Bootstrap Evidence](001-2-playthings-repository-bootstrap-evidence.trace.md)
   - Origin:
-    - [relative](002-2-playthings-repository-bootstrap-evidence.trace.md)
+    - [relative](001-2-playthings-repository-bootstrap-evidence.trace.md)
 - Current
   - Current Schema: [tiinex.evidence.v1](https://github.com/Tiinex/docs/blob/089427470f04336dfcc100c4dcf6289d51bf0291/.topics/.schemas/core/evidence/tiinex.evidence.v1.schema.md)
   - Created At: 2026-09-08 13:40:00
@@ -91,9 +91,9 @@ Observed post-correction rules retain existing-asset reference-in-place and line
 # Continuity Integrity
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
-  - Towards: [Playthings Repository Bootstrap Evidence](002-2-playthings-repository-bootstrap-evidence.trace.md)
-  - Value: 55R92yV8liHQQB0GFnEFlebOWboZy02vSgDzGrtxQws
+  - Towards: [Playthings Repository Bootstrap Evidence](001-2-playthings-repository-bootstrap-evidence.trace.md)
+  - Value: UHsGN4v14XYkh2iIc0e-kaS5KskWilE-7C3UMqRa23g
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:Ai-97bWWml18YktYthI-AqkGDASHYJLU96-H0lDyO-A
+  - Value:LO4plSe-FYAoqD73PU3UuJE7LSk1JCsmQ-XfEAtq-rI

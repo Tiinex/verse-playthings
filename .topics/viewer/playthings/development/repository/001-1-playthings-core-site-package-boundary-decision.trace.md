@@ -4,9 +4,9 @@
 - Parent
   - Parent Schema: [tiinex.task.v1](https://github.com/Tiinex/docs/blob/053d46ce082d4ec261b82abc44ecca403d61e240/.topics/.schemas/core/task/tiinex.task.v1.schema.md)
   - Created At: 2026-09-08 13:20:00
-  - Trace: [Playthings Repository Extraction And Bootstrap](002-playthings-repository-extraction-and-bootstrap-task.trace.md)
+  - Trace: [Playthings Repository Extraction And Bootstrap](001-playthings-repository-extraction-and-bootstrap-task.trace.md)
   - Origin:
-    - [relative](002-playthings-repository-extraction-and-bootstrap-task.trace.md)
+    - [relative](001-playthings-repository-extraction-and-bootstrap-task.trace.md)
 - Current
   - Current Schema: [tiinex.decision.v1](https://github.com/Tiinex/docs/blob/e713557f8be630967571d11a73f9ecd05ae329ce/.topics/.schemas/core/decision/tiinex.decision.v1.schema.md)
   - Created At: 2026-09-08 13:24:00
@@ -28,7 +28,7 @@
 
 ## Refactor Anchor Input
 
-The exact informal response that qualified this boundary is preserved as co-event source material at [Refactor Anchor package-boundary input](002-1-refactor-anchor-package-boundary-input-01.md).
+The exact informal response that qualified this boundary is preserved as co-event source material at [Refactor Anchor package-boundary input](001-1-refactor-anchor-package-boundary-input-01.md).
 
 The response establishes that the Core extraction is compatible with the Playthings split and recommends that Playthings consume stable Core contracts/projections rather than Site internals. It also assigns Verse selection, lazy loading, mount/unmount, fullscreen shell behavior, and navigation back to Site. Runtime import names remain intentionally unlocked until Core's public API surface is stabilized.
 
@@ -91,9 +91,9 @@ No runtime source, npm manifest, React implementation, or mirrored `src/schemas`
 # Continuity Integrity
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
-  - Towards: [Playthings Repository Extraction And Bootstrap](002-playthings-repository-extraction-and-bootstrap-task.trace.md)
-  - Value: EifyeF8roZEmMmvuCw6ptMkI9Gps4yYBzh_HZld8qco
+  - Towards: [Playthings Repository Extraction And Bootstrap](001-playthings-repository-extraction-and-bootstrap-task.trace.md)
+  - Value: -0DaXw40HAIydajw2XlN534LPtIdfNEFX2Cai69bAGc
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:Z_t9eA3XCSuERkK28092PbAj8fhjm2Qnj89jfxdzlbM
+  - Value:JOE8Ck6SoevYzLmavc1HlS9wKHCi89zFzbwmCjepJ4g

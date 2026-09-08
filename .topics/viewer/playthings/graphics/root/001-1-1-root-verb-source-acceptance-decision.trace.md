@@ -50,8 +50,8 @@
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Root Verb Inspect Generation Evidence](001-5-root-verb-inspect-generation-evidence.trace.md)
-  - Value: zCBJjq7i-Cv8rNv-luIxxdtQBQK1o-v3B1f70CzS3W0
+  - Value: btMjUFaULv9AQ1ajgsPr_TLAOBMyXLyMYWPCX7R_8j0
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:Wsy3OGow5EbbUJD3jqvGSBZjuhRoMfW7W-GRb-Q1kf0
+  - Value:ZzgQ6440g6IHAsmSYZDX9gdjkm4WOBnBRIY-2StAX5o

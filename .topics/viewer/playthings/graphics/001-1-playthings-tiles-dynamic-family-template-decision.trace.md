@@ -124,8 +124,8 @@ File suffix + type template + dimensions are the baseline parsing contract. Meta
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Named Sheet Companion Contract](001-playthings-named-sheet-companion-contract-decision.trace.md)
-  - Value: QuPNE0d_FmAMjqlXBXXva_rxFfJp56YghfMy20q44gU
+  - Value: V37RnLIwlhlk35dQsvodGNBYpJCmUFGBy2GeLZ3vZXo
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:PM60_QoYA8hQ-PeEf4kWkCAM0n6VXyZtBPX3yvZ7vyw
+  - Value:p35qww9XTK551BluG6AwfTF2Z49n0JgngZ_RlDx9kYU

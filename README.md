@@ -19,12 +19,19 @@ Runtime design remains in a planning phase. The old Site experiment may be consu
 
 The intended long-term split is:
 
-- `@tiinex/core`: host-neutral Tiinex semantic contracts and projections;
-- `Tiinex/site`: Viewer shell, Verse selection, lazy loading, fullscreen/mount integration, and navigation;
+- `@tiinex/core`: host-neutral Tiinex semantic projections and the planned general Companion Resource Resolver/provider contract;
+- `@tiinex/app`: planned Viewer/React foundation, Verse host/mount boundary and companion-provider composition;
+- `Tiinex/site`: thin deployment, configuration and overrides above App/Core; read-only in this Playthings planning checkpoint;
 - `Tiinex/playthings`: Playthings runtime, world/timeline projection, presentation, React entrypoint, and default Playthings graphics;
 - user Workspaces: artifact-local `.playthings.*.png` companions for moddable overrides.
 
 Playthings must not depend on Site internals or assume that companion files physically live in the Site repository. Companion lookup will use qualified artifact/schema identity plus registered asset providers.
+
+## Designer frontier
+
+The current [designer review](.topics/viewer/playthings/development/design/001-playthings-designer-review-topic.trace.md) preserves the user requirements and the first semantic/event counterexample matrix. Its proposed depiction rules are under review; the 32 cases are specification scenarios, not executed runtime tests. No `src/`, `package.json`, npm implementation or new PNG production has been added.
+
+The [updated Refactor planning sync](.topics/viewer/playthings/development/repository/001-1-1-core-app-site-unblock-sync-topic.trace.md) introduces App and assigns general companion resolution to Core. Actual consumer exports remain a later dependency gate.
 
 ## Mirrored paths
 

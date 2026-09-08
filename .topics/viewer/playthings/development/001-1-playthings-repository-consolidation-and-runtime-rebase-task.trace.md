@@ -55,8 +55,8 @@ Turn the current source-complete Playthings work into a clean scalable repositor
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Development Root](001-playthings-development-root-topic.trace.md)
-  - Value: Mzhz4reERBnvlzUPJFF_0-gsRdYEocI8k_VhIDQatt0
+  - Value: ljaKUf17E-sER5_0l53J8Is0_Y8Myh7b5HLGvG_VTc8
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:yLNmud00g8Gy8P0LxOLxN7RRfwrkwvLEewNiLca0tlA
+  - Value:HBaR7PQJNapbj54TmLCS0zZzXRIuI9sDDgOOvh6XFhc

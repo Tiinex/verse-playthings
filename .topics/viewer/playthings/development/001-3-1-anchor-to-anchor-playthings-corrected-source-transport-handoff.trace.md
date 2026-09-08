@@ -138,8 +138,8 @@
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Refined Runtime Rebase — Anchor To Anchor](001-3-anchor-to-anchor-playthings-refined-runtime-rebase-handoff.trace.md)
-  - Value: xrJElEa6oWKZ8wVIUxpT05NnX2_MQ5kyicaoIYcZp58
+  - Value: V7KP8WXOIYaBPfnWERqtUR1J4KX-2K4MQ91iTShvRAQ
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:JC-Eszg8f9cJxVCiqEJKktr2UmgzIp-hNfS0PfsWUnY
+  - Value:siPfj3TurtsCRzyVTZWpKwi_mXLEyKV0lH8L16aGUW4

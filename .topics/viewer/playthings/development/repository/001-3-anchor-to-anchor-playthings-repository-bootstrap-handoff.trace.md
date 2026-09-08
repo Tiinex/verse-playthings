@@ -34,19 +34,19 @@
 - standalone-playthings-workspace
   - Transfer Kind: work-and-responsibility
   - Description: treat the carried Playthings Workspace as future Playthings source/lineage authority; it contains the migrated Playthings lineage, current production tooling, repository identity/legal files, and no runtime implementation yet
-  - Controlling Artifact: [Playthings Repository Extraction And Bootstrap](002-playthings-repository-extraction-and-bootstrap-task.trace.md)
+  - Controlling Artifact: [Playthings Repository Extraction And Bootstrap](001-playthings-repository-extraction-and-bootstrap-task.trace.md)
   - Boundary: do not move active Playthings development back into the carried Site Workspace merely because historical artifacts originated there
 
 - package-boundary
   - Transfer Kind: work-and-responsibility
   - Description: maintain the accepted Core/Site/Playthings ownership split and provider-oriented companion lookup boundary while designer planning continues
-  - Controlling Artifact: [Playthings Core / Site Package Boundary](002-1-playthings-core-site-package-boundary-decision.trace.md)
+  - Controlling Artifact: [Playthings Core / Site Package Boundary](001-1-playthings-core-site-package-boundary-decision.trace.md)
   - Boundary: no Site-internal runtime imports and no unstable Core-internal imports
 
 - designer-frontier
   - Transfer Kind: work-and-responsibility
   - Description: continue discussing and stress-testing the Playthings experience, timeline, actor/presence, spatial companion-capability, pseudorandom world, pathfinding, fullscreen, and Root-Gate interaction model before materializing the runtime master Task/subtasks
-  - Controlling Artifact: [Playthings Repository Bootstrap Evidence](002-2-playthings-repository-bootstrap-evidence.trace.md)
+  - Controlling Artifact: [Playthings Repository Bootstrap Evidence](001-2-playthings-repository-bootstrap-evidence.trace.md)
   - Boundary: current conversation-level design ideas are not automatically final companion/runtime contracts until Sigma approves the consolidated plan
 
 ## Required Context
@@ -59,19 +59,19 @@
 
 - repository-bootstrap-task
   - Material: repository extraction/bootstrap Task
-  - Material Reference: [Playthings Repository Extraction And Bootstrap](002-playthings-repository-extraction-and-bootstrap-task.trace.md)
+  - Material Reference: [Playthings Repository Extraction And Bootstrap](001-playthings-repository-extraction-and-bootstrap-task.trace.md)
   - Purpose: scope, constraints, and done criteria for the source split
   - Availability: available
 
 - package-boundary-decision
   - Material: accepted Core/Site/Playthings boundary Decision
-  - Material Reference: [Playthings Core / Site Package Boundary](002-1-playthings-core-site-package-boundary-decision.trace.md)
+  - Material Reference: [Playthings Core / Site Package Boundary](001-1-playthings-core-site-package-boundary-decision.trace.md)
   - Purpose: package ownership, provider boundary, and deferred runtime import authority
   - Availability: available
 
 - bootstrap-evidence
   - Material: exact local repository bootstrap evidence
-  - Material Reference: [Playthings Repository Bootstrap Evidence](002-2-playthings-repository-bootstrap-evidence.trace.md)
+  - Material Reference: [Playthings Repository Bootstrap Evidence](001-2-playthings-repository-bootstrap-evidence.trace.md)
   - Purpose: source provenance, fidelity, and minimal-workspace state
   - Availability: available
 
@@ -150,7 +150,7 @@
 
 - refactor-anchor-source
   - Material: exact informal Refactor Anchor reply used to qualify the package boundary
-  - Material Reference: [Refactor Anchor package-boundary input](002-1-refactor-anchor-package-boundary-input-01.md)
+  - Material Reference: [Refactor Anchor package-boundary input](001-1-refactor-anchor-package-boundary-input-01.md)
   - Purpose: full wording behind the accepted package-boundary synthesis
   - Availability: available
 
@@ -165,8 +165,8 @@
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Standalone Workspace And Companion Provider Revision](../../processes/002-playthings-standalone-workspace-and-companion-provider-revision.trace.md)
-  - Value: DT5NzSEeQOsEO67yJ9Jr5jncEWRBn29MFnYLfQyix78
+  - Value: YUiElp488x_yhbZ2C1n5CIzrf6jeq4w20tKLd1YubYs
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:py-9LefD7CdZcYkdwNnrbr8yrYxkLVyDap9Cxdi7T6k
+  - Value:W_kyjsFDEuK0jrokcU2D8NGvc4rWrF8FQQfa9It3JuA
