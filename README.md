@@ -1,15 +1,15 @@
 # Tiinex Playthings
 
-A deterministic Tiinex story/world engine with an experimental App/React adapter, qualified spatial-world candidate and bounded Root-only renderer scaffold.
+A deterministic Tiinex story/world engine with an experimental App/React adapter, qualified spatial-world assembly and guarded multi-surface renderer with a bounded Root fallback.
 
 ## What can I use today?
 
-**A locally installable experimental package with a React Verse adapter. The spatial world renderer is still incomplete.**
+**A locally installable experimental package with a React Verse adapter. Qualified spatial worlds can now render across surfaces; browser/visual acceptance is still incomplete.**
 
 - `@tiinex/playthings` exports the `time`, `story`, `observation`, `world`, `companions` and `scene` namespaces.
 - Matching subpaths, including `@tiinex/playthings/app` and `@tiinex/playthings/react`, expose the App adapter and React view without private Core/App imports.
 - `@tiinex/playthings/node` is the separate Node-only PNG codec/compiler entrypoint.
-- React 19.2.7 is an optional peer. The current React view renders history/portraits plus a deterministic Root-only SVG scene; exact companion capabilities can now compile a separate rectangular multi-surface world candidate, but renderer cutover remains pending.
+- React 19.2.7 is an optional peer. The React view uses a qualified rectangular multi-surface world when exact spatial companion activation completes; otherwise it fails back to the deterministic Root-only SVG scaffold. Cross-surface camera/actor transitions stay explicit and never interpolate diagonally between unrelated surfaces.
 
 The source package is `0.1.0` and is release-enabled, but this repository state does **not** claim that any npm version has been published. Publication is guarded: the one-time registry bootstrap must be explicit, and normal publication is only accepted from the GitHub Release workflow. APIs remain experimental. The headless/runtime package needs no bundled runtime dependency; the React entrypoint uses the host React peer and real rendered-browser qualification remains an external gate.
 
@@ -98,8 +98,8 @@ The small npm tarball contains runtime modules, documentation, license/notice an
 
 Start with the [master Task](.topics/viewer/playthings/development/runtime/001-playthings-runtime-productization-task.trace.md). Current implementation evidence is in each domain's lineage; the master is not marked complete just because headless tests pass.
 
-The public Core/App adapter, bounded Root-only renderer scaffold and exact-capability → rectangular world candidate are now present.
-Still pending are dependency-equipped React/Vite rendered-browser acceptance, candidate → active multi-surface renderer/camera cutover with continuity state, final atlas approval/promotion, full Root Gate/fullscreen product acceptance, and human visual acceptance. There is no standalone demo and no claim that the synthetic Root scaffold is the final world renderer.
+The public Core/App adapter, bounded Root fallback, exact-capability → rectangular world assembly, and guarded candidate → active multi-surface renderer cutover are now present.
+Still pending are dependency-equipped React/Vite rendered-browser acceptance, longer-lived continuity state for demand-footprint growth across live snapshot replacement, final atlas approval/promotion, full Root Gate/fullscreen product acceptance, and human visual acceptance. There is no standalone demo and no claim that generated rectangular presentation geometry is Tiinex spatial source truth.
 
 The developer-only reseal helper now requires an explicit qualified integrity module via `--integrity-module`; it does not import an absent Site source file or silently copy Core. Run its `--help` for the local tooling contract.
 

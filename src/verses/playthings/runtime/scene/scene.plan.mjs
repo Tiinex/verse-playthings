@@ -26,6 +26,10 @@ const copyLocation=location=>location==null?null:{surfaceId:requireId(location.s
 export function createScenePlan(story,options={}) {
   if(story?.kind!=='playthings-story-plan') throw new TypeError('Use createStoryPlan first');
   if(!options.world) throw new TypeError('Explicit navigation world required');
+  const rendererQualified=options.rendererQualified??false;
+  if(typeof rendererQualified!=='boolean')throw new TypeError('rendererQualified must be boolean');
+  const rendererMode=options.rendererMode??'caller-supplied';
+  if(typeof rendererMode!=='string'||!rendererMode)throw new TypeError('rendererMode must be a nonempty string');
   const locations=Object.fromEntries(story.records.map(r=>[r.id,copyLocation(get(options.locations??{},r.id))]));
   const routes=Object.create(null),scenes=Object.create(null),findings=[],blocked=new Set(),presentationOrderByGroup=Object.create(null);
   for(const event of story.log) {
@@ -42,7 +46,7 @@ export function createScenePlan(story,options={}) {
   }
   const observation=createObservationPlan(story.records,{...options.playback,scenes,presentationOrderByGroup});
   return freeze({kind:'playthings-scene-plan',story,observation,routes,locations,findings,
-    navigationIsCallerSupplied:true,rendererQualified:false});
+    navigationIsCallerSupplied:true,rendererQualified,rendererMode});
 }
 
 export function sampleScenePlan(plan,presentationTimeMs,options={}) {

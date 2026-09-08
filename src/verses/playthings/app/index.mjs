@@ -1,5 +1,6 @@
 import {createStoryPlan,sampleStoryPlan} from '../runtime/story/index.mjs';
 import {createCompanionSpatialWorld,createRootWorldScaffold} from '../runtime/world/index.mjs';
+import {selectPresentationWorld} from '../runtime/world/presentation.mjs';
 import {createScenePlan,sampleScenePlan} from '../runtime/scene/index.mjs';
 /** This adapter consumes App's projection; it never parses Tiinex source, invents
  * missing ancestry, maps labels to identities, or mutates loaded Workspaces. */
@@ -17,12 +18,14 @@ export function createAppVerseModel({applicationData,getPlaythingsStoryRecords,r
  const times=Object.freeze([...new Set(story.records.map(r=>r.historicalTimeMs))]);
  const spatialCandidate=story.records.length&&typeof resolveCompanions==='function'?createCompanionSpatialWorld({records:story.records,metadata,resolveCompanions},{historicalTimeMs:times.at(-1),seed:'playthings-world'}):null;
  const rootWorld=story.records.length?createRootWorldScaffold(story,{maxRecords:Math.min(maxRootRecords,story.records.length)}):null;
- const scene=rootWorld?createScenePlan(story,{world:rootWorld.world,locations:rootWorld.locations,
+ const presentationWorld=rootWorld?selectPresentationWorld({spatialCandidate,rootWorld}):null;
+ const scene=presentationWorld?createScenePlan(story,{world:presentationWorld.world,locations:presentationWorld.locations,
+  rendererQualified:presentationWorld.geometryQualified,rendererMode:presentationWorld.mode,
   playback:{endHistoricalMs:times.at(-1),followsLiveTime:false}}):null;
  return Object.freeze({contract:PLAYTHINGS_APP_CONTRACT,story,metadata:Object.freeze(metadata),times,
-  spatialCandidate,rootWorld,scene,presentationDurationMs:scene?.observation?.playback?.finitePresentationDurationMs??0,
+  spatialCandidate,rootWorld,presentationWorld,scene,presentationDurationMs:scene?.observation?.playback?.finitePresentationDurationMs??0,
   omittedRecords:(applicationData.records||[]).length-records.length,
-  boundary:'Read-only history depiction. Exact companion spatial capability may compile a separate candidate world, while the renderer remains on the bounded Root scaffold until multi-surface presentation is qualified; no execution, Handoff acceptance or new semantic authority.'});
+  boundary:'Read-only history depiction. Complete exact-companion spatial geometry may drive the multi-surface renderer; otherwise the bounded Root scaffold stays active; no execution, Handoff acceptance or new semantic authority.'});
 }
 export function sampleAppVerse(model,index) {
  if(model?.contract!==PLAYTHINGS_APP_CONTRACT)throw Error('playthings.app.model-required');

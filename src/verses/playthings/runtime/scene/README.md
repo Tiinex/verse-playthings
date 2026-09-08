@@ -1,10 +1,10 @@
 # Headless scene projection
 
-A scene is the layer between headless story/time/navigation and the future renderer. It does not mount React, create DOM, start timers, parse artifacts, fetch assets or decide a Core/App host API.
+A scene is the layer between headless story/time/navigation and the renderer. It does not mount React, create DOM, start timers, parse artifacts, fetch assets or decide a Core/App host API.
 
 ## Plan and sample
 
-`createScenePlan(storyPlan, {world,locations,movement?,playback?})` plans routes and camera/work/dwell budgets. The caller supplies a qualified navigation snapshot and locations. Dynamic/historical topology is not inferred here. Parent dependencies order equal-time **visits**; all same-time facts are available together regardless of visit order.
+`createScenePlan(storyPlan, {world,locations,rendererQualified?,rendererMode?,movement?,playback?})` plans routes and camera/work/dwell budgets. The caller supplies a qualified navigation snapshot and locations. Dynamic/historical topology is not inferred here. Parent dependencies order equal-time **visits**; all same-time facts are available together regardless of visit order.
 
 `sampleScenePlan(plan, presentationTimeMs, options?)` returns immutable:
 

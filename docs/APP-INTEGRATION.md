@@ -2,9 +2,10 @@
 
 Exact candidate composition: Core 0.1.1, App 0.1.1, Playthings 0.1.0.
 The source-independent headless engine remains intact. The App adapter now exposes both
-the current bounded Root-only renderer model and a separately qualified spatial-world
-candidate. This is still an integration surface, NOT completion of the final spatial
-renderer.
+the bounded Root fallback and a separately qualified spatial-world candidate. A complete
+candidate now becomes the active multi-surface presentation world; incomplete or absent
+spatial activation keeps the fallback active. This remains an integration surface, NOT
+final rendered-browser or visual acceptance.
 
 ## Public entrypoints
 
@@ -34,15 +35,20 @@ candidate can contain rectangular enclosures, real wall barriers/doors, multiple
 surfaces, passages and stairs. `semanticPixelsQualified` remains false: pixels are not
 read as hidden geometry.
 
-The current React view intentionally still renders the deterministic Root-only SVG
-scaffold. Semantic story, qualified spatial candidate and active presentation geometry
-remain separate until the multi-surface renderer/camera cutover is itself qualified.
-The scaffold's artifact placement is a stable presentation hash only: collisions stack
-visibly, later history cannot move earlier placements, and renderer budget overflow is
-explicit. Historical presentation uses source-declared times; missing timestamps remain
-explicit. Snapshots remain owned by App. Viewer stays mounted, hidden while external
-Verse is shown, so returning does not recreate source state. No mutation/automation is
-added.
+`presentationWorld` is selected fail-closed. It uses `qualified-spatial` only when
+the candidate is `ready`, navigation is compiled, geometry is qualified, exact spatial
+capability provenance is present, and at least one `tiles` or `structure` activation
+exists. Resolver availability or Props-only artwork does not replace the Root fallback.
+
+The React view renders the selected surface, qualified rectangular enclosures, blocked
+cells, wall barriers, door/stair endpoints, artifact markers and actors. Cross-surface
+camera/actor transitions use explicit endpoints; the renderer never draws a fictitious
+diagonal between unrelated surfaces. The Root scaffold remains available as fallback;
+its artifact placement is a stable presentation hash only, collisions stack visibly,
+later history cannot move earlier placements, and renderer budget overflow is explicit.
+Historical presentation uses source-declared times; missing timestamps remain explicit.
+Snapshots remain owned by App. Viewer stays mounted, hidden while external Verse is
+shown, so returning does not recreate source state. No mutation/automation is added.
 
 ## Companion reads
 
@@ -74,8 +80,9 @@ Pending external execution: pinned React/Vite bundle and rendered browser tests,
 GitHub OIDC/account configuration and npm publication. No registry publication is
 claimed here. Refactor Anchor retains Turn 2; Playthings does not mutate Core/App/Site.
 
-The next renderer step is **candidate → active multi-surface renderer**: preserve the
-semantic/presentation boundary, carry continuity state where settled geometry must
-survive growth, qualify camera behavior across surfaces, and only then retire the
-Root-only scaffold. Final atlas approval/promotion and human visual acceptance remain
-separate gates.
+The candidate → active multi-surface cutover is now implemented behind the strict
+qualification gate. The next renderer step is dependency-equipped rendered-browser
+acceptance plus longer-lived continuity state when a live replacement snapshot expands
+an already-settled demand footprint. The Root scaffold remains the deliberate fallback,
+not a deprecated semantic source. Final atlas approval/promotion and human visual
+acceptance remain separate gates.
