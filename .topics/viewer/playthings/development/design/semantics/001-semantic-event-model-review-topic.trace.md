@@ -135,8 +135,8 @@ This work advances the design; it is not a new canonical schema, a final accepta
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Designer Review Frontier](../001-playthings-designer-review-topic.trace.md)
-  - Value: uXL7QmzU2kj8snSKtW6UJ54dYRyVdvmUicN4wBReNek
+  - Value: gkbCrJFgk8brcI97lMfcriqkXJvj16puFNOFC-pWIKc
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:jehyvEFAIC9VaQaSxWowIVeMR0yrF-Mu4H4R8TmdZCs
+  - Value:vg5XM2bJ4HzXPGlypP2aBfrS8OrHYp2lOr6i0LAUut8

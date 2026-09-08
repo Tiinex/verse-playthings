@@ -74,8 +74,8 @@ For this repository line, the human carrier identity is presented as `Tiinex Sit
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Standalone Tooling Workspace Compatibility Evidence](../development/repository/001-2-1-playthings-standalone-tooling-workspace-compatibility-evidence.trace.md)
-  - Value: LO4plSe-FYAoqD73PU3UuJE7LSk1JCsmQ-XfEAtq-rI
+  - Value: fIiw70ClYSIow7nQosJGV8wNBerAMKZRAek9WnnvNmw
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:YUiElp488x_yhbZ2C1n5CIzrf6jeq4w20tKLd1YubYs
+  - Value:Uqpf9_oc3vWNebkw6IPSR7k30_Twd1xxdt0X-P8Uaso

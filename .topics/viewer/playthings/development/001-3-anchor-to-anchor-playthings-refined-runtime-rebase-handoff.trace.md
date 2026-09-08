@@ -150,8 +150,8 @@
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Runtime Rebase Plan](001-2-playthings-runtime-rebase-plan-decision.trace.md)
-  - Value: 3JpmxVMfbVw4VtwIjQcmRbEHGpW-IjS4JowbZVPZakQ
+  - Value: rSntCb6sRlz_WTTwzEKAQb8Ar4Lhz8-8DQUpVI7CExI
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:V7KP8WXOIYaBPfnWERqtUR1J4KX-2K4MQ91iTShvRAQ
+  - Value:qHnuHeRyCwOeBKg9g2caCZ9nlMuB5V7EtBAh7EbcgAo

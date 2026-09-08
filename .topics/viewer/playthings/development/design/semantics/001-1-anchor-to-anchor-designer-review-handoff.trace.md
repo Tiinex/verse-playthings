@@ -160,8 +160,8 @@
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Semantic / Event Model — Adversarial Design Review](001-semantic-event-model-review-topic.trace.md)
-  - Value: jehyvEFAIC9VaQaSxWowIVeMR0yrF-Mu4H4R8TmdZCs
+  - Value: vg5XM2bJ4HzXPGlypP2aBfrS8OrHYp2lOr6i0LAUut8
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:iUZU31U59JWOft2lbOiL9_yfytliieVNk76-1m_Kn0s
+  - Value:xNQTwmT4ZYQLfsQ_btPccGUTUmuYYdWi7jKLIW1tkQo

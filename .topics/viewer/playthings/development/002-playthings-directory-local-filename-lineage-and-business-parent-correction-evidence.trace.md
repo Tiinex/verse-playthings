@@ -79,8 +79,8 @@
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Development Root](001-playthings-development-root-topic.trace.md)
-  - Value: ljaKUf17E-sER5_0l53J8Is0_Y8Myh7b5HLGvG_VTc8
+  - Value: IVm3d17l__q2YY0dO99o9Zo0JyXbglzONNbWF4Kou9M
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:89QAYWO-quuIJuYuZLO-oihhplqmdV6JoDsbXqAxl7A
+  - Value:5aTOv6Q8oc_RW5lqLqTwwjW_YMGmiLAW8UntVGRfwBA

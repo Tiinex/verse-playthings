@@ -66,5 +66,13 @@ export function resolvePlaybackPolicy(options = {}) {
     throw new RangeError('fastForwardMultiplier must be at least one');
   }
 
+  for (const key of ['preparationMsByGroup', 'observationMsByGroup']) {
+    const values = options[key] ?? {};
+    if (!values || Array.isArray(values) || typeof values !== 'object') throw new TypeError(`${key} must be a record`);
+    policy[key] = Object.freeze(Object.fromEntries(Object.entries(values).map(([id, value]) => {
+      if (typeof value !== 'number' || !Number.isFinite(value) || value < 0) throw new TypeError(`Invalid ${key}.${id}`);
+      return [id, value];
+    })));
+  }
   return Object.freeze(policy);
 }

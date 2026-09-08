@@ -109,8 +109,8 @@ The removed sequence is acknowledged as real historical experimentation. This Ev
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Repository Consolidation And Runtime Rebase](001-1-playthings-repository-consolidation-and-runtime-rebase-task.trace.md)
-  - Value: HBaR7PQJNapbj54TmLCS0zZzXRIuI9sDDgOOvh6XFhc
+  - Value: CXiWwayrk-EOO1zssDKvGvG1-SdED2aRsfV6tH95yc4
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:hx-uKFq2KLbe6i64pDCDnskQWPMpIRhI4OlbuWIb-Uo
+  - Value:CMKg2Hs7nDqYvpqbL8r2DUKGvSyzA7MrfcZQEOmb_Ks

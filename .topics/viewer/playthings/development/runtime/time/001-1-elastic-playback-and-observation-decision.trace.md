@@ -51,8 +51,8 @@ Exact pace multipliers, dwell seconds, acceleration curves, observation budgets 
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Historical And Presentation Time](001-playthings-historical-and-presentation-time-task.trace.md)
-  - Value: I7CohXAJJy4pE2qnb9dNOx8cPCLxRG4iCeytAHORV6E
+  - Value: C3s-QzFcsMzQH3vx7afwC9UOjQa8i_RPiKSuxRSBrME
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:D7Mig51BhxumVDpAljB9VYCOXNfWHgP3ZRyNr5p_9rM
+  - Value:hmTi81nvntVetbUTgyEazBHMS8U6Cn6qS-VUzO7c8I4

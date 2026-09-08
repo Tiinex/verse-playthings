@@ -108,8 +108,8 @@
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Root Tiles — Anchor To Pilot](001-3-anchor-to-pilot-root-tiles-generation-handoff.trace.md)
-  - Value: H5Rm3MpYLryFdKUC1YcvlsysIpeE3EuMzASId93ALQI
+  - Value: TqzrIdEX7nXSvg5XL6n42SkLA5WDrTmyWGAQpvBWchY
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:HfgbN6Wpr2WBbigIzjirWR9q4YLZ8UgqHmN6aQxMKSI
+  - Value:dHAfbNH4hRCS1D0AydAArxeqTMWwH3DdRlKGtZpAB0w

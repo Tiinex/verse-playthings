@@ -92,8 +92,8 @@ Observed post-correction rules retain existing-asset reference-in-place and line
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Repository Bootstrap Evidence](001-2-playthings-repository-bootstrap-evidence.trace.md)
-  - Value: UHsGN4v14XYkh2iIc0e-kaS5KskWilE-7C3UMqRa23g
+  - Value: mtnc_Am9V3bvE3hFNM3afsEFM7PtCJknXQfy3ThOHVU
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:LO4plSe-FYAoqD73PU3UuJE7LSk1JCsmQ-XfEAtq-rI
+  - Value:fIiw70ClYSIow7nQosJGV8wNBerAMKZRAek9WnnvNmw

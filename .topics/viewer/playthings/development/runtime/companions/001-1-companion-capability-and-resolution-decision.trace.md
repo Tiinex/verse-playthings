@@ -51,8 +51,8 @@ Final per-channel cell sizes, Structure slot grammar, collection append semantic
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Companion Capability Contract](001-playthings-companion-capability-contract-task.trace.md)
-  - Value: LRNAufEG7RPsaWkn4YQ0yuMMDPX4L66hlere7kpmm4M
+  - Value: n_YE2LwpoqSXuvYSIZQkz6JAJYw02WfbDyWujgKIPsM
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:KIEfeWnI1CNP7irAxaTxCSXbtHEJQVE4zVGkrRu6_Ck
+  - Value:IYjloSa_Z3cQxiQV20lzHUOm_pqrKoWzhH3AdB1BG1o

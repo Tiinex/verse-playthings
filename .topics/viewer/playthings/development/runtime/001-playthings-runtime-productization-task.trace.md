@@ -89,8 +89,8 @@ From the current Major 006 planning/bootstrap frontier, expect approximately fou
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Designer Review Frontier](../design/001-playthings-designer-review-topic.trace.md)
-  - Value: uXL7QmzU2kj8snSKtW6UJ54dYRyVdvmUicN4wBReNek
+  - Value: gkbCrJFgk8brcI97lMfcriqkXJvj16puFNOFC-pWIKc
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:Y_GoYwJj9zAhikINEZaebCj7PmXl8KdbR1lsE3Cz_w0
+  - Value:9B3pZq69IgnJqVk-iFUlcfBHeQIyvt5yEQp9R7vUwBg

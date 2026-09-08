@@ -116,8 +116,8 @@
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Root Props Generation Execution Evidence](001-4-1-pilot-root-props-generation-evidence.trace.md)
-  - Value: DToqtW2gBxxXLEczTHYdrrLSgU6cXma_H7YkDMqBbtU
+  - Value: Ok7Qbi_nDIsrjQl__1VVfgxUPB7xfFAgXIgHOqHGJAA
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:Rq-gRPF8sPDihodhVdFzJqA2RrzPEcNvyzhW1DBp_pQ
+  - Value:tqoS_nh5oZZtOePBLmnToN8Zr0sPZIUAlApdQ-L9ktg

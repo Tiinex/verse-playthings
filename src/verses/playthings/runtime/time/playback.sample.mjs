@@ -2,28 +2,29 @@ function clamp(value, min, max) {
   return Math.min(max, Math.max(min, value));
 }
 
-function smoothstep01(value) {
-  const t = clamp(value, 0, 1);
-  return t * t * (3 - 2 * t);
-}
+// Integral of 3x² - 2x³; the derivative is continuous at ramp boundaries.
+function integratedSmoothstep(t) { return t * t * t - 0.5 * t * t * t * t; }
 
-// Long idle gaps should feel like acceleration through time with a visibly late brake.
-// The curve is presentation-only and is not semantic ordering authority.
-function fastForwardProgress(value) {
+export function fastForwardProgress(value, segment) {
   const t = clamp(value, 0, 1);
-  if (t <= 0.22) {
-    return 0.16 * smoothstep01(t / 0.22);
+  const a = segment.accelerationFraction;
+  const b = segment.brakingFraction;
+  const base = segment.baseHistoricalMsPerPresentationMs;
+  const peak = segment.maxHistoricalMsPerPresentationMs;
+  let area;
+  if (t <= a) area = a * integratedSmoothstep(t / a);
+  else if (t <= 1 - b) area = a / 2 + t - a;
+  else {
+    const u = (t - (1 - b)) / b;
+    area = a / 2 + (1 - b - a) + b * (u - integratedSmoothstep(u));
   }
-  if (t <= 0.82) {
-    return 0.16 + ((t - 0.22) / 0.60) * 0.72;
-  }
-  return 0.88 + 0.12 * smoothstep01((t - 0.82) / 0.18);
+  return (base * t + (peak - base) * area) / (base + (peak - base) * (1 - (a + b) / 2));
 }
 
 function historicalProgress(segment, presentationTimeMs) {
   if (segment.durationMs <= 0 || segment.historicalStartMs === segment.historicalEndMs) return 0;
   const linear = clamp((presentationTimeMs - segment.presentationStartMs) / segment.durationMs, 0, 1);
-  return segment.kind === 'fast-forward' ? fastForwardProgress(linear) : linear;
+  return segment.kind === 'fast-forward' ? fastForwardProgress(linear, segment) : linear;
 }
 
 export function samplePlaybackPlan(plan, presentationTimeMs) {
@@ -62,9 +63,14 @@ export function samplePlaybackPlan(plan, presentationTimeMs) {
     });
   }
 
-  const segment = plan.segments.find((entry) =>
-    localTime >= entry.presentationStartMs && localTime < entry.presentationEndMs
-  ) ?? plan.segments[0];
+  // Binary search also makes random-access scrubbing independent of replay duration.
+  let lo = 0, hi = plan.segments.length;
+  while (lo < hi) {
+    const mid = (lo + hi) >>> 1;
+    if (plan.segments[mid].presentationEndMs <= localTime) lo = mid + 1; else hi = mid;
+  }
+  const segment = plan.segments[lo];
+  if (!segment) throw new RangeError('No segment for presentation time');
 
   const progress = historicalProgress(segment, localTime);
   const historicalTimeMs = segment.historicalStartMs +
@@ -77,7 +83,8 @@ export function samplePlaybackPlan(plan, presentationTimeMs) {
     historicalTimeMs,
     observationGroupId: segment.observationGroupId ?? null,
     eventIds: segment.eventIds ?? Object.freeze([]),
-    progress,
+    progress: clamp((localTime - segment.presentationStartMs) / segment.durationMs, 0, 1),
+    historicalProgress: progress,
     atPresentFrontier: false,
     target: segment.target ?? null,
   });
@@ -89,7 +96,9 @@ export function advancePlaybackState(state, presentationDeltaMs, plan) {
   const delta = Number(presentationDeltaMs);
   if (!Number.isFinite(delta) || delta < 0) throw new TypeError('presentationDeltaMs must be a non-negative finite number');
 
-  const presentationTimeMs = Math.max(0, Number(current.presentationTimeMs ?? 0)) + (paused ? 0 : delta);
+  const previous = Number(current.presentationTimeMs ?? 0);
+  if (!Number.isFinite(previous) || previous < 0) throw new TypeError('state presentationTimeMs must be non-negative and finite');
+  const presentationTimeMs = previous + (paused ? 0 : delta);
   return Object.freeze({
     paused,
     presentationTimeMs,

@@ -44,8 +44,8 @@
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Sigma Character V1 Full Sheet Assembly Evidence](001-1-1-5-6-1-character-sheet-assembly-evidence.trace.md)
-  - Value: 8UlEs7qXCSXhw0hQAOQo8pghcdCTZggzQZR5PSKIbwo
+  - Value: 02mz9So4_IgLQBmrotROB_eMGPRvua5bE9GNAUNZv2w
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:iXx-h-iDGYZVRZyHky9U6L3MoxdUd9ZS8hk4MS8mYHM
+  - Value:RMljqmjB-zeB_XI5d_3iRdTFYPBtiD1-oTt1S_XyWmo

@@ -92,8 +92,8 @@ No runtime source, npm manifest, React implementation, or mirrored `src/schemas`
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Repository Extraction And Bootstrap](001-playthings-repository-extraction-and-bootstrap-task.trace.md)
-  - Value: -0DaXw40HAIydajw2XlN534LPtIdfNEFX2Cai69bAGc
+  - Value: 2kiByT2ejHuAIOo9bijmk2ltj-685dlHoEIAU_ts-zE
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:JOE8Ck6SoevYzLmavc1HlS9wKHCi89zFzbwmCjepJ4g
+  - Value:AjtAwN_RBn8OOXrzc69Iw8sVF8fyBtgUGYf5E5AKcr8

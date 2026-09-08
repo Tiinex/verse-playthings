@@ -49,8 +49,8 @@ This Decision does not define how many real people worked concurrently, prove ta
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Semantic Story Projection](001-playthings-semantic-story-projection-task.trace.md)
-  - Value: WNh-8DzTQYhSCPWHhjRXivr7lhklJzqGwYYUuDCRiww
+  - Value: VH1TDezbvD3a4gO9ZBLJXb5C_2seTJ3qK2DeA7C1omg
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:_MgcIIHmYNU_ldlk9V1KkFtbdKLtqljvXxW1JYVcnBU
+  - Value:ffkyRdrHWV_Y8nYQO2SfWkBIVkqljAzfUJ8_t42yE6Q

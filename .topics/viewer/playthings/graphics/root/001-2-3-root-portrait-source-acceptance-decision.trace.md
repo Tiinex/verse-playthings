@@ -50,8 +50,8 @@
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Pilot Root Portrait Generation Evidence](001-2-1-pilot-root-portrait-generation-evidence.trace.md)
-  - Value: PWAYLkP21fzu8vTa5tz-g9vgdxrizqaOAYuL3lybiPU
+  - Value: tueyYx6y3lsdMko5SIqPQi_2p13SiPUczggkVxlvCsY
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:DO7ZHiyJh7__9atPsZuv_NSWmFh6PIpI7AxOqy5sbx8
+  - Value:qB0CLff0hNQdwMpW9VSVJMJ3M0aR_qJlqYXJcJplV7I

@@ -6,14 +6,23 @@ This repository is being bootstrapped as a separate package boundary from `Tiine
 
 ## Current state
 
-The repository intentionally contains no new runtime implementation yet. The current checkpoint carries:
+The first **host-neutral, headless foundations** are implemented. There is no public npm/React entrypoint, Core/App adapter, renderer or playable Verse yet.
 
-- `README.md`, `LICENSE`, and `NOTICE`;
-- `.topics/viewer/playthings/` development, graphics, and process lineage migrated from the Site Playthings branch;
-- `.topics/.workspaces/tiinex-playthings.workspace.md` as the portable Workspace entrypoint;
-- `tools/playthings/` graphics/asset-lifecycle tooling that remains relevant to Playthings production.
+- Historical/presentation playback, continuous fast-forward rate ramps and observation budgets.
+- Neutral story fixtures: contribution changes, explicit participants/endpoints, historical identity discovery, frontier ghosts, backtrack/fork and reactivation.
+- Deterministic navigation across explicit surfaces, doors and stairs; immutable link-state changes and bounded route search.
+- Stateless visual variation, capacity estimates, stable existing placement reservations and NESW topology masks.
+- A headless integration fixture combines ghost/backtrack, a door, a staircase and elastic observation. It is not a rendered tavern or proof of Core/App integration.
 
-Runtime design remains in a planning phase. The old Site experiment may be consulted for observations, but it is not migration authority for the new runtime.
+Run the dependency-free JavaScript tests from the repository root:
+
+`node tools/playthings/test-runtime.mjs`
+
+The graphics regression script uses the existing Python/Pillow tooling:
+
+`PYTHONDONTWRITEBYTECODE=1 python tools/playthings/generative_visual/tests/test_motion_sheet_tool.py`
+
+Read [the runtime foundation boundary](src/verses/playthings/runtime/README.md) before consuming internal exports.
 
 ## Package boundary
 
@@ -27,11 +36,15 @@ The intended long-term split is:
 
 Playthings must not depend on Site internals or assume that companion files physically live in the Site repository. Companion lookup will use qualified artifact/schema identity plus registered asset providers.
 
-## Designer frontier
+## Active frontier
 
-The current [designer review](.topics/viewer/playthings/development/design/001-playthings-designer-review-topic.trace.md) preserves the user requirements and the first semantic/event counterexample matrix. Its proposed depiction rules are under review; the 32 cases are specification scenarios, not executed runtime tests. No `src/`, `package.json`, npm implementation or new PNG production has been added.
+Start with the [Runtime Productization master Task](.topics/viewer/playthings/development/runtime/001-playthings-runtime-productization-task.trace.md) and its [bounded implementation authorization](.topics/viewer/playthings/development/runtime/001-4-bounded-host-neutral-foundation-implementation-authorization-decision.trace.md).
 
-The [updated Refactor planning sync](.topics/viewer/playthings/development/repository/001-1-1-core-app-site-unblock-sync-topic.trace.md) introduces App and assigns general companion resolution to Core. Actual consumer exports remain a later dependency gate.
+The latest [headless foundation integration evidence](.topics/viewer/playthings/development/runtime/integration/001-1-1-headless-foundation-integration-evidence.trace.md) records executable coverage and the remaining gates. Earlier designer scenarios remain design material; they are not all claimed to be implemented or tested.
+
+Refactor Anchor still owns the qualified Core/App consumer exports and host integration. Site, Business and Docs are read-only context in this lane. Only the uploaded Playthings full-source snapshot is the writable baseline.
+
+Deliveries to Sigma use a complete Tiinex Handoff carrier, not a source overlay. The [delivery decision](.topics/viewer/playthings/processes/003-sigma-full-source-delivery-contract-decision.trace.md) explains replacement safety and ignored-file boundaries.
 
 ## Mirrored paths
 

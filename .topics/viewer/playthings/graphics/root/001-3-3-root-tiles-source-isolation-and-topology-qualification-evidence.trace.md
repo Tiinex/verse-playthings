@@ -152,8 +152,8 @@ The current accepted source remains useful for Root world prototyping even befor
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Root Tiles Generation Execution Evidence](001-3-1-root-tiles-generation-execution-evidence.trace.md)
-  - Value: HfgbN6Wpr2WBbigIzjirWR9q4YLZ8UgqHmN6aQxMKSI
+  - Value: dHAfbNH4hRCS1D0AydAArxeqTMWwH3DdRlKGtZpAB0w
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:wAF3PY0xsevXsx8Sm5w4cUQui2Njd57nSoi7ho-Ul48
+  - Value:-YS_a3axo6RrBBA94bCVWQrkhZTRvTE__yDob20bavg

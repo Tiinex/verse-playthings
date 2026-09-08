@@ -94,8 +94,8 @@ A source-space Topic is documentation of our work, not a required Playthings com
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Repository Bootstrap — Anchor To Anchor](../repository/001-3-anchor-to-anchor-playthings-repository-bootstrap-handoff.trace.md)
-  - Value: W_kyjsFDEuK0jrokcU2D8NGvc4rWrF8FQQfa9It3JuA
+  - Value: qTqBEh6SqdAnW_hapzXwVdDk8DGLxPnMHB5S1Fq0JlU
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:uXL7QmzU2kj8snSKtW6UJ54dYRyVdvmUicN4wBReNek
+  - Value:gkbCrJFgk8brcI97lMfcriqkXJvj16puFNOFC-pWIKc

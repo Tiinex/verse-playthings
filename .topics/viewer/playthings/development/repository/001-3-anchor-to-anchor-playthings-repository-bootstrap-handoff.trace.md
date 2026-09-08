@@ -165,8 +165,8 @@
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Standalone Workspace And Companion Provider Revision](../../processes/002-playthings-standalone-workspace-and-companion-provider-revision.trace.md)
-  - Value: YUiElp488x_yhbZ2C1n5CIzrf6jeq4w20tKLd1YubYs
+  - Value: Uqpf9_oc3vWNebkw6IPSR7k30_Twd1xxdt0X-P8Uaso
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:W_kyjsFDEuK0jrokcU2D8NGvc4rWrF8FQQfa9It3JuA
+  - Value:qTqBEh6SqdAnW_hapzXwVdDk8DGLxPnMHB5S1Fq0JlU

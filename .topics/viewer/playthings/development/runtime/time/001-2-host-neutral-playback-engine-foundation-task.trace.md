@@ -59,8 +59,8 @@
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Historical And Presentation Time](001-playthings-historical-and-presentation-time-task.trace.md)
-  - Value: I7CohXAJJy4pE2qnb9dNOx8cPCLxRG4iCeytAHORV6E
+  - Value: C3s-QzFcsMzQH3vx7afwC9UOjQa8i_RPiKSuxRSBrME
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:xFg0W7PpOf_8wOSRm__Y7-hbK5ovE4eR7z4LQ5Yf0H4
+  - Value:RSKlBerFqhcJadIKWRyZSx53UjwRY8j04ETXfwvBxLU

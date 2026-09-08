@@ -129,8 +129,8 @@ The new runtime modules contain no imports from React, Site, Core or App. Their 
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Host-Neutral Playthings Playback Engine Foundation](001-2-host-neutral-playback-engine-foundation-task.trace.md)
-  - Value: xFg0W7PpOf_8wOSRm__Y7-hbK5ovE4eR7z4LQ5Yf0H4
+  - Value: RSKlBerFqhcJadIKWRyZSx53UjwRY8j04ETXfwvBxLU
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:vDK39VmLPUT22QcngabijMvXqPfZHWCo4hiY4uEqqPE
+  - Value:I8R1RtIdr3ciAHKfpcdEU2a0Bip0wKdjZzM36zNbA5g

@@ -1,28 +1,33 @@
+import { freeze } from '../shared/values.mjs';
 import { resolvePlaybackPolicy } from './playback.policy.mjs';
 
 function finiteTime(value, label) {
-  const time = Number(value);
+  const time = value;
+  if (typeof time !== 'number') throw new TypeError(`${label} must be numeric`);
   if (!Number.isFinite(time)) throw new TypeError(`${label} must be a finite millisecond timestamp`);
   return time;
 }
 
 export function groupHistoricalEvents(events = []) {
-  const normalized = [...events].map((event, inputIndex) => {
+  if (!Array.isArray(events)) throw new TypeError('events must be an array');
+  const seen = new Set();
+  const normalized = events.map((event, inputIndex) => {
     if (!event || typeof event !== 'object') throw new TypeError('Playback event must be an object');
-    const id = String(event.id ?? '').trim();
-    if (!id) throw new TypeError(`Playback event at input index ${inputIndex} is missing id`);
-    return Object.freeze({
-      ...event,
+    const id = event.id;
+    if (typeof id !== 'string' || !id.trim()) throw new TypeError(`Playback event at input index ${inputIndex} is missing id`);
+    if (seen.has(id)) throw new TypeError(`Duplicate playback event id: ${id}`);
+    seen.add(id);
+    return freeze({
+      ...structuredClone(event),
       id,
       historicalTimeMs: finiteTime(event.historicalTimeMs, `event ${id} historicalTimeMs`),
-      inputIndex,
+
     });
   });
 
   normalized.sort((a, b) =>
     a.historicalTimeMs - b.historicalTimeMs ||
-    a.id.localeCompare(b.id) ||
-    a.inputIndex - b.inputIndex
+    (a.id < b.id ? -1 : a.id > b.id ? 1 : 0)
   );
 
   const groups = [];
@@ -35,14 +40,15 @@ export function groupHistoricalEvents(events = []) {
     }
   }
 
-  return Object.freeze(groups.map((group, groupIndex) => Object.freeze({
-    id: `historical-group:${group.historicalTimeMs}:${groupIndex}`,
+  return Object.freeze(groups.map((group) => Object.freeze({
+    id: `historical-group:${group.historicalTimeMs}`,
     historicalTimeMs: group.historicalTimeMs,
     events: Object.freeze(group.events),
   })));
 }
 
 function segment(kind, presentationStartMs, durationMs, historicalStartMs, historicalEndMs, extras = {}) {
+  if (![presentationStartMs, durationMs, historicalStartMs, historicalEndMs, presentationStartMs + durationMs].every(Number.isFinite) || durationMs < 0) throw new RangeError('Playback segment overflow');
   return Object.freeze({
     index: -1,
     kind,
@@ -61,7 +67,9 @@ function appendGapSegments(segments, cursor, historicalStartMs, historicalEndMs,
 
   const rate = policy.historicalMsPerPresentationMs;
   const desiredDuration = gap / rate;
-  const minApproach = policy.minApproachMs;
+  const requestedLeadIn = target?.type === 'event-group'
+    ? (policy.preparationMsByGroup?.[target.id] ?? 0) : 0;
+  const minApproach = Math.max(policy.minApproachMs, requestedLeadIn);
 
   // Dense history: slow the historical clock rather than speeding up actors/camera.
   if (desiredDuration <= minApproach) {
@@ -111,7 +119,12 @@ function appendGapSegments(segments, cursor, historicalStartMs, historicalEndMs,
 
   if (fastGap > 0) {
     const fastRate = rate * policy.fastForwardMultiplier;
-    const fastDuration = Math.max(1, fastGap / fastRate);
+    // Integrate a continuous rate envelope: slow acceleration, short late brake.
+    // The plateau rate is a true maximum, not an average later exceeded by easing.
+    const accelerationFraction = 0.65;
+    const brakingFraction = 0.10;
+    const averageRate = rate + (fastRate - rate) * (1 - (accelerationFraction + brakingFraction) / 2);
+    const fastDuration = fastGap / averageRate;
     segments.push(segment(
       'fast-forward',
       cursor,
@@ -122,7 +135,9 @@ function appendGapSegments(segments, cursor, historicalStartMs, historicalEndMs,
         target,
         baseHistoricalMsPerPresentationMs: rate,
         maxHistoricalMsPerPresentationMs: fastRate,
-        curve: 'accelerate-then-late-brake-v1',
+        curve: 'integrated-rate-envelope-v2',
+        accelerationFraction,
+        brakingFraction,
       }
     ));
     cursor += fastDuration;
@@ -146,7 +161,8 @@ function appendGapSegments(segments, cursor, historicalStartMs, historicalEndMs,
 }
 
 function observationDuration(group, policy) {
-  return policy.observationBaseMs + Math.max(0, group.events.length - 1) * policy.observationExtraMs;
+  return Math.max(policy.observationBaseMs + Math.max(0, group.events.length - 1) * policy.observationExtraMs,
+    policy.observationMsByGroup?.[group.id] ?? 0);
 }
 
 export function createPlaybackPlan(events = [], options = {}) {
@@ -170,6 +186,7 @@ export function createPlaybackPlan(events = [], options = {}) {
   const startHistoricalMs = finiteTime(options.startHistoricalMs ?? groups[0].historicalTimeMs, 'startHistoricalMs');
   const latestEventMs = groups.at(-1).historicalTimeMs;
   const endHistoricalMs = Math.max(latestEventMs, finiteTime(options.endHistoricalMs ?? nowHistoricalMs, 'endHistoricalMs'));
+  if (endHistoricalMs < startHistoricalMs) throw new RangeError('endHistoricalMs precedes startHistoricalMs');
   const segments = [];
   let cursor = 0;
   let historical = startHistoricalMs;
@@ -177,6 +194,14 @@ export function createPlaybackPlan(events = [], options = {}) {
   for (const group of groups) {
     if (group.historicalTimeMs < startHistoricalMs) continue;
 
+    // No fabricated earlier date for the first event. Its preparation is a held
+    // presentation at the first known anchor; semantic presence is separate.
+    const firstLeadIn = policy.preparationMsByGroup?.[group.id] ?? 0;
+    if (!segments.length && historical === group.historicalTimeMs && firstLeadIn > 0) {
+      segments.push(segment('prepare-first', cursor, firstLeadIn, historical, historical,
+        { target: Object.freeze({ type: 'event-group', id: group.id }) }));
+      cursor += firstLeadIn;
+    }
     const gapResult = appendGapSegments(
       segments,
       cursor,

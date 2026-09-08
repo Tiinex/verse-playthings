@@ -113,8 +113,8 @@ The source bytes are unchanged; only lineage-address meaning is corrected.
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Asset Location And Promotion Contract](001-1-2-playthings-asset-location-and-promotion-contract-decision.trace.md)
-  - Value: zOKth-EzKklyKdT3_tM43TFJLttZFCOxCl1izLgB7ms
+  - Value: eimaVHRKfvAckjESL0drHESAyXDvT0LCjISxVsGso8M
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:Q2E_3ixJH-7lN8qNtroCaDlyIzNA1xz-YHl9Vwdp0d4
+  - Value:w107jNcpKcY1L9ZeYnr46fgLpsebuvGfWUd13vg_1zY

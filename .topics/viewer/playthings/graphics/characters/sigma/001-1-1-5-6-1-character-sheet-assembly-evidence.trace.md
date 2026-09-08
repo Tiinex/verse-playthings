@@ -91,8 +91,8 @@ The detailed pre-consolidation history remains recoverable from the prior full-s
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Visual Production And Asset Lifecycle](../../../processes/001-playthings-visual-production-and-asset-lifecycle-process.trace.md)
-  - Value: gk9cbJ7PzaqytVT2YF77OULTrRXhwnef-POdjJ9vl7I
+  - Value: XgKXrPg6KIZ94ACZs1sk5tFvZIGn4WH1WHLRhOq_AUs
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:8UlEs7qXCSXhw0hQAOQo8pghcdCTZggzQZR5PSKIbwo
+  - Value:02mz9So4_IgLQBmrotROB_eMGPRvua5bE9GNAUNZv2w

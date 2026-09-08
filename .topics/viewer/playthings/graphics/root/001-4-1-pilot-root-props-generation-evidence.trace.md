@@ -106,8 +106,8 @@
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Root Props — Anchor To Pilot](001-4-anchor-to-pilot-root-props-generation-handoff.trace.md)
-  - Value: FkK8gf1P0e53pmvoKaV5tY5fQMj4LiJU-BElXEhE9VI
+  - Value: 3vclGs-NV1soyILD7_yHf5QQkOGR4Cwtgh28q8UR274
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:DToqtW2gBxxXLEczTHYdrrLSgU6cXma_H7YkDMqBbtU
+  - Value:Ok7Qbi_nDIsrjQl__1VVfgxUPB7xfFAgXIgHOqHGJAA

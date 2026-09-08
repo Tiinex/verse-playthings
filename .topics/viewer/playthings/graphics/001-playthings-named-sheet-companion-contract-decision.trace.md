@@ -204,8 +204,8 @@ Root provides ultimate per-channel fallback. Root portrait may represent the ste
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Asset Location And Promotion Contract](../development/001-1-2-playthings-asset-location-and-promotion-contract-decision.trace.md)
-  - Value: zOKth-EzKklyKdT3_tM43TFJLttZFCOxCl1izLgB7ms
+  - Value: eimaVHRKfvAckjESL0drHESAyXDvT0LCjISxVsGso8M
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:V37RnLIwlhlk35dQsvodGNBYpJCmUFGBy2GeLZ3vZXo
+  - Value:TAPH1oP4cSRmYAaV57Xn8EHx82ocDvyNL0RONo6ah_I

@@ -53,8 +53,8 @@ This Decision does not say that a Structure is semantically a building or a nest
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Spatial World Model](001-playthings-spatial-world-model-task.trace.md)
-  - Value: trbvEvOS8Xakafc8i0Y_z2NvlUR9vA65N5vL_R47lsY
+  - Value: 3DCb3BPt68zlLcGFOdPIwy8lj3q3WfAF-uxqA_mC-5g
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:m9CO1g3uRpbZa8rpguNpZl3MhsyvCGttOqZ0JpFpLV8
+  - Value:cGSZgAv1D1EehVmzrRXwZxg2QfMFXYcmKo6FgZBLtx0

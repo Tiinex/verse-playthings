@@ -83,8 +83,8 @@ humanOutput.normalInlineRouting.content
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Visual Production And Asset Lifecycle](001-playthings-visual-production-and-asset-lifecycle-process.trace.md)
-  - Value: gk9cbJ7PzaqytVT2YF77OULTrRXhwnef-POdjJ9vl7I
+  - Value: XgKXrPg6KIZ94ACZs1sk5tFvZIGn4WH1WHLRhOq_AUs
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:EijLVGOK3XXM641Bi2CVeONypeo0iKLnNVWUHRtJlR0
+  - Value:MumZJWZUYcUDC6FSanNb6QjhOKE2fNwG6mjDFsK2Ngo

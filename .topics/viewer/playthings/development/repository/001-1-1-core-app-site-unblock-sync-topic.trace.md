@@ -62,8 +62,8 @@ The supplied message is an informal plan, not verification of Core/App/Site buil
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Playthings Core / Site Package Boundary](001-1-playthings-core-site-package-boundary-decision.trace.md)
-  - Value: JOE8Ck6SoevYzLmavc1HlS9wKHCi89zFzbwmCjepJ4g
+  - Value: AjtAwN_RBn8OOXrzc69Iw8sVF8fyBtgUGYf5E5AKcr8
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:aF1w1y0VQYL8pqO5uTWM31_5quaY1JprlfQ_1Mm69hE
+  - Value:VPJDjCI5rN5264wiUzaEytEqRmZest8EpeqU4V4IOTE

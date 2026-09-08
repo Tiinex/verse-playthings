@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 
-const TYPES = new Set(['character', 'verb', 'blueprint', 'portrait', 'tiles', 'props']);
+const TYPES = new Set(['character', 'verb', 'blueprint', 'portrait', 'tiles', 'structure', 'props']);
 
 function die(message, code = 2) {
   console.error(JSON.stringify({ schema: 'tiinex.playthings.asset-tool.error.v1', error: message }, null, 2));
@@ -209,7 +209,7 @@ function audit(root) {
 }
 
 function help() {
-  console.log(`Playthings asset placement helper\n\nCommands:\n  import --asset <outside-or-existing-path> --artifact <trace.md> --label <slug> [--ordinal 1]\n  promote --source <png> --schema <schema.md> --type character|verb|blueprint|portrait|tiles|props [--replace]\n  audit\n\nRules:\n  * Existing in-workspace assets are referenced where they already live; no lineage-only duplication.\n  * New non-final assets imported from outside the workspace are placed beside the controlling lineage artifact and share its exact numeric dimension; use --ordinal for -01/-02 ordering at the end of the slug, never a numeric child dimension.\n  * Final runtime products use the mirrored src/schemas path and .playthings. namespace; standalone Playthings does not need to copy schema authority just to store a default companion.\n`);
+  console.log(`Playthings asset placement helper\n\nCommands:\n  import --asset <outside-or-existing-path> --artifact <trace.md> --label <slug> [--ordinal 1]\n  promote --source <png> --schema <schema.md> --type character|verb|blueprint|portrait|tiles|structure|props [--replace]\n  audit\n\nRules:\n  * Existing in-workspace assets are referenced where they already live; no lineage-only duplication.\n  * New non-final assets imported from outside the workspace are placed beside the controlling lineage artifact and share its exact numeric dimension; use --ordinal for -01/-02 ordering at the end of the slug, never a numeric child dimension.\n  * Final runtime products use the mirrored src/schemas path and .playthings. namespace; standalone Playthings does not need to copy schema authority just to store a default companion.\n`);
 }
 
 const { command, flags } = parseArgs(process.argv.slice(2));

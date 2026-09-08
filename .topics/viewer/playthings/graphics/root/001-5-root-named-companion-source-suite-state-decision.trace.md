@@ -64,8 +64,8 @@ Tiles additionally requires explicit topology/compiler qualification before adja
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: [Root Tiles Source Acceptance](001-3-4-root-tiles-source-acceptance-decision.trace.md)
-  - Value: Kr_2CBDNMpaz8iiwNWT-Wc0Ub19Ckw4DumZ4LNKhgAU
+  - Value: _iFvsJKUA1ivGqrcdwEF72l_jD00uhLoPvQSkyOrguI
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value:Mp5VMIlIZup6iYUTMLjMW039zz2A4y1Xy7JZlmO8nYM
+  - Value:JSUMhSNYhTcgZRAsY1ZNlDvNpcBZeEPxZNZH4xAFfCE
