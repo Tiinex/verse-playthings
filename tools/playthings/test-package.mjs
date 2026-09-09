@@ -15,9 +15,9 @@ const env={...process.env,npm_config_cache:path.join(scratch,'cache'),npm_config
 function run(command,args,cwd){const result=spawnSync(command,args,{cwd,env,encoding:'utf8',timeout:60000,maxBuffer:8*1024*1024,shell:process.platform==='win32'&&command===npm});if(result.error||result.status!==0)throw new Error(result.error?.message??`${command} failed (${result.status}): ${result.stdout}\n${result.stderr}`);return result.stdout;}
 try {
  const pkg=JSON.parse(await fs.readFile(path.join(root,'package.json'),'utf8'));
- assert.equal(pkg.name,'@tiinex/playthings');assert.equal(pkg.private,false);assert.equal(pkg.type,'module');
+ assert.equal(pkg.name,'@tiinex/verse-playthings');assert.equal(pkg.private,false);assert.equal(pkg.type,'module');
  assert.equal(pkg.publishConfig?.access,'public');assert.equal(pkg.publishConfig?.registry,'https://registry.npmjs.org/');
- assert.equal(pkg.repository?.url,'git+https://github.com/Tiinex/playthings.git');
+ assert.equal(pkg.repository?.url,'git+https://github.com/Tiinex/verse-playthings.git');
  assert.equal(pkg.exports['./react'],'./src/verses/playthings/react/index.mjs');
  assert.equal(pkg.exports['./app'],'./src/verses/playthings/app/index.mjs');
  assert.ok(!pkg.dependencies,'Headless runtime has no production dependencies');
@@ -35,17 +35,17 @@ try {
  const consumer=path.join(scratch,'consumer');await fs.mkdir(consumer);
  await fs.writeFile(path.join(consumer,'package.json'),JSON.stringify({name:'playthings-offline-consumer',version:'0.0.0',private:true,type:'module'}));
  run(npm,['install',tar,'--offline','--ignore-scripts','--no-audit','--no-fund','--package-lock=false','--legacy-peer-deps'],consumer);
- const installed=path.join(consumer,'node_modules/@tiinex/playthings');
+ const installed=path.join(consumer,'node_modules/@tiinex/verse-playthings');
  assert.equal((await fs.lstat(installed)).isSymbolicLink(),false);
  assert.equal(await fs.realpath(installed),installed);
  const program=`
  import assert from 'node:assert/strict';
- import * as engine from '@tiinex/playthings';
- import {createStoryPlan} from '@tiinex/playthings/story';
- import {createNavigationWorld} from '@tiinex/playthings/world';
- import {createScenePlan,createSceneStore} from '@tiinex/playthings/scene';
- import {validateAtlas,compileAtlas} from '@tiinex/playthings/companions';
- import {encodePng,decodePng} from '@tiinex/playthings/node';
+ import * as engine from '@tiinex/verse-playthings';
+ import {createStoryPlan} from '@tiinex/verse-playthings/story';
+ import {createNavigationWorld} from '@tiinex/verse-playthings/world';
+ import {createScenePlan,createSceneStore} from '@tiinex/verse-playthings/scene';
+ import {validateAtlas,compileAtlas} from '@tiinex/verse-playthings/companions';
+ import {encodePng,decodePng} from '@tiinex/verse-playthings/node';
  assert.deepEqual(Object.keys(engine).sort(),['companions','observation','scene','story','time','world']);
  const story=createStoryPlan([{id:'root-artifact',parentId:null,historicalTimeMs:0,authors:['A']}]);
  const world=createNavigationWorld({surfaces:[{id:'root',width:4,height:4}]});
@@ -56,9 +56,9 @@ try {
  const compiled=compileAtlas(source,{channel:'props',width:8,height:1,cells:Array.from({length:8},()=>({source:{x:0,y:0,width:1,height:1}}))});
  assert.deepEqual(decodePng(encodePng(compiled)).data,compiled.data);
  assert.equal(validateAtlas({channel:'structure',width:256,height:192}).status,'valid');
- await assert.rejects(()=>import('@tiinex/playthings/src/verses/playthings/runtime/shared/values.mjs'),{code:'ERR_PACKAGE_PATH_NOT_EXPORTED'});
- const adapter=await import('@tiinex/playthings/app'); assert.equal(adapter.createPlaythingsVerse().id,'playthings');
- await assert.rejects(()=>import('@tiinex/playthings/react'),{code:'ERR_MODULE_NOT_FOUND'}); // React is intentionally absent from this headless consumer
+ await assert.rejects(()=>import('@tiinex/verse-playthings/src/verses/playthings/runtime/shared/values.mjs'),{code:'ERR_PACKAGE_PATH_NOT_EXPORTED'});
+ const adapter=await import('@tiinex/verse-playthings/app'); assert.equal(adapter.createPlaythingsVerse().id,'playthings');
+ await assert.rejects(()=>import('@tiinex/verse-playthings/react'),{code:'ERR_MODULE_NOT_FOUND'}); // React is intentionally absent from this headless consumer
  console.log('Installed-package consumer PASS');
  `;
  await fs.writeFile(path.join(consumer,'consumer.mjs'),program);

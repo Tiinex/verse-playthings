@@ -6,7 +6,7 @@ import {fileURLToPath} from 'node:url';
 import {spawnSync} from 'node:child_process';
 import {recommendRelease} from './release-policy.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
-const base={name:'@tiinex/playthings',version:'1.2.3',type:'module',engines:{node:'>=22.16.0'},exports:{'.':'./index.mjs'},files:['src/**/*.mjs']};
+const base={name:'@tiinex/verse-playthings',version:'1.2.3',type:'module',engines:{node:'>=22.16.0'},exports:{'.':'./index.mjs'},files:['src/**/*.mjs']};
 let r=recommendRelease({currentVersion:'0.1.0-dev.0',currentPackage:{...base,version:'0.1.0-dev.0'}});
 assert.equal(r.bump,'bootstrap');assert.equal(r.targetVersion,'0.1.0');
 r=recommendRelease({currentVersion:'1.2.3',previousVersion:'1.2.3',previousPackage:base,currentPackage:base,commitMessages:['fix: repair edge case']});

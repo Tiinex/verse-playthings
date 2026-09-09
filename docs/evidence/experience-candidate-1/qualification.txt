@@ -1,0 +1,1554 @@
+
+> @tiinex/playthings@0.1.0 check
+> npm run test:runtime && npm run test:package && npm run test:release && npm run test:adapter
+
+
+> @tiinex/playthings@0.1.0 test:runtime
+> node tools/playthings/test-runtime.mjs
+
+TAP version 13
+# Subtest: App model keeps semantic story and Root fallback distinct when no spatial resolver exists
+ok 1 - App model keeps semantic story and Root fallback distinct when no spatial resolver exists
+  ---
+  duration_ms: 134.466891
+  type: 'test'
+  ...
+# Subtest: historical index sampling remains available beside presentation sampling
+ok 2 - historical index sampling remains available beside presentation sampling
+  ---
+  duration_ms: 60.465498
+  type: 'test'
+  ...
+# Subtest: Root renderer budget is explicit and does not remove semantic records
+ok 3 - Root renderer budget is explicit and does not remove semantic records
+  ---
+  duration_ms: 7.503057
+  type: 'test'
+  ...
+# Subtest: complete exact-companion geometry cuts over to qualified multi-surface scene
+ok 4 - complete exact-companion geometry cuts over to qualified multi-surface scene
+  ---
+  duration_ms: 43.685082
+  type: 'test'
+  ...
+# Subtest: resolver availability alone does not replace Root fallback without spatial activation
+ok 5 - resolver availability alone does not replace Root fallback without spatial activation
+  ---
+  duration_ms: 41.468059
+  type: 'test'
+  ...
+# Subtest: Props-only exact capability remains a modifier and cannot trigger spatial renderer cutover
+ok 6 - Props-only exact capability remains a modifier and cannot trigger spatial renderer cutover
+  ---
+  duration_ms: 36.021778
+  type: 'test'
+  ...
+# Subtest: atlas character: named, valid and slot-addressable
+ok 7 - atlas character: named, valid and slot-addressable
+  ---
+  duration_ms: 1.658611
+  type: 'test'
+  ...
+# Subtest: atlas verb: named, valid and slot-addressable
+ok 8 - atlas verb: named, valid and slot-addressable
+  ---
+  duration_ms: 0.315047
+  type: 'test'
+  ...
+# Subtest: atlas blueprint: named, valid and slot-addressable
+ok 9 - atlas blueprint: named, valid and slot-addressable
+  ---
+  duration_ms: 0.103024
+  type: 'test'
+  ...
+# Subtest: atlas portrait: named, valid and slot-addressable
+ok 10 - atlas portrait: named, valid and slot-addressable
+  ---
+  duration_ms: 0.116436
+  type: 'test'
+  ...
+# Subtest: atlas tiles: named, valid and slot-addressable
+ok 11 - atlas tiles: named, valid and slot-addressable
+  ---
+  duration_ms: 0.100375
+  type: 'test'
+  ...
+# Subtest: atlas structure: named, valid and slot-addressable
+ok 12 - atlas structure: named, valid and slot-addressable
+  ---
+  duration_ms: 0.123675
+  type: 'test'
+  ...
+# Subtest: atlas props: named, valid and slot-addressable
+ok 13 - atlas props: named, valid and slot-addressable
+  ---
+  duration_ms: 0.089413
+  type: 'test'
+  ...
+# Subtest: geometry rejects partial grids, unknown channel, excessive memory and partial families
+ok 14 - geometry rejects partial grids, unknown channel, excessive memory and partial families
+  ---
+  duration_ms: 0.272919
+  type: 'test'
+  ...
+# Subtest: dimensions carry family count, alpha never determines type
+ok 15 - dimensions carry family count, alpha never determines type
+  ---
+  duration_ms: 3.50643
+  type: 'test'
+  ...
+# Subtest: channel detection does not admit legacy generic, typo or query-path filenames
+ok 16 - channel detection does not admit legacy generic, typo or query-path filenames
+  ---
+  duration_ms: 0.351245
+  type: 'test'
+  ...
+# Subtest: role grammar matches accepted fixed state meanings and architecture split
+ok 17 - role grammar matches accepted fixed state meanings and architecture split
+  ---
+  duration_ms: 0.379812
+  type: 'test'
+  ...
+# Subtest: explicit compiler preserves RGBA including hidden RGB and never mutates input
+ok 18 - explicit compiler preserves RGBA including hidden RGB and never mutates input
+  ---
+  duration_ms: 1.103383
+  type: 'test'
+  ...
+# Subtest: clockwise rotations and post-rotation flips work on rectangular source cells
+ok 19 - clockwise rotations and post-rotation flips work on rectangular source cells
+  ---
+  duration_ms: 1.843683
+  type: 'test'
+  ...
+# Subtest: compiler rejects incomplete, ambiguous, out-of-bounds and invalid mappings
+ok 20 - compiler rejects incomplete, ambiguous, out-of-bounds and invalid mappings
+  ---
+  duration_ms: 0.441067
+  type: 'test'
+  ...
+# Subtest: RGBA PNG roundtrip is byte-repeatable in current codec and pixel-exact over 80 rasters
+ok 21 - RGBA PNG roundtrip is byte-repeatable in current codec and pixel-exact over 80 rasters
+  ---
+  duration_ms: 27.7139
+  type: 'test'
+  ...
+# Subtest: all five PNG row filters decode correctly
+ok 22 - all five PNG row filters decode correctly
+  ---
+  duration_ms: 0.918857
+  type: 'test'
+  ...
+# Subtest: RGB and RGB color-key transparency decode without inventing alpha
+ok 23 - RGB and RGB color-key transparency decode without inventing alpha
+  ---
+  duration_ms: 0.411631
+  type: 'test'
+  ...
+# Subtest: bad CRC, truncation, trailing bytes and decompression bombs are rejected
+ok 24 - bad CRC, truncation, trailing bytes and decompression bombs are rejected
+  ---
+  duration_ms: 1.213895
+  type: 'test'
+  ...
+# Subtest: animated, unknown critical chunks, invalid row filters and unsupported encodings fail closed
+ok 25 - animated, unknown critical chunks, invalid row filters and unsupported encodings fail closed
+  ---
+  duration_ms: 1.177385
+  type: 'test'
+  ...
+# Subtest: PNG offsets respect a Uint8Array view, not its backing-buffer prefix
+ok 26 - PNG offsets respect a Uint8Array view, not its backing-buffer prefix
+  ---
+  duration_ms: 0.248061
+  type: 'test'
+  ...
+# Subtest: combined old 64-slot atlas can be mechanically split with EXPLICIT known fixture mapping
+ok 27 - combined old 64-slot atlas can be mechanically split with EXPLICIT known fixture mapping
+  ---
+  duration_ms: 37.006635
+  type: 'test'
+  ...
+# Subtest: RGB transparency samples outside declared depth are invalid
+ok 28 - RGB transparency samples outside declared depth are invalid
+  ---
+  duration_ms: 0.291391
+  type: 'test'
+  ...
+# Subtest: shared reads, lease lifetime and URL revocation
+ok 29 - shared reads, lease lifetime and URL revocation
+  ---
+  duration_ms: 2.521678
+  type: 'test'
+  ...
+# Subtest: aborted stale readers cannot publish a URL after snapshot disposal
+ok 30 - aborted stale readers cannot publish a URL after snapshot disposal
+  ---
+  duration_ms: 4.380609
+  type: 'test'
+  ...
+# Subtest: bounded concurrency queues and cancelled queued leases are never loaded
+ok 31 - bounded concurrency queues and cancelled queued leases are never loaded
+  ---
+  duration_ms: 0.590346
+  type: 'test'
+  ...
+# Subtest: full active entry budget reports degradation rather than evicting in-use URLs
+ok 32 - full active entry budget reports degradation rather than evicting in-use URLs
+  ---
+  duration_ms: 2.123426
+  type: 'test'
+  ...
+# Subtest: memory budget accounts decoded RGBA pixels
+ok 33 - memory budget accounts decoded RGBA pixels
+  ---
+  duration_ms: 0.523924
+  type: 'test'
+  ...
+# Subtest: bad MIME, PNG CRC and atlas strip geometry all fail closed
+ok 34 - bad MIME, PNG CRC and atlas strip geometry all fail closed
+  ---
+  duration_ms: 0.796052
+  type: 'test'
+  ...
+# Subtest: store validates slot and does not mutate/freeze resolver objects
+ok 35 - store validates slot and does not mutate/freeze resolver objects
+  ---
+  duration_ms: 0.545609
+  type: 'test'
+  ...
+# Subtest: resource revision identity changes do not reuse prior bytes
+ok 36 - resource revision identity changes do not reuse prior bytes
+  ---
+  duration_ms: 0.344024
+  type: 'test'
+  ...
+# Subtest: ambiguity never falls back to a pretty lower-ranked resource
+ok 37 - ambiguity never falls back to a pretty lower-ranked resource
+  ---
+  duration_ms: 0.398631
+  type: 'test'
+  ...
+# Subtest: collection winners remain host ordered and distinct, without a local resolver
+ok 38 - collection winners remain host ordered and distinct, without a local resolver
+  ---
+  duration_ms: 0.982339
+  type: 'test'
+  ...
+# Subtest: single slot multiple winners are rejected
+ok 39 - single slot multiple winners are rejected
+  ---
+  duration_ms: 0.174003
+  type: 'test'
+  ...
+# Subtest: future artifact does not even query the resolver
+ok 40 - future artifact does not even query the resolver
+  ---
+  duration_ms: 0.320561
+  type: 'test'
+  ...
+# Subtest: candidate character frame has bounded exact crop
+ok 41 - candidate character frame has bounded exact crop
+  ---
+  duration_ms: 0.704922
+  type: 'test'
+  ...
+# Subtest: candidate verb frame has bounded exact crop
+ok 42 - candidate verb frame has bounded exact crop
+  ---
+  duration_ms: 0.094468
+  type: 'test'
+  ...
+# Subtest: candidate blueprint frame has bounded exact crop
+ok 43 - candidate blueprint frame has bounded exact crop
+  ---
+  duration_ms: 0.058054
+  type: 'test'
+  ...
+# Subtest: candidate portrait frame has bounded exact crop
+ok 44 - candidate portrait frame has bounded exact crop
+  ---
+  duration_ms: 0.045341
+  type: 'test'
+  ...
+# Subtest: candidate tiles frame has bounded exact crop
+ok 45 - candidate tiles frame has bounded exact crop
+  ---
+  duration_ms: 0.040755
+  type: 'test'
+  ...
+# Subtest: candidate structure frame has bounded exact crop
+ok 46 - candidate structure frame has bounded exact crop
+  ---
+  duration_ms: 0.048962
+  type: 'test'
+  ...
+# Subtest: candidate props frame has bounded exact crop
+ok 47 - candidate props frame has bounded exact crop
+  ---
+  duration_ms: 0.041962
+  type: 'test'
+  ...
+# Subtest: verb is suppressed for unknown/planned/cancelled occurrence
+ok 48 - verb is suppressed for unknown/planned/cancelled occurrence
+  ---
+  duration_ms: 0.156687
+  type: 'test'
+  ...
+# Subtest: portrait crops one cell rather than compressing the eight-frame sheet
+ok 49 - portrait crops one cell rather than compressing the eight-frame sheet
+  ---
+  duration_ms: 0.130259
+  type: 'test'
+  ...
+# Subtest: reduced motion gives a stable walking frame across elapsed times
+ok 50 - reduced motion gives a stable walking frame across elapsed times
+  ---
+  duration_ms: 0.102819
+  type: 'test'
+  ...
+# Subtest: detached nested provider source data cannot freeze caller-owned inputs
+ok 51 - detached nested provider source data cannot freeze caller-owned inputs
+  ---
+  duration_ms: 0.143936
+  type: 'test'
+  ...
+# Subtest: ambiguous Workspace owner identity cannot disclose arbitrary first metadata match
+ok 52 - ambiguous Workspace owner identity cannot disclose arbitrary first metadata match
+  ---
+  duration_ms: 0.126774
+  type: 'test'
+  ...
+# Subtest: rapidly cancelled queued leases do not retain an unbounded queue behind a slow reader
+ok 53 - rapidly cancelled queued leases do not retain an unbounded queue behind a slow reader
+  ---
+  duration_ms: 34.228287
+  type: 'test'
+  ...
+# Subtest: 5000 authorless artifacts preserve full history with bounded physical admission
+ok 54 - 5000 authorless artifacts preserve full history with bounded physical admission
+  ---
+  duration_ms: 552.261787
+  type: 'test'
+  ...
+# Subtest: same-time branch visits remain deterministic when host file/import order reverses
+ok 55 - same-time branch visits remain deterministic when host file/import order reverses
+  ---
+  duration_ms: 1724.602969
+  type: 'test'
+  ...
+# Subtest: Handoff endpoints, explicit empty Participants and occurrence states stay distinct
+ok 56 - Handoff endpoints, explicit empty Participants and occurrence states stay distinct
+  ---
+  duration_ms: 11.518489
+  type: 'test'
+  ...
+# Subtest: Root Gate inventory is host-owned, duplicate/invalid entries never become guessed choices
+ok 57 - Root Gate inventory is host-owned, duplicate/invalid entries never become guessed choices
+  ---
+  duration_ms: 0.292168
+  type: 'test'
+  ...
+# Subtest: runtime schema references do not create story knowledge
+ok 58 - runtime schema references do not create story knowledge
+  ---
+  duration_ms: 8.53375
+  type: 'test'
+  ...
+# Subtest: explicit Workspace definition binding gates duplicate embedded/story schema both forward and backward
+ok 59 - explicit Workspace definition binding gates duplicate embedded/story schema both forward and backward
+  ---
+  duration_ms: 1.705001
+  type: 'test'
+  ...
+# Subtest: unqualified / unavailable / conflicting introductions fail closed
+ok 60 - unqualified / unavailable / conflicting introductions fail closed
+  ---
+  duration_ms: 0.404505
+  type: 'test'
+  ...
+# Subtest: a loaded schema without historical position is not disclosed by its name or filename
+ok 61 - a loaded schema without historical position is not disclosed by its name or filename
+  ---
+  duration_ms: 0.188672
+  type: 'test'
+  ...
+# Subtest: prototype-looking identities are ordinary ledger keys
+ok 62 - prototype-looking identities are ordinary ledger keys
+  ---
+  duration_ms: 0.196889
+  type: 'test'
+  ...
+# Subtest: metadata duplicates fail closed before last-writer-wins map conversion
+ok 63 - metadata duplicates fail closed before last-writer-wins map conversion
+  ---
+  duration_ms: 0.538076
+  type: 'test'
+  ...
+# Subtest: visibility and model never freeze mutable host input records
+ok 64 - visibility and model never freeze mutable host input records
+  ---
+  duration_ms: 23.375329
+  type: 'test'
+  ...
+# Subtest: future geometry, surfaces, stairs and blocked cells are filtered before display
+ok 65 - future geometry, surfaces, stairs and blocked cells are filtered before display
+  ---
+  duration_ms: 21.607263
+  type: 'test'
+  ...
+# Subtest: earlier routes cannot travel through future floors
+ok 66 - earlier routes cannot travel through future floors
+  ---
+  duration_ms: 53.477211
+  type: 'test'
+  ...
+# Subtest: guarded UI advancement stops at an observation boundary and drops suspended-tab backlog
+ok 67 - guarded UI advancement stops at an observation boundary and drops suspended-tab backlog
+  ---
+  duration_ms: 8.787508
+  type: 'test'
+  ...
+# Subtest: snapshot replacement preserves historical playhead rather than jumping to latest
+ok 68 - snapshot replacement preserves historical playhead rather than jumping to latest
+  ---
+  duration_ms: 37.263796
+  type: 'test'
+  ...
+# Subtest: source removal does not retain stale world as apparent continuity
+ok 69 - source removal does not retain stale world as apparent continuity
+  ---
+  duration_ms: 7.022249
+  type: 'test'
+  ...
+# Subtest: growth conflict is held with explicit pending depiction, not an implicit world jump
+ok 70 - growth conflict is held with explicit pending depiction, not an implicit world jump
+  ---
+  duration_ms: 12.796588
+  type: 'test'
+  ...
+# Subtest: withdrawn exact companions cannot keep a previously spatial world alive
+ok 71 - withdrawn exact companions cannot keep a previously spatial world alive
+  ---
+  duration_ms: 129.493472
+  type: 'test'
+  ...
+# Subtest: large record sets skip expensive spatial compilation explicitly, without removing story
+ok 72 - large record sets skip expensive spatial compilation explicitly, without removing story
+  ---
+  duration_ms: 69.864607
+  type: 'test'
+  ...
+# Subtest: Root refresh admits new records without prototype-key hazards or inherited capacity lock
+ok 73 - Root refresh admits new records without prototype-key hazards or inherited capacity lock
+  ---
+  duration_ms: 0.671074
+  type: 'test'
+  ...
+# Subtest: an already completed observation stays completed after appended history
+ok 74 - an already completed observation stays completed after appended history
+  ---
+  duration_ms: 20.480206
+  type: 'test'
+  ...
+# Subtest: companion byte revision invalidates old qualified geometry continuity receipts
+ok 75 - companion byte revision invalidates old qualified geometry continuity receipts
+  ---
+  duration_ms: 41.217959
+  type: 'test'
+  ...
+# Subtest: future spatial ancestors cannot expose early child surfaces
+ok 76 - future spatial ancestors cannot expose early child surfaces
+  ---
+  duration_ms: 1.94078
+  type: 'test'
+  ...
+# Subtest: a future explicitly bound schema cannot disclose its spatial shape via embedded companions
+ok 77 - a future explicitly bound schema cannot disclose its spatial shape via embedded companions
+  ---
+  duration_ms: 2.756021
+  type: 'test'
+  ...
+# Subtest: unplaced authorless records remain semantic history and explicitly blocked depiction
+ok 78 - unplaced authorless records remain semantic history and explicitly blocked depiction
+  ---
+  duration_ms: 27.907092
+  type: 'test'
+  ...
+# Subtest: shared obstacle ownership does not let a future owner erase an earlier wall
+ok 79 - shared obstacle ownership does not let a future owner erase an earlier wall
+  ---
+  duration_ms: 2.74125
+  type: 'test'
+  ...
+# Subtest: asset location auditor recognizes the accepted structure companion suffix
+ok 80 - asset location auditor recognizes the accepted structure companion suffix
+  ---
+  duration_ms: 150.862222
+  type: 'test'
+  ...
+# Subtest: headless fork: ghost stays put; active actor walks to ancestor, forks, then climbs stairs
+ok 81 - headless fork: ghost stays put; active actor walks to ancestor, forks, then climbs stairs
+  ---
+  duration_ms: 6.382354
+  type: 'test'
+  ...
+# Subtest: a physically blocked backtrack cannot complete by following a Parent line through the wall
+ok 82 - a physically blocked backtrack cannot complete by following a Parent line through the wall
+  ---
+  duration_ms: 1.31775
+  type: 'test'
+  ...
+# Subtest: missing locations and unresolved ancestry have distinct deferred outcomes
+ok 83 - missing locations and unresolved ancestry have distinct deferred outcomes
+  ---
+  duration_ms: 0.756847
+  type: 'test'
+  ...
+# Subtest: observation reservation accommodates physical backtrack without rewinding history
+ok 84 - observation reservation accommodates physical backtrack without rewinding history
+  ---
+  duration_ms: 3.790869
+  type: 'test'
+  ...
+# Subtest: all three scenes remain observable even under huge incoming frame deltas
+ok 85 - all three scenes remain observable even under huge incoming frame deltas
+  ---
+  duration_ms: 5.124185
+  type: 'test'
+  ...
+# Subtest: two authors retain independent route tracks; no cross-identity aliasing
+ok 86 - two authors retain independent route tracks; no cross-identity aliasing
+  ---
+  duration_ms: 7.157524
+  type: 'test'
+  ...
+# Subtest: same-time events are available together while camera observes them sequentially
+ok 87 - same-time events are available together while camera observes them sequentially
+  ---
+  duration_ms: 3.097206
+  type: 'test'
+  ...
+# Subtest: camera travel is continuous and never changes historical time during observation
+ok 88 - camera travel is continuous and never changes historical time during observation
+  ---
+  duration_ms: 0.556131
+  type: 'test'
+  ...
+# Subtest: pace changes observation dwell but never the declared movement work budget
+ok 89 - pace changes observation dwell but never the declared movement work budget
+  ---
+  duration_ms: 1.774454
+  type: 'test'
+  ...
+# Subtest: large wall-clock ticks cannot skip a camera/dwell boundary
+ok 90 - large wall-clock ticks cannot skip a camera/dwell boundary
+  ---
+  duration_ms: 4.373153
+  type: 'test'
+  ...
+# Subtest: pause freezes camera, observation and history; explicit sample remains usable for seek
+ok 91 - pause freezes camera, observation and history; explicit sample remains usable for seek
+  ---
+  duration_ms: 0.624011
+  type: 'test'
+  ...
+# Subtest: cross-floor camera transition is explicit, not a diagonal through unrelated planes
+ok 92 - cross-floor camera transition is explicit, not a diagonal through unrelated planes
+  ---
+  duration_ms: 0.378852
+  type: 'test'
+  ...
+# Subtest: unlocated events still receive a dwell without fabricated world coordinates
+ok 93 - unlocated events still receive a dwell without fabricated world coordinates
+  ---
+  duration_ms: 0.495769
+  type: 'test'
+  ...
+# Subtest: prepared path budgets extend the hold and do not expose future event results
+ok 94 - prepared path budgets extend the hold and do not expose future event results
+  ---
+  duration_ms: 0.514348
+  type: 'test'
+  ...
+# Subtest: reordered event input gives identical observation schedule
+ok 95 - reordered event input gives identical observation schedule
+  ---
+  duration_ms: 1.505061
+  type: 'test'
+  ...
+# Subtest: scene stages actors separately from semantic knowledge; no destination teleport at anchor
+ok 96 - scene stages actors separately from semantic knowledge; no destination teleport at anchor
+  ---
+  duration_ms: 23.079387
+  type: 'test'
+  ...
+# Subtest: fork, stairs and arrived phases retain one history anchor and explicit layer transitions
+ok 97 - fork, stairs and arrived phases retain one history anchor and explicit layer transitions
+  ---
+  duration_ms: 12.978486
+  type: 'test'
+  ...
+# Subtest: selecting an echo changes emphasis, not source truth or physical location
+ok 98 - selecting an echo changes emphasis, not source truth or physical location
+  ---
+  duration_ms: 1.743058
+  type: 'test'
+  ...
+# Subtest: later identity does not leak into early presentation
+ok 99 - later identity does not leak into early presentation
+  ---
+  duration_ms: 1.112964
+  type: 'test'
+  ...
+# Subtest: blocked route stays unresolved and later dependent travel cannot restart from invisible frontier
+ok 100 - blocked route stays unresolved and later dependent travel cannot restart from invisible frontier
+  ---
+  duration_ms: 1.592332
+  type: 'test'
+  ...
+# Subtest: even a zero-length root arrival cannot stand on a blocked tile
+ok 101 - even a zero-length root arrival cannot stand on a blocked tile
+  ---
+  duration_ms: 0.376945
+  type: 'test'
+  ...
+# Subtest: equal-time visits follow explicit Parent order; facts are available together despite camera travel
+ok 102 - equal-time visits follow explicit Parent order; facts are available together despite camera travel
+  ---
+  duration_ms: 0.48379
+  type: 'test'
+  ...
+# Subtest: two authors get stable distinct render ids and input plans are not mutated
+ok 103 - two authors get stable distinct render ids and input plans are not mutated
+  ---
+  duration_ms: 0.382097
+  type: 'test'
+  ...
+# Subtest: daylight follows history during bullet time, supports dates before epoch and explicit offset
+ok 104 - daylight follows history during bullet time, supports dates before epoch and explicit offset
+  ---
+  duration_ms: 1.210656
+  type: 'test'
+  ...
+# Subtest: missing locations are findings, not spawn-at-origin fallback
+ok 105 - missing locations are findings, not spawn-at-origin fallback
+  ---
+  duration_ms: 0.458771
+  type: 'test'
+  ...
+# Subtest: external store snapshot identity is stable between changes and pause suppresses clock updates
+ok 106 - external store snapshot identity is stable between changes and pause suppresses clock updates
+  ---
+  duration_ms: 1.247185
+  type: 'test'
+  ...
+# Subtest: guarded ticks keep every dwell observable even with huge deltas; seek is explicitly separate
+ok 107 - guarded ticks keep every dwell observable even with huge deltas; seek is explicitly separate
+  ---
+  duration_ms: 37.117899
+  type: 'test'
+  ...
+# Subtest: subscription errors cannot prevent other listeners; reentrant mutation fails, state is committed
+ok 108 - subscription errors cannot prevent other listeners; reentrant mutation fails, state is committed
+  ---
+  duration_ms: 1.398571
+  type: 'test'
+  ...
+# Subtest: independent subscriptions, disposal, unknown selection and future selection are handled
+ok 109 - independent subscriptions, disposal, unknown selection and future selection are handled
+  ---
+  duration_ms: 0.794857
+  type: 'test'
+  ...
+# Subtest: prototype-looking artifact identities stay ordinary data keys
+ok 110 - prototype-looking artifact identities stay ordinary data keys
+  ---
+  duration_ms: 0.312956
+  type: 'test'
+  ...
+# Subtest: starting playback after existing history initializes its frontier without replaying all visits
+ok 111 - starting playback after existing history initializes its frontier without replaying all visits
+  ---
+  duration_ms: 0.686193
+  type: 'test'
+  ...
+# Subtest: external store copies retained lighting options
+ok 112 - external store copies retained lighting options
+  ---
+  duration_ms: 0.930269
+  type: 'test'
+  ...
+# Subtest: serial contribution reuses a frontier rather than spawning more leaves
+ok 113 - serial contribution reuses a frontier rather than spawning more leaves
+  ---
+  duration_ms: 3.578145
+  type: 'test'
+  ...
+# Subtest: approved fork leaves old-leaf ghost and backtracks to the actual common ancestor
+ok 114 - approved fork leaves old-leaf ghost and backtracks to the actual common ancestor
+  ---
+  duration_ms: 1.096841
+  type: 'test'
+  ...
+# Subtest: a later continuation wakes the old frontier without fabricating a Root spawn
+ok 115 - a later continuation wakes the old frontier without fabricating a Root spawn
+  ---
+  duration_ms: 0.296319
+  type: 'test'
+  ...
+# Subtest: selecting a ghost changes emphasis only
+ok 116 - selecting a ghost changes emphasis only
+  ---
+  duration_ms: 0.396663
+  type: 'test'
+  ...
+# Subtest: no future artifact or ghost leaks through the historical knowledge gate
+ok 117 - no future artifact or ghost leaks through the historical knowledge gate
+  ---
+  duration_ms: 0.331109
+  type: 'test'
+  ...
+# Subtest: identity discovery changes graphics only at its declared historical point
+ok 118 - identity discovery changes graphics only at its declared historical point
+  ---
+  duration_ms: 0.149769
+  type: 'test'
+  ...
+# Subtest: explicit participants beat Authors; writer does not become the RPG subject
+ok 119 - explicit participants beat Authors; writer does not become the RPG subject
+  ---
+  duration_ms: 1.202425
+  type: 'test'
+  ...
+# Subtest: explicitly empty participants do not fall through to Authors
+ok 120 - explicitly empty participants do not fall through to Authors
+  ---
+  duration_ms: 0.170464
+  type: 'test'
+  ...
+# Subtest: A to A+B to B reports contributor changes, not responsibility or ownership
+ok 121 - A to A+B to B reports contributor changes, not responsibility or ownership
+  ---
+  duration_ms: 0.367517
+  type: 'test'
+  ...
+# Subtest: informal succession never invents a handoff or a participant meeting
+ok 122 - informal succession never invents a handoff or a participant meeting
+  ---
+  duration_ms: 0.589766
+  type: 'test'
+  ...
+# Subtest: formal Handoff From/To is depicted as a declaration, not acceptance
+ok 123 - formal Handoff From/To is depicted as a declaration, not acceptance
+  ---
+  duration_ms: 0.220594
+  type: 'test'
+  ...
+# Subtest: event status unknown has bounded depiction
+ok 124 - event status unknown has bounded depiction
+  ---
+  duration_ms: 0.152955
+  type: 'test'
+  ...
+# Subtest: event status planned has bounded depiction
+ok 125 - event status planned has bounded depiction
+  ---
+  duration_ms: 0.063195
+  type: 'test'
+  ...
+# Subtest: event status cancelled has bounded depiction
+ok 126 - event status cancelled has bounded depiction
+  ---
+  duration_ms: 0.110762
+  type: 'test'
+  ...
+# Subtest: event status occurred has bounded depiction
+ok 127 - event status occurred has bounded depiction
+  ---
+  duration_ms: 0.054577
+  type: 'test'
+  ...
+# Subtest: an explicitly parentless new tree does not borrow an unrelated same-author frontier
+ok 128 - an explicitly parentless new tree does not borrow an unrelated same-author frontier
+  ---
+  duration_ms: 0.155536
+  type: 'test'
+  ...
+# Subtest: unknown-parent is quarantined, not silently interpreted as Root
+ok 129 - unknown-parent is quarantined, not silently interpreted as Root
+  ---
+  duration_ms: 0.239683
+  type: 'test'
+  ...
+# Subtest: missing-parent is quarantined, not silently interpreted as Root
+ok 130 - missing-parent is quarantined, not silently interpreted as Root
+  ---
+  duration_ms: 0.064352
+  type: 'test'
+  ...
+# Subtest: future-parent is quarantined, not silently interpreted as Root
+ok 131 - future-parent is quarantined, not silently interpreted as Root
+  ---
+  duration_ms: 0.074263
+  type: 'test'
+  ...
+# Subtest: cycle is quarantined, not silently interpreted as Root
+ok 132 - cycle is quarantined, not silently interpreted as Root
+  ---
+  duration_ms: 0.075098
+  type: 'test'
+  ...
+# Subtest: same-time siblings are both visible and sharp; tie-break is not concurrency proof
+ok 133 - same-time siblings are both visible and sharp; tie-break is not concurrency proof
+  ---
+  duration_ms: 0.125002
+  type: 'test'
+  ...
+# Subtest: equal-time Parent order follows edges even when lexical names suggest the reverse
+ok 134 - equal-time Parent order follows edges even when lexical names suggest the reverse
+  ---
+  duration_ms: 0.16018
+  type: 'test'
+  ...
+# Subtest: permuting provider order or changing real/synthetic paths does not change the plan
+ok 135 - permuting provider order or changing real/synthetic paths does not change the plan
+  ---
+  duration_ms: 0.615645
+  type: 'test'
+  ...
+# Subtest: duplicate IDs and invalid timestamps fail closed
+ok 136 - duplicate IDs and invalid timestamps fail closed
+  ---
+  duration_ms: 0.792255
+  type: 'test'
+  ...
+# Subtest: late discovery retains history time instead of restamping to receipt time
+ok 137 - late discovery retains history time instead of restamping to receipt time
+  ---
+  duration_ms: 0.177565
+  type: 'test'
+  ...
+# Subtest: unknown identities are not aliased through JavaScript object prototypes
+ok 138 - unknown identities are not aliased through JavaScript object prototypes
+  ---
+  duration_ms: 0.115087
+  type: 'test'
+  ...
+# Subtest: frozen plan and sampled states cannot be mutated by a consumer
+ok 139 - frozen plan and sampled states cannot be mutated by a consumer
+  ---
+  duration_ms: 0.459467
+  type: 'test'
+  ...
+# Subtest: reactivating an old ghost tones the prior sequential same-identity frontier
+ok 140 - reactivating an old ghost tones the prior sequential same-identity frontier
+  ---
+  duration_ms: 0.442544
+  type: 'test'
+  ...
+# Subtest: shuffled input produces byte-equivalent groups and stable group IDs after earlier insertion
+ok 141 - shuffled input produces byte-equivalent groups and stable group IDs after earlier insertion
+  ---
+  duration_ms: 2.380063
+  type: 'test'
+  ...
+# Subtest: duplicate IDs, coercible-null times and nonfinite state do not enter a playback plan
+ok 142 - duplicate IDs, coercible-null times and nonfinite state do not enter a playback plan
+  ---
+  duration_ms: 1.1833
+  type: 'test'
+  ...
+# Subtest: history ending before its explicit start is rejected
+ok 143 - history ending before its explicit start is rejected
+  ---
+  duration_ms: 0.281981
+  type: 'test'
+  ...
+# Subtest: observation progress advances even though historicalProgress is zero
+ok 144 - observation progress advances even though historicalProgress is zero
+  ---
+  duration_ms: 0.779574
+  type: 'test'
+  ...
+# Subtest: first event preparation is held at its timestamp without inventing an earlier history
+ok 145 - first event preparation is held at its timestamp without inventing an earlier history
+  ---
+  duration_ms: 0.336445
+  type: 'test'
+  ...
+# Subtest: long travel budget stretches an approach without changing actor speed or event anchor
+ok 146 - long travel budget stretches an approach without changing actor speed or event anchor
+  ---
+  duration_ms: 0.360997
+  type: 'test'
+  ...
+# Subtest: invalid budgets fail at plan construction
+ok 147 - invalid budgets fail at plan construction
+  ---
+  duration_ms: 0.386244
+  type: 'test'
+  ...
+# Subtest: pace 1: fast-forward rate is continuous, bounded and brakes late
+ok 148 - pace 1: fast-forward rate is continuous, bounded and brakes late
+  ---
+  duration_ms: 2.256806
+  type: 'test'
+  ...
+# Subtest: pace 2: fast-forward rate is continuous, bounded and brakes late
+ok 149 - pace 2: fast-forward rate is continuous, bounded and brakes late
+  ---
+  duration_ms: 0.65795
+  type: 'test'
+  ...
+# Subtest: pace 3: fast-forward rate is continuous, bounded and brakes late
+ok 150 - pace 3: fast-forward rate is continuous, bounded and brakes late
+  ---
+  duration_ms: 0.793551
+  type: 'test'
+  ...
+# Subtest: pace 4: fast-forward rate is continuous, bounded and brakes late
+ok 151 - pace 4: fast-forward rate is continuous, bounded and brakes late
+  ---
+  duration_ms: 0.377599
+  type: 'test'
+  ...
+# Subtest: many sampled phases never rewind historical time or exceed the requested finite end
+ok 152 - many sampled phases never rewind historical time or exceed the requested finite end
+  ---
+  duration_ms: 15.910005
+  type: 'test'
+  ...
+# Subtest: caller mutation cannot change a prepared event payload
+ok 153 - caller mutation cannot change a prepared event payload
+  ---
+  duration_ms: 0.29149
+  type: 'test'
+  ...
+# Subtest: qualified event identities are not trimmed or coerced into aliases
+ok 154 - qualified event identities are not trimmed or coerced into aliases
+  ---
+  duration_ms: 0.186606
+  type: 'test'
+  ...
+# Subtest: no artifacts follows present time instead of inventing a historical start
+ok 155 - no artifacts follows present time instead of inventing a historical start
+  ---
+  duration_ms: 2.225026
+  type: 'test'
+  ...
+# Subtest: equal timestamps form one observation set with deterministic presentation order only
+ok 156 - equal timestamps form one observation set with deterministic presentation order only
+  ---
+  duration_ms: 2.742657
+  type: 'test'
+  ...
+# Subtest: dense history slows the historical clock instead of skipping the next event
+ok 157 - dense history slows the historical clock instead of skipping the next event
+  ---
+  duration_ms: 0.571997
+  type: 'test'
+  ...
+# Subtest: observation freezes historical time while presentation continues
+ok 158 - observation freezes historical time while presentation continues
+  ---
+  duration_ms: 0.47236
+  type: 'test'
+  ...
+# Subtest: long idle history enters explicit fast-forward and brakes before the next anchor
+ok 159 - long idle history enters explicit fast-forward and brakes before the next anchor
+  ---
+  duration_ms: 0.703725
+  type: 'test'
+  ...
+# Subtest: events are never completed before their historical anchor
+ok 160 - events are never completed before their historical anchor
+  ---
+  duration_ms: 0.545997
+  type: 'test'
+  ...
+# Subtest: pause stops presentation and therefore historical progression
+ok 161 - pause stops presentation and therefore historical progression
+  ---
+  duration_ms: 0.601261
+  type: 'test'
+  ...
+# Subtest: sampling the same plan at the same presentation phase is deterministic
+ok 162 - sampling the same plan at the same presentation phase is deterministic
+  ---
+  duration_ms: 0.447751
+  type: 'test'
+  ...
+# Subtest: ready demand compiles rectangular Root/level geometry with doors, barriers and stairs
+ok 163 - ready demand compiles rectangular Root/level geometry with doors, barriers and stairs
+  ---
+  duration_ms: 15.278772
+  type: 'test'
+  ...
+# Subtest: structure barriers make the generated door actual topology, not decoration
+ok 164 - structure barriers make the generated door actual topology, not decoration
+  ---
+  duration_ms: 5.763325
+  type: 'test'
+  ...
+# Subtest: container occupies its containing surface and connects to a distinct walkable interior
+ok 165 - container occupies its containing surface and connects to a distinct walkable interior
+  ---
+  duration_ms: 0.748459
+  type: 'test'
+  ...
+# Subtest: later nested history does not move an earlier enclosure or its usable entry when the surface grows
+ok 166 - later nested history does not move an earlier enclosure or its usable entry when the surface grows
+  ---
+  duration_ms: 1.001609
+  type: 'test'
+  ...
+# Subtest: partial demand and missing capability provenance cannot claim qualified geometry
+ok 167 - partial demand and missing capability provenance cannot claim qualified geometry
+  ---
+  duration_ms: 2.148301
+  type: 'test'
+  ...
+# Subtest: only exact artifact and exact schema winners activate spatial capability
+ok 168 - only exact artifact and exact schema winners activate spatial capability
+  ---
+  duration_ms: 2.764433
+  type: 'test'
+  ...
+# Subtest: ambiguous/blocked resolver output fails capability qualification closed
+ok 169 - ambiguous/blocked resolver output fails capability qualification closed
+  ---
+  duration_ms: 0.282789
+  type: 'test'
+  ...
+# Subtest: exact owner metadata is required and resolver errors stay visible
+ok 170 - exact owner metadata is required and resolver errors stay visible
+  ---
+  duration_ms: 0.348966
+  type: 'test'
+  ...
+# Subtest: surface ordering is deterministic presentation policy, not lexicographic floor numbering
+ok 171 - surface ordering is deterministic presentation policy, not lexicographic floor numbering
+  ---
+  duration_ms: 0.83727
+  type: 'test'
+  ...
+# Subtest: qualified companions feed recursive demand without fallback capability leakage
+ok 172 - qualified companions feed recursive demand without fallback capability leakage
+  ---
+  duration_ms: 1.900168
+  type: 'test'
+  ...
+# Subtest: qualified companion chain can compile navigation geometry without reading pixels
+ok 173 - qualified companion chain can compile navigation geometry without reading pixels
+  ---
+  duration_ms: 4.485082
+  type: 'test'
+  ...
+# Subtest: exact schema capability is source-neutral and may come from a dynamically supplied provider
+ok 174 - exact schema capability is source-neutral and may come from a dynamically supplied provider
+  ---
+  duration_ms: 0.159123
+  type: 'test'
+  ...
+# Subtest: all 8 switch combinations are disjoint; Props is only a modifier
+ok 175 - all 8 switch combinations are disjoint; Props is only a modifier
+  ---
+  duration_ms: 2.081958
+  type: 'test'
+  ...
+# Subtest: generic topic tavern: direct contents stay in owning common zones, not random rooms
+ok 176 - generic topic tavern: direct contents stay in owning common zones, not random rooms
+  ---
+  duration_ms: 2.028179
+  type: 'test'
+  ...
+# Subtest: nested non-spatial topics do not create surfaces or break spatial ancestry
+ok 177 - nested non-spatial topics do not create surfaces or break spatial ancestry
+  ---
+  duration_ms: 0.468022
+  type: 'test'
+  ...
+# Subtest: Props resources do not spawn every row or invent occupied physical area
+ok 178 - Props resources do not spawn every row or invent occupied physical area
+  ---
+  duration_ms: 0.185533
+  type: 'test'
+  ...
+# Subtest: multiple internal surfaces need an explicit presentation order, not lexicographic floor inference
+ok 179 - multiple internal surfaces need an explicit presentation order, not lexicographic floor inference
+  ---
+  duration_ms: 0.717279
+  type: 'test'
+  ...
+# Subtest: ordering is layout-only and cannot number historical floors semantically
+ok 180 - ordering is layout-only and cannot number historical floors semantically
+  ---
+  duration_ms: 1.185306
+  type: 'test'
+  ...
+# Subtest: path/filename/author are ignored; input permutation and repeated sampling do not change planning
+ok 181 - path/filename/author are ignored; input permutation and repeated sampling do not change planning
+  ---
+  duration_ms: 0.884754
+  type: 'test'
+  ...
+# Subtest: future records cannot affect current sizes, assignments or pseudorandom choices
+ok 182 - future records cannot affect current sizes, assignments or pseudorandom choices
+  ---
+  duration_ms: 0.957156
+  type: 'test'
+  ...
+# Subtest: missing, future, unknown and cyclic parentage remains unresolved, not Root entry
+ok 183 - missing, future, unknown and cyclic parentage remains unresolved, not Root entry
+  ---
+  duration_ms: 0.46643
+  type: 'test'
+  ...
+# Subtest: more direct presentation demand never reduces own common zone budget
+ok 184 - more direct presentation demand never reduces own common zone budget
+  ---
+  duration_ms: 0.470765
+  type: 'test'
+  ...
+# Subtest: root reservations preserve old houses, and growth conflicts are visible
+ok 185 - root reservations preserve old houses, and growth conflicts are visible
+  ---
+  duration_ms: 0.556165
+  type: 'test'
+  ...
+# Subtest: later top-level history cannot reshuffle earlier Root reservations even when its id sorts first
+ok 186 - later top-level history cannot reshuffle earlier Root reservations even when its id sorts first
+  ---
+  duration_ms: 0.23329
+  type: 'test'
+  ...
+# Subtest: invalid budgets, ambiguous identifiers and depth overflow cannot fabricate placements
+ok 187 - invalid budgets, ambiguous identifiers and depth overflow cannot fabricate placements
+  ---
+  duration_ms: 0.210381
+  type: 'test'
+  ...
+# Subtest: aggregate root placement budget produces explicit incompleteness
+ok 188 - aggregate root placement budget produces explicit incompleteness
+  ---
+  duration_ms: 0.134821
+  type: 'test'
+  ...
+# Subtest: all sixteen NESW masks come from topology in the agreed order
+ok 189 - all sixteen NESW masks come from topology in the agreed order
+  ---
+  duration_ms: 2.254063
+  type: 'test'
+  ...
+# Subtest: variation is stateless and different channels do not consume shared RNG state
+ok 190 - variation is stateless and different channels do not consume shared RNG state
+  ---
+  duration_ms: 0.42792
+  type: 'test'
+  ...
+# Subtest: capacity calculation includes directly owned content and circulation
+ok 191 - capacity calculation includes directly owned content and circulation
+  ---
+  duration_ms: 0.352901
+  type: 'test'
+  ...
+# Subtest: same batch plus seed yields the same nonoverlapping placements independent of input enumeration
+ok 192 - same batch plus seed yields the same nonoverlapping placements independent of input enumeration
+  ---
+  duration_ms: 18.142516
+  type: 'test'
+  ...
+# Subtest: new material cannot reshuffle existing settled footprints
+ok 193 - new material cannot reshuffle existing settled footprints
+  ---
+  duration_ms: 0.513878
+  type: 'test'
+  ...
+# Subtest: growth conflicts and search exhaustion are surfaced instead of silently relocating
+ok 194 - growth conflicts and search exhaustion are surfaced instead of silently relocating
+  ---
+  duration_ms: 0.304556
+  type: 'test'
+  ...
+# Subtest: invalid capacity and overlapping reservations fail instead of corrupting layout
+ok 195 - invalid capacity and overlapping reservations fail instead of corrupting layout
+  ---
+  duration_ms: 0.441099
+  type: 'test'
+  ...
+# Subtest: capacity overflow and explicit packing work budget fail safely
+ok 196 - capacity overflow and explicit packing work budget fail safely
+  ---
+  duration_ms: 0.663596
+  type: 'test'
+  ...
+# Subtest: contained packing stays inside explicit bounds and preserves earlier insertion-time placements
+ok 197 - contained packing stays inside explicit bounds and preserves earlier insertion-time placements
+  ---
+  duration_ms: 1.30395
+  type: 'test'
+  ...
+# Subtest: contained packing keeps settled coordinates when only the containing bounds grow
+ok 198 - contained packing keeps settled coordinates when only the containing bounds grow
+  ---
+  duration_ms: 0.838277
+  type: 'test'
+  ...
+# Subtest: contained packing reports impossible/budgeted placements instead of leaking outside
+ok 199 - contained packing reports impossible/budgeted placements instead of leaking outside
+  ---
+  duration_ms: 0.488298
+  type: 'test'
+  ...
+# Subtest: pathfinding crosses door and stairs into another floor
+ok 200 - pathfinding crosses door and stairs into another floor
+  ---
+  duration_ms: 3.719958
+  type: 'test'
+  ...
+# Subtest: closed door removes the actual passage, not merely its image
+ok 201 - closed door removes the actual passage, not merely its image
+  ---
+  duration_ms: 0.448271
+  type: 'test'
+  ...
+# Subtest: explicit wall barriers block cardinal edges without blocking either cell
+ok 202 - explicit wall barriers block cardinal edges without blocking either cell
+  ---
+  duration_ms: 0.692925
+  type: 'test'
+  ...
+# Subtest: reopening creates a new immutable world; old routes do not magically update
+ok 203 - reopening creates a new immutable world; old routes do not magically update
+  ---
+  duration_ms: 2.525873
+  type: 'test'
+  ...
+# Subtest: closed stairs produce unreachable rather than a teleport fallback
+ok 204 - closed stairs produce unreachable rather than a teleport fallback
+  ---
+  duration_ms: 0.706146
+  type: 'test'
+  ...
+# Subtest: one-way links are respected in both directions
+ok 205 - one-way links are respected in both directions
+  ---
+  duration_ms: 0.218178
+  type: 'test'
+  ...
+# Subtest: weighted portal shortcut beats an apparently shorter same-floor route
+ok 206 - weighted portal shortcut beats an apparently shorter same-floor route
+  ---
+  duration_ms: 0.385512
+  type: 'test'
+  ...
+# Subtest: path cost, endpoints and order are stable when surface/link input order changes
+ok 207 - path cost, endpoints and order are stable when surface/link input order changes
+  ---
+  duration_ms: 2.750002
+  type: 'test'
+  ...
+# Subtest: same-cell query is a zero-length path
+ok 208 - same-cell query is a zero-length path
+  ---
+  duration_ms: 0.506449
+  type: 'test'
+  ...
+# Subtest: invalid graph endpoints, duplicate portals and invalid costs are rejected
+ok 209 - invalid graph endpoints, duplicate portals and invalid costs are rejected
+  ---
+  duration_ms: 0.59875
+  type: 'test'
+  ...
+# Subtest: blocked/out-of-range destinations are explicit failures
+ok 210 - blocked/out-of-range destinations are explicit failures
+  ---
+  duration_ms: 0.193135
+  type: 'test'
+  ...
+# Subtest: search budget failure is not reported as absence of a path
+ok 211 - search budget failure is not reported as absence of a path
+  ---
+  duration_ms: 0.116923
+  type: 'test'
+  ...
+# Subtest: movement sampler runs at presentation speed and does not interpolate through floors
+ok 212 - movement sampler runs at presentation speed and does not interpolate through floors
+  ---
+  duration_ms: 0.723042
+  type: 'test'
+  ...
+# Subtest: 80 seeded obstacle fixtures agree with an independent breadth-first cost oracle
+ok 213 - 80 seeded obstacle fixtures agree with an independent breadth-first cost oracle
+  ---
+  duration_ms: 71.773633
+  type: 'test'
+  ...
+# Subtest: Root scaffold is deterministic and input-order independent
+ok 214 - Root scaffold is deterministic and input-order independent
+  ---
+  duration_ms: 5.559344
+  type: 'test'
+  ...
+# Subtest: later history cannot move already placed Root scaffold records
+ok 215 - later history cannot move already placed Root scaffold records
+  ---
+  duration_ms: 1.280399
+  type: 'test'
+  ...
+# Subtest: hash collisions stack instead of inventing semantic separation
+ok 216 - hash collisions stack instead of inventing semantic separation
+  ---
+  duration_ms: 1.155942
+  type: 'test'
+  ...
+# Subtest: record budget leaves semantic records unplaced rather than spawning at origin
+ok 217 - record budget leaves semantic records unplaced rather than spawning at origin
+  ---
+  duration_ms: 0.419359
+  type: 'test'
+  ...
+# Subtest: admitted locations are real walkable points in the shared navigation engine
+ok 218 - admitted locations are real walkable points in the shared navigation engine
+  ---
+  duration_ms: 16.05281
+  type: 'test'
+  ...
+# Subtest: prototype-looking ids remain ordinary location keys
+ok 219 - prototype-looking ids remain ordinary location keys
+  ---
+  duration_ms: 0.355648
+  type: 'test'
+  ...
+1..219
+# tests 219
+# suites 0
+# pass 219
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2578.081289
+
+> @tiinex/playthings@0.1.0 test:package
+> node tools/playthings/test-package.mjs
+
+{
+  "status": "pass",
+  "node": "v22.16.0",
+  "npm": "10.9.2",
+  "package": "@tiinex/playthings",
+  "version": "0.1.0",
+  "packedFiles": 49,
+  "packedBytes": 76591,
+  "unpackedBytes": 247387,
+  "browserModuleCount": 30,
+  "consumer": "Installed-package consumer PASS",
+  "symlink": false,
+  "network": false,
+  "published": false,
+  "packContainsLineage": false,
+  "files": [
+    "LICENSE",
+    "NOTICE",
+    "README.md",
+    "package.json",
+    "src/verses/playthings/app/continuity.mjs",
+    "src/verses/playthings/app/host-controls.mjs",
+    "src/verses/playthings/app/index.mjs",
+    "src/verses/playthings/app/playback.mjs",
+    "src/verses/playthings/index.mjs",
+    "src/verses/playthings/node/index.mjs",
+    "src/verses/playthings/node/png.codec.mjs",
+    "src/verses/playthings/react/companions.mjs",
+    "src/verses/playthings/react/controls.mjs",
+    "src/verses/playthings/react/index.mjs",
+    "src/verses/playthings/react/viewport.mjs",
+    "src/verses/playthings/runtime/companions/atlas.compile.mjs",
+    "src/verses/playthings/runtime/companions/atlas.profile.mjs",
+    "src/verses/playthings/runtime/companions/index.mjs",
+    "src/verses/playthings/runtime/companions/png.inspect.mjs",
+    "src/verses/playthings/runtime/companions/presentation.mjs",
+    "src/verses/playthings/runtime/companions/README.md",
+    "src/verses/playthings/runtime/companions/resource-store.mjs",
+    "src/verses/playthings/runtime/observation/index.mjs",
+    "src/verses/playthings/runtime/observation/observation.plan.mjs",
+    "src/verses/playthings/runtime/README.md",
+    "src/verses/playthings/runtime/scene/index.mjs",
+    "src/verses/playthings/runtime/scene/README.md",
+    "src/verses/playthings/runtime/scene/scene.plan.mjs",
+    "src/verses/playthings/runtime/scene/scene.store.mjs",
+    "src/verses/playthings/runtime/shared/values.mjs",
+    "src/verses/playthings/runtime/story/index.mjs",
+    "src/verses/playthings/runtime/story/story.input.mjs",
+    "src/verses/playthings/runtime/story/story.plan.mjs",
+    "src/verses/playthings/runtime/story/story.routes.mjs",
+    "src/verses/playthings/runtime/story/visibility.mjs",
+    "src/verses/playthings/runtime/time/index.mjs",
+    "src/verses/playthings/runtime/time/playback.plan.mjs",
+    "src/verses/playthings/runtime/time/playback.policy.mjs",
+    "src/verses/playthings/runtime/time/playback.sample.mjs",
+    "src/verses/playthings/runtime/world/assembly.mjs",
+    "src/verses/playthings/runtime/world/capabilities.mjs",
+    "src/verses/playthings/runtime/world/demand.mjs",
+    "src/verses/playthings/runtime/world/index.mjs",
+    "src/verses/playthings/runtime/world/layout.mjs",
+    "src/verses/playthings/runtime/world/navigation.mjs",
+    "src/verses/playthings/runtime/world/presentation.mjs",
+    "src/verses/playthings/runtime/world/README.md",
+    "src/verses/playthings/runtime/world/root-scaffold.mjs",
+    "src/verses/playthings/runtime/world/visibility.mjs"
+  ]
+}
+
+> @tiinex/playthings@0.1.0 test:release
+> node tools/playthings/test-release.mjs
+
+{"status":"pass","policyCases":7,"workflow":"master-only","longLivedPublishSecret":false}
+
+> @tiinex/playthings@0.1.0 test:adapter
+> node --test test/app-adapter.test.mjs test/companion-resolver.test.mjs
+
+TAP version 13
+# Subtest: real installed App/Core records feed existing story engine without Site imports
+ok 1 - real installed App/Core records feed existing story engine without Site imports
+  ---
+  duration_ms: 28.448144
+  type: 'test'
+  ...
+# Subtest: empty or missing history is not invented
+ok 2 - empty or missing history is not invented
+  ---
+  duration_ms: 0.648432
+  type: 'test'
+  ...
+# Subtest: duplicate ids and forged cross-snapshot records fail closed
+ok 3 - duplicate ids and forged cross-snapshot records fail closed
+  ---
+  duration_ms: 1.528239
+  type: 'test'
+  ...
+# Subtest: artifact-local Relation portrait uses real bytes and Playthings PNG inspection
+ok 4 - artifact-local Relation portrait uses real bytes and Playthings PNG inspection
+  ---
+  duration_ms: 2.324374
+  type: 'test'
+  ...
+# Subtest: package descriptor declares immersive presentation without importing Site/App internals
+ok 5 - package descriptor declares immersive presentation without importing Site/App internals
+  ---
+  duration_ms: 0.698433
+  type: 'test'
+  ...
+# Subtest: workspace updates preserve story model distinction from source truth
+ok 6 - workspace updates preserve story model distinction from source truth
+  ---
+  duration_ms: 1.320455
+  type: 'test'
+  ...
+# Subtest: Playthings accepts an exact schema companion from a dynamically supplied provider without repository assumptions
+ok 7 - Playthings accepts an exact schema companion from a dynamically supplied provider without repository assumptions
+  ---
+  duration_ms: 14.689624
+  type: 'test'
+  ...
+# Subtest: real Core companion specificity activates qualified spatial presentation while preserving Root fallback
+ok 8 - real Core companion specificity activates qualified spatial presentation while preserving Root fallback
+  ---
+  duration_ms: 5.147109
+  type: 'test'
+  ...
+# Subtest: specificity dominates even explicitly larger provider precedence
+ok 9 - specificity dominates even explicitly larger provider precedence
+  ---
+  duration_ms: 1.796099
+  type: 'test'
+  ...
+# Subtest: exact artifact outranks every schema in arbitrary provider order
+ok 10 - exact artifact outranks every schema in arbitrary provider order
+  ---
+  duration_ms: 0.34326
+  type: 'test'
+  ...
+# Subtest: closest declared schema ancestor beats remote ancestor independent of repository
+ok 11 - closest declared schema ancestor beats remote ancestor independent of repository
+  ---
+  duration_ms: 0.250581
+  type: 'test'
+  ...
+# Subtest: default equal-specificity provider ranks descend workspace/site/verse/app/core
+ok 12 - default equal-specificity provider ranks descend workspace/site/verse/app/core
+  ---
+  duration_ms: 1.044112
+  type: 'test'
+  ...
+# Subtest: equally ranked conflicts fail closed under every iteration order
+ok 13 - equally ranked conflicts fail closed under every iteration order
+  ---
+  duration_ms: 0.30206
+  type: 'test'
+  ...
+# Subtest: Core collection keys append while same key resolves by specificity then precedence
+ok 14 - Core collection keys append while same key resolves by specificity then precedence
+  ---
+  duration_ms: 1.496037
+  type: 'test'
+  ...
+# Subtest: ambiguous collection key empties the collection instead of partial pretty success
+ok 15 - ambiguous collection key empties the collection instead of partial pretty success
+  ---
+  duration_ms: 0.225938
+  type: 'test'
+  ...
+# Subtest: inherited-only props collections cannot activate capability
+ok 16 - inherited-only props collections cannot activate capability
+  ---
+  duration_ms: 0.260046
+  type: 'test'
+  ...
+# Subtest: duplicate indistinguishable registration is deterministic in resolver but host byte ambiguity remains explicit
+ok 17 - duplicate indistinguishable registration is deterministic in resolver but host byte ambiguity remains explicit
+  ---
+  duration_ms: 1.367261
+  type: 'test'
+  ...
+# Subtest: external schema ancestry and companions work through real App, not Playthings repo paths
+ok 18 - external schema ancestry and companions work through real App, not Playthings repo paths
+  ---
+  duration_ms: 10.055563
+  type: 'test'
+  ...
+# Subtest: workspace-local artifact override is withdrawn cleanly when the asset disappears
+ok 19 - workspace-local artifact override is withdrawn cleanly when the asset disappears
+  ---
+  duration_ms: 1.720676
+  type: 'test'
+  ...
+# Subtest: replacement digest causes actual host rejection of stale selection and wrong bytes
+ok 20 - replacement digest causes actual host rejection of stale selection and wrong bytes
+  ---
+  duration_ms: 10.685212
+  type: 'test'
+  ...
+# Subtest: schema filename by itself never fabricates schema-definition ownership in current host
+ok 21 - schema filename by itself never fabricates schema-definition ownership in current host
+  ---
+  duration_ms: 0.280748
+  type: 'test'
+  ...
+# Subtest: visual adapter consumes Core conflict without bypassing to shadowed defaults
+ok 22 - visual adapter consumes Core conflict without bypassing to shadowed defaults
+  ---
+  duration_ms: 0.342998
+  type: 'test'
+  ...
+1..22
+# tests 22
+# suites 0
+# pass 22
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 299.150099

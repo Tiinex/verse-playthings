@@ -1,0 +1,29 @@
+{
+  "scope": "real carried Core/App module execution",
+  "packages": [
+    {
+      "package": "@tiinex/core",
+      "version": "0.1.1",
+      "mode": "actual locally packed carried source; installed offline, not registry publication",
+      "archiveSha256": "0f97321f7acaf6b7bf39169e5b08945af505abc423be1fcbe14e90ac4716c654",
+      "archiveBytes": 991783,
+      "carriedWorkspaceArchiveSha256": "915fcf2a2a50464bd87f17f279a3b7b54e3ec3f3e30e74298751fa4493cdca7b",
+      "installedFilesCompared": 517,
+      "installedFilesDiffering": [],
+      "symlink": false
+    },
+    {
+      "package": "@tiinex/app",
+      "version": "0.1.1",
+      "mode": "actual locally packed carried source; installed offline, not registry publication",
+      "archiveSha256": "884b620962c3fe1e903146b4ec70ee69df668194e513960c538b7e93a102df84",
+      "archiveBytes": 779920,
+      "carriedWorkspaceArchiveSha256": "f4c50c47fecafdabadd6f62db76afbc0929f3b1feb86514a65e13051ddf7e1c8",
+      "installedFilesCompared": 580,
+      "installedFilesDiffering": [],
+      "symlink": false
+    }
+  ],
+  "registryAcquisition": false,
+  "publicationClaim": false
+}

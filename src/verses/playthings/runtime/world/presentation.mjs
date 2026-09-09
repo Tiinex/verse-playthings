@@ -19,6 +19,8 @@ export function selectPresentationWorld({spatialCandidate,rootWorld}={}) {
     world:spatial.world,
     locations:spatial.locations,
     geometry:spatial.geometry,
+    topologyOwnership:spatial.topologyOwnership,
+    artifactHomes:spatial.artifactHomes,
     findings:spatialCandidate.findings??spatial.findings??[],
     surfaceIds:spatial.world.surfaces.map(surface=>surface.id),
     spatialCapabilitiesApplied:true,

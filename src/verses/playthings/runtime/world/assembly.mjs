@@ -1,6 +1,7 @@
 import {compareIds,freeze,requireId,requireInteger} from '../shared/values.mjs';
 import {placeFootprintsWithin,variation} from './layout.mjs';
 import {createNavigationWorld} from './navigation.mjs';
+import {cellIdentity,edgeIdentity} from './visibility.mjs';
 
 const cellKey=c=>JSON.stringify([c.surfaceId,c.x,c.y]);
 const inside=(cell,rect)=>cell.surfaceId===rect.surfaceId&&cell.x>=rect.x&&cell.y>=rect.y&&cell.x<rect.x+rect.width&&cell.y<rect.y+rect.height;
@@ -26,7 +27,7 @@ function entryForRect(rect,region,surface,otherRects,seed,id) {
   if(candidates.length){
     candidates.sort((a,b)=>{
       const ak=`${a.side}:${a.threshold.x}:${a.threshold.y}`,bk=`${b.side}:${b.threshold.x}:${b.threshold.y}`;
-      return variation(seed,`${id}:${ak}`,'entry-candidate')-variation(seed,`${id}:${bk}`,'entry-candidate')||ak.localeCompare(bk);
+      return variation(seed,`${id}:${ak}`,'entry-candidate')-variation(seed,`${id}:${bk}`,'entry-candidate')||compareIds(ak,bk);
     });
     return freeze(candidates[0]);
   }
@@ -76,11 +77,14 @@ export function assembleSpatialWorld(demand,options={}) {
 
   const rootBuilt=rootGeometry(demand,rootMargin,rootMinSize),surfaceSpecs=new Map([[demand.rootId,rootBuilt.surface]]),outerRects=new Map(rootBuilt.rects);
   const homeRegions=new Map([[demand.rootId,{surfaceId:demand.rootId,x:0,y:0,width:rootBuilt.surface.width,height:rootBuilt.surface.height,excludedRects:[]}]]),homeEntries=new Map([[demand.rootId,navCell(demand.rootId,0,0)]]);
+  const ownership={surfaces:Object.create(null),links:Object.create(null),barriers:Object.create(null),blocked:Object.create(null)};
+  ownership.surfaces[demand.rootId]=[];
   const geometry=new Map(),barriers=[],links=[],blockedBySurface=new Map([[demand.rootId,new Set()]]);
   let surfaceCells=rootBuilt.surface.width*rootBuilt.surface.height;
   for(const node of demand.nodes)if(node.id!==demand.rootId&&node.capabilities.surface) {
     const width=node.footprint.width,height=node.footprint.height;surfaceCells+=width*height;
     if(!Number.isSafeInteger(surfaceCells)||surfaceCells>maxSurfaceCells)findings.push({severity:'warning',code:'assembly.surface-cell-budget',id:node.id});
+    ownership.surfaces[node.id]=[node.id];
     surfaceSpecs.set(node.id,{id:node.id,width,height,blocked:[]});blockedBySurface.set(node.id,new Set());
     homeRegions.set(node.id,{surfaceId:node.id,x:0,y:0,width,height,excludedRects:[]});homeEntries.set(node.id,navCell(node.id,0,0));
   }
@@ -135,17 +139,20 @@ export function assembleSpatialWorld(demand,options={}) {
       let door;try{door=entryForRect(rect,parentRegion,surface,otherRects,seed,node.id);}catch(error){findings.push({severity:'warning',code:'assembly.entry-unavailable',id:node.id,message:String(error?.message||error)});continue;}
       g.entry=door;homeEntries.set(node.id,node.capabilities.baseType==='structure'?door.threshold:homeEntries.get(node.id));
       links.push({id:`door:${node.id}`,kind:'door',from:door.approach,to:door.threshold,enabled:true});
-      if(node.capabilities.baseType==='structure')barriers.push(...barriersForRect(rect,door,surface));
+      ownership.links[`door:${node.id}`]=[node.id];
+      if(node.capabilities.baseType==='structure'){const walls=barriersForRect(rect,door,surface);barriers.push(...walls);for(const wall of walls){const key=edgeIdentity(wall.from,wall.to);ownership.barriers[key]=[...new Set([...(ownership.barriers[key]??[]),node.id])];}}
       else {
         const blocked=blockedBySurface.get(rect.surfaceId),spec=surfaceSpecs.get(rect.surfaceId);
-        for(let y=rect.y;y<rect.y+rect.height;y++)for(let x=rect.x;x<rect.x+rect.width;x++)if(x!==door.threshold.x||y!==door.threshold.y)blocked.add(`${x},${y}`);
+        for(let y=rect.y;y<rect.y+rect.height;y++)for(let x=rect.x;x<rect.x+rect.width;x++)if(x!==door.threshold.x||y!==door.threshold.y){blocked.add(`${x},${y}`);const key=cellIdentity(navCell(rect.surfaceId,x,y));ownership.blocked[key]=[...new Set([...(ownership.blocked[key]??[]),node.id])];}
+        ownership.links[`passage:${node.id}`]=[node.id];
         links.push({id:`passage:${node.id}`,kind:'passage',from:door.threshold,to:homeEntries.get(node.id)});
         spec.blocked=[...blocked].map(value=>{const [x,y]=value.split(',').map(Number);return {x,y};});
       }
     } else if(node.capabilities.baseType==='surface'&&!g.isInternalSurface) {
       const anchor=navCell(rect.surfaceId,rect.x+Math.floor(rect.width/2),rect.y+Math.floor(rect.height/2));
       g.entry=freeze({side:'portal',approach:anchor,threshold:homeEntries.get(node.id)});
-      links.push({id:`passage:${node.id}`,kind:'passage',from:anchor,to:homeEntries.get(node.id)});
+      ownership.links[`passage:${node.id}`]=[node.id];
+        links.push({id:`passage:${node.id}`,kind:'passage',from:anchor,to:homeEntries.get(node.id)});
     }
   }
 
@@ -157,7 +164,7 @@ export function assembleSpatialWorld(demand,options={}) {
   for(const node of demand.nodes)if(node.capabilities.structure&&Array.isArray(node.internalSurfaceOrder)&&node.internalSurfaceOrder.length) {
     let from=homeEntries.get(node.id);
     for(const surfaceId of node.internalSurfaceOrder) {
-      const to=homeEntries.get(surfaceId);links.push({id:`stairs:${node.id}:${surfaceId}`,kind:'stairs',from,to,cost:2});from=to;
+      const to=homeEntries.get(surfaceId);ownership.links[`stairs:${node.id}:${surfaceId}`]=[node.id,surfaceId,...(ownership.surfaces[from.surfaceId]??[])];links.push({id:`stairs:${node.id}:${surfaceId}`,kind:'stairs',from,to,cost:2});from=to;
     }
   }
 
@@ -187,7 +194,7 @@ export function assembleSpatialWorld(demand,options={}) {
   }
   const ready=!findings.some(f=>f.severity==='warning'||f.severity==='error');
   return freeze({kind:'playthings-spatial-world',status:ready?'ready':'partial',demand,world,locations,geometry:[...geometry.values()].sort((a,b)=>compareIds(a.nodeId,b.nodeId)),findings,
-    root:{surfaceId:demand.rootId,shift:rootBuilt.shift},spatialCapabilitiesApplied:options.capabilitiesQualified===true,navigationCompiled:true,
+    topologyOwnership:ownership,artifactHomes:Object.fromEntries(demand.assignments.filter(a=>a.status==='resolved').map(a=>[a.artifactId,a.spatialHomeId])),root:{surfaceId:demand.rootId,shift:rootBuilt.shift},spatialCapabilitiesApplied:options.capabilitiesQualified===true,navigationCompiled:true,
     geometryQualified:ready&&options.capabilitiesQualified===true,semanticPixelsQualified:false,
     boundary:'Deterministic rectangular presentation geometry from qualified spatial capability switches and explicit presentation order. Placement/topology do not create Tiinex semantic authority or certify companion pixels.'});
 }

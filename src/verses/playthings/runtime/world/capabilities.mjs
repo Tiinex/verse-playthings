@@ -40,7 +40,7 @@ export function qualifySpatialCapabilities({records,metadata,resolveCompanions}=
     for(const channel of SPATIAL_COMPANION_CHANNELS) {
       let resolution;
       try {
-        resolution=resolveCompanions({namespace:'playthings',slot:channel,cardinality:'single',owner:{kind:'artifact',workspaceId:meta.workspaceId,artifactPath:meta.path,schemaId:meta.schemaId||''}});
+        resolution=resolveCompanions({namespace:'playthings',slot:channel,owner:{kind:'artifact',workspaceId:meta.workspaceId,artifactPath:meta.path,schemaId:meta.schemaId||''}});
       } catch(error) {
         findings.push(finding('error','spatial-capability.resolver-threw',id,channel,{message:String(error?.message||error)}));
         channels[channel]=freeze({status:'blocked',active:false,basis:'resolver-error'});
@@ -52,25 +52,25 @@ export function qualifySpatialCapabilities({records,metadata,resolveCompanions}=
         channels[channel]=freeze({status,active:false,basis:'absent'});
         continue;
       }
-      if(status!=='resolved'||resources.length!==1) {
+      const collection=channel==='props'&&(resolution?.query?.cardinality==='multiple'||resources.every(item=>item?.cardinality==='multiple'));
+      if(status!=='resolved'||resources.length<1||resources.length>8||(!collection&&resources.length!==1)) {
         findings.push(finding('error',`spatial-capability.${status||'invalid'}`,id,channel,{resourceCount:resources.length}));
         channels[channel]=freeze({status:status||'invalid',active:false,basis:'unresolved'});
         continue;
       }
-      const resource=resources[0],basis=exactBasis(resource,meta),active=basis!=='inherited-or-fallback';
-      if(resource.namespace!==undefined&&resource.namespace!=='playthings') {
-        findings.push(finding('error','spatial-capability.namespace-mismatch',id,channel));
+      if(resources.some(resource=>resource?.namespace!=='playthings'||resource.slot!==channel||!resource.providerId)) {
+        findings.push(finding('error','spatial-capability.resource-mismatch',id,channel));
         channels[channel]=freeze({status:'blocked',active:false,basis:'invalid-resource'});
         continue;
       }
-      if(resource.slot!==undefined&&resource.slot!==channel) {
-        findings.push(finding('error','spatial-capability.slot-mismatch',id,channel));
-        channels[channel]=freeze({status:'blocked',active:false,basis:'invalid-resource'});
-        continue;
-      }
+      const bases=resources.map(resource=>exactBasis(resource,meta)),active=bases.some(basis=>basis!=='inherited-or-fallback');
+      const copies=resources.map((resource,i)=>({id:resource.id||'',key:resource.key||'',path:resource.path||'',url:resource.url||'',
+        providerId:resource.providerId||'',sha256:resource.sha256||'',mediaType:resource.mediaType||'',
+        owner:resource.owner?{...resource.owner}:null,basis:bases[i]}));
       capabilities[channel]=active;
-      channels[channel]=freeze({status:'resolved',active,basis,resource:freeze({id:resource.id||'',path:resource.path||'',providerId:resource.providerId||'',owner:resource.owner||null})});
-      if(!active)findings.push(finding('info','spatial-capability.fallback-does-not-activate',id,channel,{owner:resource.owner||null}));
+      const basis=resources.length===1?bases[0]:active?'exact-collection':'inherited-or-fallback';
+      channels[channel]=freeze({status:'resolved',active,basis,resource:copies.length===1?copies[0]:null,resources:copies});
+      if(!active)findings.push(finding('info','spatial-capability.fallback-does-not-activate',id,channel));
     }
     const projected={id,historicalTimeMs,capabilities:freeze(capabilities)};
     if(record.parentId!==undefined)projected.parentId=record.parentId;
@@ -97,7 +97,7 @@ export function createPresentationSurfaceOrder(records,{seed='playthings-surface
     if(classifySpatial(parent.capabilities).structure!==true||classifySpatial(child.capabilities).baseType!=='surface')continue;
     const list=groups.get(parent.id)||[];list.push(child.id);groups.set(parent.id,list);
   }
-  const entries=[...groups.entries()].map(([parentId,ids])=>[parentId,ids.sort((a,b)=>variation(seed,a,'surface-order')-variation(seed,b,'surface-order')||compareIds(a,b))]);
+  const entries=[...groups.entries()].map(([parentId,ids])=>[parentId,ids.sort((a,b)=>byId.get(a).historicalTimeMs-byId.get(b).historicalTimeMs||variation(seed,a,'surface-order')-variation(seed,b,'surface-order')||compareIds(a,b))]);
   entries.sort(([a],[b])=>compareIds(a,b));
   return freeze({kind:'playthings-presentation-surface-order',surfaceOrder:Object.fromEntries(entries),levelNumberingIsSemantic:false,
     boundary:'Stable presentation order only; it does not assert floor numbers, chronology, hierarchy beyond the supplied Parent/capability projection, or source semantics.'});

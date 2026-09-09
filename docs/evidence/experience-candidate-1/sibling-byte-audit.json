@@ -1,0 +1,57 @@
+{
+  "schema": "playthings.experience.sibling-byte-audit.v1",
+  "method": "SHA-256 comparison of every regular file to the qualified carried Workspace file map; no sibling exclusions",
+  "workspaces": {
+    "business": {
+      "archiveSha256": "ab6e06d87f6416345a1a4d8434744873ac6d8a43733a9fc988e71cb1a22cf29b",
+      "expectedFiles": 102,
+      "actualFiles": 102,
+      "changed": [],
+      "missing": [],
+      "added": [],
+      "symlinks": [],
+      "status": "pass"
+    },
+    "docs": {
+      "archiveSha256": "6674015f617f37e776345316e48f2da92d5f774d8457be3de5d0526e12b7e9da",
+      "expectedFiles": 158,
+      "actualFiles": 158,
+      "changed": [],
+      "missing": [],
+      "added": [],
+      "symlinks": [],
+      "status": "pass"
+    },
+    "core": {
+      "archiveSha256": "915fcf2a2a50464bd87f17f279a3b7b54e3ec3f3e30e74298751fa4493cdca7b",
+      "expectedFiles": 539,
+      "actualFiles": 539,
+      "changed": [],
+      "missing": [],
+      "added": [],
+      "symlinks": [],
+      "status": "pass"
+    },
+    "app": {
+      "archiveSha256": "f4c50c47fecafdabadd6f62db76afbc0929f3b1feb86514a65e13051ddf7e1c8",
+      "expectedFiles": 653,
+      "actualFiles": 653,
+      "changed": [],
+      "missing": [],
+      "added": [],
+      "symlinks": [],
+      "status": "pass"
+    },
+    "site": {
+      "archiveSha256": "4e3add3dbc157312b0125e7dcc08ec25ecd1254b92879c8123183dcda2835516",
+      "expectedFiles": 460,
+      "actualFiles": 460,
+      "changed": [],
+      "missing": [],
+      "added": [],
+      "symlinks": [],
+      "status": "pass"
+    }
+  },
+  "status": "pass"
+}

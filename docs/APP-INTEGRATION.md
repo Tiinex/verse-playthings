@@ -1,99 +1,43 @@
-# App ↔ Playthings — landed source contract, 2026-09-09
+# App ↔ Playthings — Experience Candidate 1
 
-Exact candidate composition: Core 0.1.1, App 0.1.1, Playthings 0.1.0.
-The source-independent headless engine remains intact. The App adapter now exposes both
-the bounded Root fallback and a separately qualified spatial-world candidate. A complete
-candidate now becomes the active multi-surface presentation world; incomplete or absent
-spatial activation keeps the fallback active. This remains an integration surface, NOT
-final rendered-browser or visual acceptance.
+Carried source composition: Core 0.1.1, App 0.1.1, Playthings 0.1.0. These version labels describe tested source packs, not registry publication or Refactor Turn-2 completion. Read [candidate scope](EXPERIENCE-CANDIDATE-1.md) and [the required host integration boundary](TURN-2-HOST-BOUNDARY.md) before a human test.
 
-## Public entrypoints
+## Public boundary
 
-- `@tiinex/playthings/app`: createPlaythingsVerse, createAppVerseModel, sampleAppVerse, sampleAppScene.
-- `@tiinex/playthings/react`: default/PlaythingsVerse React function component.
-- Existing time/story/world/observation/companions/scene/node exports remain unchanged.
-- `@tiinex/app/viewer`: mountTiinexApp(element, config).
-- `@tiinex/app`: runtime, snapshots, explicit Verse and companion contracts.
+The App VerseHost passes `applicationData`, `getPlaythingsStoryRecords`, `resolveCompanions`, `host` and `verse`. Playthings imports neither private Core/App paths nor Site source. The `@tiinex/verse-playthings/app` descriptor is dependency-free; selecting `@tiinex/verse-playthings/react` loads the optional pinned host React peer.
 
-Site imports createPlaythingsVerse from the data-only app subpath. Only selecting
-Playthings imports React/presentation code. React is a host peer, not a private
-copy. No Site source or private Core/App module is imported by Playthings.
+The model requires `tiinex.core.application-data.v1`, matching unique record IDs and primitive metadata. Core's declared-data projection does not itself certify artifact schema/integrity; Playthings adds no such certification. It consumes the supplied historical/Parent/participant/Handoff/occurrence projection without reparsing source, guessing identities or treating camera visits as occurrences.
 
-## Adapter inputs
+`createAppVerseModel` accepts `previousModel`, input/drawing budgets and optional **Playthings-internal** `introductions` for qualified fixture/future-host bindings. `sampleAppScene` adds historically eligible `presentationWorld` and `knowledge` to its scene snapshot. The React adapter does not manufacture introduction bindings from the current host.
 
-The current App VerseHost passes `applicationData`, `getPlaythingsStoryRecords`,
-`resolveCompanions`, `host` and `verse`. Snapshot schema must be
-`tiinex.core.application-data.v1`. createAppVerseModel validates the snapshot,
-requires matching IDs, enforces a record budget, then calls the existing
-createStoryPlan. It does not re-parse artifacts or invent missing Parents/actors.
+## Rendering and time
 
-When `resolveCompanions` is available, the model also builds `spatialCandidate` through
-the Playthings world chain. Exact artifact resources and exact-schema defaults may
-activate `tiles` / `structure` / `props`; ancestor-schema, Root and fallback resources
-cannot activate them. Resolution authority remains Core/App-owned. The resulting ready
-candidate can contain rectangular enclosures, real wall barriers/doors, multiple
-surfaces, passages and stairs. `semanticPixelsQualified` remains false: pixels are not
-read as hidden geometry.
+Exact `tiles` / `structure` companion activation can produce a compiled spatial world; exact Props capability alone cannot. Unqualified, conflicting, incomplete or over-budget candidates retain the deterministic bounded Root scaffold. Historical topology is filtered using explicit assembler ownership before routing and drawing. Shared obstacles retain any qualified visible owner; links require all declared owning/end-point dependencies. Parentless Root reservations are not source geography.
 
-`presentationWorld` is selected fail-closed. It uses `qualified-spatial` only when
-the candidate is `ready`, navigation is compiled, geometry is qualified, exact spatial
-capability provenance is present, and at least one `tiles` or `structure` activation
-exists. Resolver availability or Props-only artwork does not replace the Root fallback.
+Camera/actor movement follows compiled presentation walkability. Cross-surface travel uses explicit endpoints instead of interpolating between unrelated coordinate frames. Read-only shelf/inspector availability remains the complete admitted story even when physical depiction is unavailable. Same-time source facts are available together; a sequential camera visit order does not give them new semantic ordering.
 
-The React view renders the selected surface, qualified rectangular enclosures, blocked
-cells, wall barriers, door/stair endpoints, artifact markers and actors. Cross-surface
-camera/actor transitions use explicit endpoints; the renderer never draws a fictitious
-diagonal between unrelated surfaces. The Root scaffold remains available as fallback;
-its artifact placement is a stable presentation hash only, collisions stack visibly,
-later history cannot move earlier placements, and renderer budget overflow is explicit.
-Historical presentation uses source-declared times; missing timestamps remain explicit.
-Snapshots remain owned by App. Viewer stays mounted, hidden while external Verse is
-shown, so returning does not recreate source state. No mutation/automation is added.
+Snapshot refresh preserves compatible placements and observation position. Incompatible growth is held explicitly until user Rebuild; removed/changed semantics or changed capability receipts cause a truthful reset. This is not a claim that arbitrary live growth has been solved.
 
+## Companions
 
-## Immersive Verse and Root Gate
+All selection remains Core/App-owned: artifact specificity, exact schema, qualified ancestry, generic Root; provider precedence only resolves equal specificity. Dynamic declarations/providers are supported without repository assumptions. Spatial Props collections append exactly as returned; inherited-only artwork cannot activate capabilities. Byte access uses host `readCompanion` only.
 
-The Playthings Verse descriptor now declares immersive/fullscreen presentation intent. On mount, the React Verse calls the host `setImmersive(true)` callback and restores it on unmount. The Verse itself occupies the browser viewport with a fixed presentation layer, so existing Viewer chrome and host fallback controls remain behind the Playthings surface during the experience. Browser Fullscreen API remains optional and is not required for the normal Playthings path.
+The renderer owns bounded shared leases, CRC/container and atlas-geometry inspection, browser decoding, current-snapshot cancellation and URL revocation. A valid atlas is still only `playthings-atlas-candidate-1`, with `semanticPixelsQualified:false`. Each channel has explicit crop/state sampling. Portrait strips are cropped to one cell, not squeezed into a portrait. Verb work animation requires supplied `occurred` status. No production default PNG was supplied or promoted.
 
-The visible navigation escape is the in-Verse **Root Gate**. It calls the host-owned `exitVerse()` callback to return to Viewer, where the host Verse switcher becomes available again. Playthings does not own the host registry or invent Verse ids. The Root Gate also owns presentation-only replay/pause/latest controls.
+Unbound runtime schemas may style the current presentation without becoming story discoveries. Explicit known future schema/identity introduction bindings restrict historical disclosure. Core/App must qualify the actual schema definition rather than infer its identity from a `.schema.md` filename. Provider-only changes also require an upstream observable revision; the carried host does not currently notify the snapshot stream for them.
 
-This is deliberately a presentation boundary: immersive mode, viewport coverage and Root Gate navigation create no Tiinex semantic authority and do not mutate Workspace material.
+## Immersion and controls
 
-## Dynamic schemas, story visibility and companion source neutrality
+Playthings requests `host.setImmersive(true)` and restores it on unmount. Its own fixed `100% × 100dvh` layer includes Root Gate exit, keyboard/touch-friendly controls, timeline, reduced motion and read-only inspection. Browser fullscreen is optional and user-invoked.
 
-Playthings never assumes a schema or its companions live in the Playthings repository. It queries the App/Core resolver using the loaded artifact owner. App/Core remains responsible for qualified schema ancestry, exact artifact/schema specificity and provider precedence; the selected resource may therefore originate from a Workspace, deployment/provider, package or other qualified host source. Playthings only consumes the resolver result and applies its stricter exact-spatial-capability gate.
+The host must genuinely hide/inert old chrome/footer/duplicate exit controls, isolate focus/background scroll and restore Viewer state on return. Playthings covering it is not proof that the host has done so. An optional host-provided Verse list can populate Root Gate; otherwise exit to Viewer is the supported selector path. No guessed registry is introduced.
 
-Runtime schema knowledge and story knowledge are intentionally separate. Embedded/pre-discovered schemas may be used immediately for parsing/validation/ancestry/companion resolution, but that does not make a schema a discovered item in the Playthings story. A schema becomes ordinary story material only when its artifact is present in a loaded Workspace and historical sampling reaches that artifact.
+The old Site smoke's prose counters and always-visible Fullscreen selector require a coordinated update. The new stable attributes are documented in `TURN-2-HOST-BOUNDARY.md`. Do not make future totals visible merely to satisfy an outdated assertion.
 
-The current App projection does not expose a sufficiently explicit artifact-to-schema-definition identity binding for Playthings to build a truthful tech-tree/skills discovery surface. Therefore Playthings does **not** infer such a binding from filename, path, title or the fact that an ordinary artifact uses the same schema id. Tech/skills remain intentionally absent until that qualified host projection exists.
+## Qualification levels
 
-## Companion reads
+1. Runtime/package/release and **actual installed carried Core/App** tests run locally.
+2. Genuine Chromium primitive decoding/crop/disposal/dialog checks run separately, using a network-free local-source import map and diagnostic PNGs. They mount neither React nor App.
+3. Pinned React/Vite/whole-host browser execution, old-footer/focus isolation, all seven channels against approved real artwork and Sigma experience acceptance remain separate open gates.
 
-Portrait lookup requests playthings/portrait for the exact loaded artifact owner.
-Spatial capability lookup requests Playthings `tiles`, `structure` and `props` through
-the same host resolver and applies a stricter activation gate described above.
-App composes workspace-local and explicitly registered package/deployment providers.
-Resolution remains in Core; Playthings does not implement a competing resolver.
-Ambiguous or blocked resources fail closed. Portrait bytes are inspected with
-Playthings' existing bounded PNG/CRC inspector, turned into an object URL and revoked
-on change/unmount. Aborted/stale effects cannot repaint the new selection. Metadata
-presence alone is not loaded byte availability.
-
-No default PNG resources were supplied in the current Playthings source; this pass adds
-no fabricated art. Schema-default and override registries remain explicit host/provider
-configuration using the existing mirrored src/schemas convention.
-
-## What is verified vs pending
-
-Local source qualification covers the runtime suite, offline installed-package consumer,
-master-only release-policy suite and App-adapter tests against the carried Core 0.1.1 and
-App 0.1.1 source snapshots. Adapter coverage includes the real Core companion resolver
-feeding exact spatial capabilities into a geometry-qualified Playthings candidate.
-World tests cover fail-closed fallback activation, bounded nested packing, append-stable
-enclosure/entry placement under surface growth, real door barriers, container passages
-and multi-surface stair navigation.
-
-Pending external execution: pinned React/Vite bundle and rendered browser tests, including the immersive viewport/Root Gate path; real GitHub OIDC/account configuration and npm publication remain independently evidenced by the release flow. No registry publication is
-claimed here. Refactor Anchor retains Turn 2; Playthings does not mutate Core/App/Site.
-
-The candidate → active multi-surface cutover and first immersive Root Gate shell are now implemented behind strict qualification boundaries. The next product gate is dependency-equipped rendered-browser + Sigma experience acceptance, followed separately by longer-lived continuity state when a live replacement snapshot expands an already-settled demand footprint. The Root scaffold remains the deliberate fallback, not a deprecated semantic source. Final atlas approval/promotion and human visual acceptance remain separate gates.
+Refactor Anchor retains Turn 2. This candidate changes only Playthings, performs no remote writes and neither requests nor claims npm publication.

@@ -28,7 +28,8 @@ function findWorkspaceRoot(start = process.cwd()) {
   let current = path.resolve(start);
   while (true) {
     const workspaces = path.join(current, '.topics', '.workspaces');
-    if (fs.existsSync(path.join(workspaces, 'tiinex-playthings.workspace.md'))) return current;
+    if (fs.existsSync(path.join(workspaces, 'tiinex-verse-playthings.workspace.md'))) return current;
+    if (fs.existsSync(path.join(workspaces, 'tiinex-playthings.workspace.md'))) return current; // predecessor compatibility
     if (fs.existsSync(path.join(workspaces, 'tiinex-site.workspace.md'))) return current;
     const parent = path.dirname(current);
     if (parent === current) break;
@@ -38,7 +39,8 @@ function findWorkspaceRoot(start = process.cwd()) {
 }
 
 function isStandalonePlaythingsWorkspace(root) {
-  return fs.existsSync(path.join(root, '.topics', '.workspaces', 'tiinex-playthings.workspace.md'));
+  return fs.existsSync(path.join(root, '.topics', '.workspaces', 'tiinex-verse-playthings.workspace.md'))
+    || fs.existsSync(path.join(root, '.topics', '.workspaces', 'tiinex-playthings.workspace.md')); // predecessor compatibility
 }
 
 function realish(p) { return path.resolve(p); }

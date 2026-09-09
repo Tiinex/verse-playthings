@@ -94,8 +94,13 @@ export function advanceObservationState(plan, state = {}, elapsedMs) {
   const old = requireFinite(state.presentationTimeMs ?? 0, 'presentationTimeMs', 0);
   const maxFrameDeltaMs = requireFinite(state.maxFrameDeltaMs ?? 100, 'maxFrameDeltaMs', Number.EPSILON);
   const delta = state.paused ? 0 : Math.min(elapsedMs, maxFrameDeltaMs);
-  const barriers = plan.phases.flatMap(p => [p.startMs, p.endMs]).filter(t => t > old).sort((a, b) => a - b);
-  const next = Math.min(old + delta, barriers[0] ?? Infinity);
+  // Phases are chronologically sorted by createObservationPlan. Locate the
+  // next unseen boundary without rebuilding/sorting a workspace-sized array
+  // on every animation frame.
+  let lo=0,hi=plan.phases.length;
+  while(lo<hi){const mid=(lo+hi)>>>1;if(plan.phases[mid].endMs<=old)lo=mid+1;else hi=mid;}
+  const phase=plan.phases[lo],boundary=phase?(phase.startMs>old?phase.startMs:phase.endMs):Infinity;
+  const next = Math.min(old + delta, boundary);
   return freeze({ paused: Boolean(state.paused), maxFrameDeltaMs, presentationTimeMs: next,
     discardedWallTimeMs: elapsedMs - (next - old), sample: sampleObservationPlan(plan, next) });
 }

@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Playthings native browser primitive qualification — NOT the React Verse</title>
+<style>
+body{font-family:system-ui,sans-serif;background:#111b29;color:#e8edf6;margin:28px}h1{font-size:22px}p{max-width:800px;line-height:1.5}
+#samples{display:flex;flex-wrap:wrap;gap:16px}.sample{padding:14px;border:1px solid #587187;border-radius:10px;min-width:100px}
+canvas{display:block;image-rendering:pixelated;margin:8px 0}button{min-height:44px;padding:10px 18px}dialog{padding:24px;min-width:260px}dialog::backdrop{background:#000a}
+pre{white-space:pre-wrap;font-size:14px}strong{color:#acdabb}
+</style>
+<h1>Playthings · browser primitives</h1>
+<p>Diagnostic fixtures only. Real Chromium decoding and exact atlas crops; no React, App shell, production artwork or Sigma acceptance is implied.</p>
+<div id="samples"></div><pre id="result">Running…</pre>
+<button id="open-gate">Open native dialog fixture</button>
+<dialog id="gate" aria-label="Root Gate primitive"><h2>Native dialog fixture</h2><button id="close-gate">Close</button><button id="other-control">Another control</button></dialog>
+<script type="module" src="./primitives.mjs"></script>
+</html>

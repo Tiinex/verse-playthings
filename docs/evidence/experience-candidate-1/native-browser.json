@@ -1,0 +1,93 @@
+{
+  "scope": "native-browser-primitives-only",
+  "transport": "memory",
+  "reactMounted": false,
+  "appHostMounted": false,
+  "sigmaAcceptance": false,
+  "sourceSha256": {
+    "test/browser/experience/primitives.mjs": "a9f21ae35e53c5adb9426bda27a074f9f1888fc5dbe5ce5367d2ba585d9bbce1",
+    "src/verses/playthings/runtime/companions/index.mjs": "6ad0c5d96637cb7b5ccf6e6e2a71a3ff728bb87728bafd1203070df11f249478",
+    "src/verses/playthings/runtime/companions/atlas.profile.mjs": "b0d9474dbf0688837232a12fc0271d5f758bb1e6591afe0fc0ee1330cbdb5bf7",
+    "src/verses/playthings/runtime/shared/values.mjs": "525d1674125c6ecee6d79811cbe6c57fb99f4fca7bdc967c45f9b5122b8af337",
+    "src/verses/playthings/runtime/companions/atlas.compile.mjs": "a4704e4ebb81c8aee7c710793b56cc0e678b3553c3d078893bc32d5c92c959c9",
+    "src/verses/playthings/runtime/companions/png.inspect.mjs": "ebef73ccbcde78e45e71f18fb2796ffc8d9ad782df16fc78d618f1ef5d9e9d3e",
+    "src/verses/playthings/runtime/companions/resource-store.mjs": "8c308eafd2006cf01bbcc26645e368bef7b07657d46a12970d1352b2103c225d",
+    "src/verses/playthings/runtime/companions/presentation.mjs": "95e36f1fa7d1eb2169048ef23fe1f62d5b951b0673fe1a822bcc8a0073b343a0",
+    "src/verses/playthings/runtime/story/visibility.mjs": "8c707bd9243d83da8a07beb861498d38ad95abdca42e8dc6829d8b71589e9867",
+    "src/verses/playthings/app/index.mjs": "afb55d8183eeb5de3abceee4ee4ae880c708ba3ab1a152e6500473812f7e1d31",
+    "src/verses/playthings/runtime/story/index.mjs": "9e2b422443faeef652a8bc4385d5f56c30426cdb1c07f2e68dff841ba4a8af73",
+    "src/verses/playthings/runtime/story/story.input.mjs": "1af13b79a6fe9b1c68fefd8ca20b9ff5b8288bd1892f9bd4a58f8dc773a6d471",
+    "src/verses/playthings/runtime/story/story.plan.mjs": "e7975e003453c971c2a391ea3e7ac5cecebd94e349cb932c600bdd852fbe4a85",
+    "src/verses/playthings/runtime/story/story.routes.mjs": "aa7b1f92cde49972aa2897d749bf0486aab1bc3f2bd3ae895eee572af2402cec",
+    "src/verses/playthings/runtime/world/navigation.mjs": "ba21617079e0e25795799074389287e7bebf391a04b5d6310a6f04e4acda9932",
+    "src/verses/playthings/runtime/world/index.mjs": "f89437a4ecd153173e512fb65aa98ae3b6c5ceb07f92507d51d5befd2b9a3cda",
+    "src/verses/playthings/runtime/world/layout.mjs": "5c8d46088f798c9a6895dd1ba775ad415f4b6cb06bda049c49a40959455c86fe",
+    "src/verses/playthings/runtime/world/demand.mjs": "a06e735f60f346b12642fab1a1ea2bd5c807684f770099423ad1fa4ad668cae4",
+    "src/verses/playthings/runtime/world/capabilities.mjs": "31105c54cef70ecee2fb33b2fbf4023e40335a4c3a04e23e4ed2403ba52da4d4",
+    "src/verses/playthings/runtime/world/assembly.mjs": "e78a5b8cc76527842d1f9c63e8d5017bdf7a54cf389899081e1cf6839097de44",
+    "src/verses/playthings/runtime/world/visibility.mjs": "d7916f290c365be3a92507e17b6cd76cd874f809f944f43f698794c9f0cb50c9",
+    "src/verses/playthings/runtime/world/root-scaffold.mjs": "a695ea88dc24df9c5c47eff29a7c29212ac4a0dc170a9a3fb637a4885c10e848",
+    "src/verses/playthings/runtime/world/presentation.mjs": "7023a89f5f8bc69f244e3ed53d9d2a1e2d5474842ecd7581b5de213581c304e1",
+    "src/verses/playthings/runtime/scene/index.mjs": "7f9765585e9e67037ae4a696073a75ed3e6785303b3efe3ff3d73928c791eeb5",
+    "src/verses/playthings/runtime/scene/scene.plan.mjs": "4a7c81eaaa123830d393ccfa62806d1b3caf4480fd9ab6f761255647bcf3c63f",
+    "src/verses/playthings/runtime/observation/index.mjs": "f8b4fb6bf00c35204812ef17adfd97eff711209806ac8ae77fb3fd5af4929548",
+    "src/verses/playthings/runtime/observation/observation.plan.mjs": "037de74d9c4cc2e3555d850aad1b4bd10a0c6e324c922cbf6541d6bcef5073ce",
+    "src/verses/playthings/runtime/time/index.mjs": "cb4c38a3810c31350445049aa2adef37e227fa830945fba44c8f708a4fb9aa6f",
+    "src/verses/playthings/runtime/time/playback.policy.mjs": "88e2d291b21553196303c94fcb6b2264f00edf425bd29e7aa5eadb310c7ccd12",
+    "src/verses/playthings/runtime/time/playback.plan.mjs": "bc1373ee2eb9d394dd5f742f60005b8bf4850c3ba70909c4641664b30a7bdf08",
+    "src/verses/playthings/runtime/time/playback.sample.mjs": "bf0f3068b0d51ff8a01cc3810b07f884a338f27034e2bb812deed1b7dc6d664c",
+    "src/verses/playthings/runtime/scene/scene.store.mjs": "4d0b2127e24fb84ffef04e27c907fd274d928f85550c19d002c4797d94379775",
+    "src/verses/playthings/app/continuity.mjs": "c7cf215eb02dbd0716e837b706b9a7bfbcde3f7fc3064e2193cb0efb081607ba",
+    "src/verses/playthings/app/playback.mjs": "90d29d9033b89a7cee93f2c8b4ce9d2ae75285102660f2f03d9e021fa59959ca"
+  },
+  "moduleLoading": "Local ES-module sources; only static specifiers mapped to in-memory modules. No React/package substitutes.",
+  "results": [
+    {
+      "name": "character: native PNG decode and exact cell crop",
+      "status": "pass"
+    },
+    {
+      "name": "verb: native PNG decode and exact cell crop",
+      "status": "pass"
+    },
+    {
+      "name": "blueprint: native PNG decode and exact cell crop",
+      "status": "pass"
+    },
+    {
+      "name": "portrait: native PNG decode and exact cell crop",
+      "status": "pass"
+    },
+    {
+      "name": "tiles: native PNG decode and exact cell crop",
+      "status": "pass"
+    },
+    {
+      "name": "structure: native PNG decode and exact cell crop",
+      "status": "pass"
+    },
+    {
+      "name": "props: native PNG decode and exact cell crop",
+      "status": "pass"
+    },
+    {
+      "name": "PNG container valid but undecodable pixels never become a ready resource",
+      "status": "pass"
+    },
+    {
+      "name": "real browser module model keeps runtime schemas outside historical knowledge",
+      "status": "pass"
+    },
+    {
+      "name": "dispose revokes every retained object URL",
+      "status": "pass"
+    },
+    {
+      "name": "native modal opens, focuses its controls, Escape closes and restores focus",
+      "status": "pass"
+    }
+  ],
+  "browserVersion": "144.0.7559.96",
+  "pageErrors": [],
+  "status": "pass"
+}

@@ -1,6 +1,6 @@
 {
   "contract": "tiinex.master-npm-release.v1",
-  "repository": "Tiinex/playthings",
+  "repository": "Tiinex/verse-playthings",
   "branch": "master",
   "defaultBump": "patch",
   "before1Breaking": "minor",

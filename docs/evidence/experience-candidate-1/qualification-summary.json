@@ -1,0 +1,62 @@
+{
+  "status": "pass-local-bounded",
+  "node": "22.16.0",
+  "npm": "10.9.2",
+  "runtime": {
+    "pass": 219,
+    "fail": 0,
+    "skip": 0
+  },
+  "realCarriedAppCore": {
+    "pass": 22,
+    "fail": 0,
+    "skip": 0
+  },
+  "releasePolicy": {
+    "pass": 7
+  },
+  "package": {
+    "package": "@tiinex/playthings",
+    "version": "0.1.0",
+    "packedFiles": 49,
+    "packedBytes": 76591,
+    "unpackedBytes": 247387,
+    "browserModuleCount": 30,
+    "network": false,
+    "symlink": false,
+    "published": false
+  },
+  "syntax": {
+    "status": "pass",
+    "nodeModulesChecked": 41,
+    "reactModulesChecked": [
+      "src/verses/playthings/react/viewport.mjs",
+      "src/verses/playthings/react/companions.mjs",
+      "src/verses/playthings/react/index.mjs",
+      "src/verses/playthings/react/controls.mjs"
+    ],
+    "scope": "syntax only; no React rendering claim"
+  },
+  "graphics": {
+    "status": "pass",
+    "safe_margin": 6,
+    "alpha_roundtrip": true,
+    "surgery_ops": 2
+  },
+  "nativeBrowser": {
+    "pass": 11,
+    "browserVersion": "144.0.7559.96",
+    "transport": "memory",
+    "reactMounted": false,
+    "appHostMounted": false,
+    "sigmaAcceptance": false
+  },
+  "unchangedSiblingWorkspaces": 5,
+  "hostTurn2": "pending; not supplied/accepted",
+  "fullReactViteHostBrowser": "not run; missing pinned dependencies, HTTP browser policy and known host smoke contract mismatch",
+  "sigmaActionNow": "none; wait for actual Turn 2 and correct-lane integration",
+  "productionDefaultArtPromoted": false,
+  "techOrSkillsUiExposed": false,
+  "remoteWrites": false,
+  "npmPublicationRequestedOrPerformed": false
+}

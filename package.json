@@ -2,7 +2,7 @@
   "name": "@tiinex/verse-playthings",
   "version": "0.1.0",
   "private": false,
-  "description": "Experimental Tiinex Playthings runtime and React Verse adapter over App read-only contracts.",
+  "description": "First-party Playthings Verse for Tiinex — deterministic, moddable and spatial presentation of one or more Tiinex Workspace contexts over shared App/Core contracts.",
   "type": "module",
   "main": "./src/verses/playthings/index.mjs",
   "exports": {
@@ -55,7 +55,7 @@
     "publish:bootstrap": "node tools/release.mjs bootstrap",
     "release:prepare": "node tools/release.mjs prepare",
     "release:publish": "node tools/release.mjs publish",
-    "test:adapter": "node --test test/app-adapter.test.mjs"
+    "test:adapter": "node --test test/app-adapter.test.mjs test/companion-resolver.test.mjs"
   },
   "publishConfig": {
     "access": "public",

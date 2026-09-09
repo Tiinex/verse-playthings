@@ -42,3 +42,8 @@ Companion/resource origin is source-neutral from Playthings' perspective. Exact 
 Dependency-equipped rendered-browser/Sigma acceptance, final atlas promotion and longer-lived live-snapshot geometry continuity remain pending.
 
 Run `node tools/playthings/test-runtime.mjs`. All fixtures run without npm installation. Node 22.16.0 is the tested environment; this is not yet a published engine-support policy.
+
+
+## Experience Candidate 1
+
+The App/React adapter now connects guarded playback, explicit historical disclosure/topology, snapshot-scoped resource leases and conservative refresh continuity. Core/App remains the semantic/resolver owner; Playthings never guesses dynamic schema introduction from filename/registry membership. See repository `docs/EXPERIENCE-CANDIDATE-1.md` and `docs/TURN-2-HOST-BOUNDARY.md` before treating the candidate as ready for a human test. Pinned React/whole-host acceptance is still distinct from Node and native browser primitive tests.

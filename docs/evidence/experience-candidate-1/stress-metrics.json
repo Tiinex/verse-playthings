@@ -1,0 +1,41 @@
+{
+  "scope": "headless-authorless-5000-single-run",
+  "node": "v22.16.0",
+  "records": 5000,
+  "buildMs": 190.03802,
+  "samples": [
+    {
+      "factor": 0,
+      "ms": 4.368382999999994,
+      "visible": 1
+    },
+    {
+      "factor": 0.25,
+      "ms": 7.322892000000024,
+      "visible": 1061
+    },
+    {
+      "factor": 0.5,
+      "ms": 11.164607999999987,
+      "visible": 2374
+    },
+    {
+      "factor": 0.75,
+      "ms": 6.544115000000005,
+      "visible": 3687
+    },
+    {
+      "factor": 1,
+      "ms": 8.137678999999991,
+      "visible": 5000
+    },
+    {
+      "factor": 0,
+      "ms": 3.081213000000048,
+      "visible": 1
+    }
+  ],
+  "admittedLocations": 256,
+  "spatialCompilation": "blocked",
+  "uiFrameRateNotMeasured": true
+}

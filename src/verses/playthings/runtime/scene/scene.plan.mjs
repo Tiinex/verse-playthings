@@ -33,14 +33,16 @@ export function createScenePlan(story,options={}) {
   const locations=Object.fromEntries(story.records.map(r=>[r.id,copyLocation(get(options.locations??{},r.id))]));
   const routes=Object.create(null),scenes=Object.create(null),findings=[],blocked=new Set(),presentationOrderByGroup=Object.create(null);
   for(const event of story.log) {
-    let route=planFrontierRoutes(event,locations,options.world,options.movement);
+    const eventWorld=options.worldForEvent?options.worldForEvent(event):options.world;
+    const eventLocations=options.locationsForEvent?options.locationsForEvent(event):locations;
+    let route=planFrontierRoutes(event,eventLocations,eventWorld,options.movement);
     // A later event cannot restart walking from a frontier we failed to present.
     if(event.effects.some(e=>e.from&&blocked.has(e.from))) route=freeze({...route,ready:false,tracks:route.tracks.map(t=>({...t,status:'prior-presentation-blocked',durationMs:0,legs:[]})),durationMs:0});
-    if(route.ready && event.actors.ids.length && locations[event.id] && findPath(options.world,locations[event.id],locations[event.id]).status!=='found') {
+    if(route.ready && (!get(eventLocations,event.id) || findPath(eventWorld,get(eventLocations,event.id),get(eventLocations,event.id)).status!=='found')) {
       route=freeze({...route,ready:false,durationMs:0,tracks:route.tracks.map(t=>({...t,status:'blocked-endpoint',durationMs:0,legs:[]}))});
     }
-    if(!route.ready){blocked.add(event.id);findings.push({id:event.id,code:'scene.route-unavailable',reasons:route.tracks.filter(t=>t.status!=='ready').map(t=>t.status)});}
-    routes[event.id]=route;scenes[event.id]={location:locations[event.id],presentationWorkMs:route.ready?route.durationMs:0};
+    if(!route.ready){blocked.add(event.id);findings.push({id:event.id,code:'scene.route-unavailable',reasons:route.tracks.length?route.tracks.filter(t=>t.status!=='ready').map(t=>t.status):['missing-or-hidden-location']});}
+    routes[event.id]=route;scenes[event.id]={location:get(eventLocations,event.id)??null,presentationWorkMs:route.ready?route.durationMs:0};
     const key=`historical-group:${event.historicalTimeMs}`;
     (presentationOrderByGroup[key]??=[]).push(event.id);
   }
@@ -73,14 +75,18 @@ export function sampleScenePlan(plan,presentationTimeMs,options={}) {
       const effect=active.effects.find(e=>e.actorId===sample.actorId);
       for(let i=actors.length-1;i>=0;i--) if(actors[i].identityId===sample.actorId&&actors[i].artifactId===effect.from&&actors[i].mode!=='ghost'&&!effect.keepConcurrentFrontierSharp) actors.splice(i,1);
       const appearance=plan.story.identities.some(i=>i.id===sample.actorId&&i.discoveredAtMs<=time)?'identity':'default';
-      actors.push({renderId:JSON.stringify([active.id,sample.actorId]),artifactId:active.id,identityId:sample.actorId,
+      const direction=sample.phase==='walk'&&sample.from?.surfaceId===sample.to?.surfaceId
+        ?sample.to.x>sample.from.x?'right':sample.to.x<sample.from.x?'left':sample.to.y<sample.from.y?'up':'down':'down';
+      actors.push({direction,renderId:JSON.stringify([active.id,sample.actorId]),artifactId:active.id,identityId:sample.actorId,
         mode:'active',emphasis:'sharp',appearance,phase:sample.phase,position:sample.position??null,
         transition:sample.position==null&&sample.from&&sample.to?{from:sample.from,to:sample.to,progress:sample.progress}:null});
     }
   }
   actors.sort((a,b)=>a.renderId<b.renderId?-1:a.renderId>b.renderId?1:0);
-  const blockedIds=plan.findings.filter(f=>semantic.visibleEventIds.includes(f.id)).map(f=>f.id);
-  const pending=semantic.visibleEventIds.filter(id=>!shown.has(id)&&id!==active?.id&&!blockedIds.includes(id));
+  const visibleSet=new Set(semantic.visibleEventIds);
+  const blockedIds=plan.findings.filter(f=>visibleSet.has(f.id)).map(f=>f.id);
+  const blockedSet=new Set(blockedIds);
+  const pending=semantic.visibleEventIds.filter(id=>!shown.has(id)&&id!==active?.id&&!blockedSet.has(id));
   return freeze({kind:'playthings-scene-snapshot',clock:observation.clock,camera:observation.camera,
     cameraTransition:phase?.kind==='surface-transition'?{from:phase.from,to:phase.to,progress:(presentationTimeMs-phase.startMs)/(phase.endMs-phase.startMs)}:null,
     observationPhase:phase?{kind:phase.kind,eventId:phase.eventId,progress:(presentationTimeMs-phase.startMs)/(phase.endMs-phase.startMs)}:null,

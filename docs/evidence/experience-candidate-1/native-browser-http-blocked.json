@@ -1,0 +1,8 @@
+{
+  "scope": "native-browser-primitives-only",
+  "reactMounted": false,
+  "appHostMounted": false,
+  "sigmaAcceptance": false,
+  "status": "fail",
+  "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:34397/test/browser/experience/primitives.html\nCall log:\n  - navigating to \"http://127.0.0.1:34397/test/browser/experience/primitives.html\", waiting until \"load\"\n"
+}

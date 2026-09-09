@@ -10,7 +10,7 @@ test('asset location auditor recognizes the accepted structure companion suffix'
   const root=mkdtempSync(path.join(tmpdir(),'playthings-vocabulary-'));
   try {
     mkdirSync(path.join(root,'.topics/.workspaces'),{recursive:true});
-    writeFileSync(path.join(root,'.topics/.workspaces/tiinex-playthings.workspace.md'),'fixture workspace marker');
+    writeFileSync(path.join(root,'.topics/.workspaces/tiinex-verse-playthings.workspace.md'),'fixture workspace marker');
     mkdirSync(path.join(root,'src/schemas'),{recursive:true});
     // Tests naming/location only; this is deliberately not a PNG decoding test.
     writeFileSync(path.join(root,'src/schemas/example.playthings.structure.png'),'filename-only-fixture');

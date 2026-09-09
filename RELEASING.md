@@ -1,11 +1,11 @@
-# Releasing @tiinex/playthings
+# Releasing @tiinex/verse-playthings
 
 This repository is prepared for npm trusted publishing from GitHub Actions. The package is not assumed to exist on npm until the one-time bootstrap below has been completed.
 
 ## Release model
 
-- Source releases are created from local VS Code through `Tiinex: release @tiinex/playthings (auto)`.
-- The release tool requires a clean `master`, verifies the Tiinex/playthings origin, fetches tags, runs package qualification, chooses a semantic-version bump, updates `package.json` and `package-lock.json`, creates one release commit and annotated `vX.Y.Z` tag, pushes commit+tag atomically, then creates a GitHub Release through GitHub CLI.
+- Source releases are created from local VS Code through `Tiinex: release @tiinex/verse-playthings (auto)`.
+- The release tool requires a clean `master`, verifies the Tiinex/verse-playthings origin, fetches tags, runs package qualification, chooses a semantic-version bump, updates `package.json` and `package-lock.json`, creates one release commit and annotated `vX.Y.Z` tag, pushes commit+tag atomically, then creates a GitHub Release through GitHub CLI.
 - Publishing is owned by `.github/workflows/publish.yml` after the GitHub Release is published.
 - The publish workflow uses npm Trusted Publishing / GitHub OIDC. It contains no npm write token.
 - `prepublishOnly` fails closed unless publication is either the one-time prerelease bootstrap or the qualified GitHub Release workflow.
@@ -24,7 +24,7 @@ Before 1.0, an automatically detected breaking change advances the minor version
 
 The first release is special: `0.1.0-dev.0` stabilizes to `0.1.0` after the npm registry bootstrap.
 
-Use `Tiinex: preview @tiinex/playthings release bump` or `npm run release:preview` to inspect the recommendation without changing files, tags, remotes or releases.
+Use `Tiinex: preview @tiinex/verse-playthings release bump` or `npm run release:preview` to inspect the recommendation without changing files, tags, remotes or releases.
 
 ## One-time npm registry bootstrap
 
@@ -52,7 +52,7 @@ After the bootstrap package exists, open the npm package settings and add a GitH
 - Environment: `npm`
 - Allowed action: direct `npm publish`
 
-The package `repository.url` uses npm's normalized GitHub form `git+https://github.com/Tiinex/playthings.git`, identifying the exact trusted repository without publish-time metadata correction.
+The package `repository.url` uses npm's normalized GitHub form `git+https://github.com/Tiinex/verse-playthings.git`, identifying the exact trusted repository without publish-time metadata correction.
 
 After trusted publishing has successfully published at least one release, npm publishing access should be tightened to require 2FA and disallow traditional tokens. OIDC trusted publishing continues to work without a long-lived npm write secret.
 
@@ -60,8 +60,8 @@ After trusted publishing has successfully published at least one release, npm pu
 
 1. Commit the intended Playthings source normally.
 2. Ensure `master` is clean and not behind `origin/master`.
-3. Run the VS Code task `Tiinex: preview @tiinex/playthings release bump` if you want a read-only recommendation.
-4. Run `Tiinex: release @tiinex/playthings (auto)`.
+3. Run the VS Code task `Tiinex: preview @tiinex/verse-playthings release bump` if you want a read-only recommendation.
+4. Run `Tiinex: release @tiinex/verse-playthings (auto)`.
 5. Review the proposed bump and target tag in the terminal and answer `y` to continue.
 6. The script qualifies the package, creates and atomically pushes the release commit/tag, then publishes a GitHub Release.
 7. GitHub Actions verifies the tag/package identity and publishes to npm through OIDC.

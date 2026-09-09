@@ -48,3 +48,10 @@ The scaffold reports `spatialCapabilitiesApplied: false` and `geometryQualified:
 ## What remains open
 
 This is a bounded deterministic rectangular assembler, not an optimal building architect. Qualified multi-surface presentation/camera cutover is now active behind the fail-closed `presentationWorld` gate. Stateful continuity across live replacement snapshots must still carry prior placement reservations when demand footprints themselves grow; otherwise repacking remains surfaced rather than silently relocated. Structure/tiles pixels remain styling inputs only, final atlas semantics are not certified, and the implementation does not solve arbitrary staircase alignment, multi-agent collisions, rendered-browser acceptance or human visual acceptance.
+
+
+## Experience-candidate historical topology and refresh
+
+The assembler emits explicit `topologyOwnership` and `artifactHomes`. The App layer filters surfaces, geometry, barriers, blocked cells, locations and links against historical availability before per-event routing and rendering. Spatial ancestors and explicit schema-introduction constraints must be eligible. Shared obstacles use any visible qualified owner, while links need all their owning endpoints. Identifiers are not parsed to derive ownership.
+
+The candidate refresh reconciler preserves compatible locations and rejects stale semantic/capability continuity. If new spatial demand cannot keep an established valid world stable, the old world is retained with pending physical depiction and a visible Rebuild control. This conservative hold is not a complete incremental-world solver. Source changes or withdrawn/digest-changed resources cannot be hidden behind it.

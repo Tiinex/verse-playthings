@@ -2,13 +2,19 @@
 
 A deterministic Tiinex lineage/story presentation engine with an experimental App/React Verse adapter, qualified spatial projection and a guarded multi-surface renderer with a bounded Root fallback.
 
+## Experience Candidate 1 — wait for Turn 2 before the Sigma test
+
+The accumulated candidate adds historical disclosure/topology guards, dynamic companion/provider regression tests, shared bounded image leases, seven-channel atlas sampling, refresh continuity with explicit growth limits, and the immersive Root Gate/camera/inspector surface.
+
+Read [candidate scope and limits](docs/EXPERIENCE-CANDIDATE-1.md), [Turn-2 host requirements](docs/TURN-2-HOST-BOUNDARY.md) and [Sigma's test card](docs/SIGMA-TEST.md). The host must still genuinely hide/inert its old footer/chrome. Current schema-definition discovery and provider-revision gaps are explicit; no tech/skills UI is inferred. Genuine Chromium primitive checks are not a React/App mount or human experience acceptance.
+
 ## What can I use today?
 
 **A locally installable experimental package with an immersive React Verse adapter. Qualified spatial presentations can render across surfaces; browser/human acceptance is still incomplete.**
 
-- `@tiinex/playthings` exports the `time`, `story`, `observation`, `world`, `companions` and `scene` namespaces.
-- Matching subpaths, including `@tiinex/playthings/app` and `@tiinex/playthings/react`, expose the App adapter and React view without private Core/App imports.
-- `@tiinex/playthings/node` is the separate Node-only PNG codec/compiler entrypoint.
+- `@tiinex/verse-playthings` exports the `time`, `story`, `observation`, `world`, `companions` and `scene` namespaces.
+- Matching subpaths, including `@tiinex/verse-playthings/app` and `@tiinex/verse-playthings/react`, expose the App adapter and React view without private Core/App imports.
+- `@tiinex/verse-playthings/node` is the separate Node-only PNG codec/compiler entrypoint.
 - React 19.2.7 is an optional peer. The React Verse enters host immersive mode and occupies the viewport with an in-Verse Root Gate for exit. It uses a qualified rectangular multi-surface presentation when exact spatial companion activation completes; otherwise it fails back to the deterministic Root-only SVG scaffold. Cross-surface camera/actor transitions stay explicit and never interpolate diagonally between unrelated surfaces.
 
 The source package is `0.1.0` and is release-enabled, but this repository state does **not** claim that any npm version has been published. Publication is guarded: the one-time registry bootstrap must be explicit, and normal publication is only accepted from the GitHub Release workflow. APIs remain experimental. The headless/runtime package needs no bundled runtime dependency; the React entrypoint uses the host React peer and real rendered-browser qualification remains an external gate.
@@ -21,6 +27,8 @@ From the source repository:
 npm test
 npm run test:package
 npm run test:release
+npm run test:adapter
+# Or all four: npm run check
 ```
 
 `npm test` runs the headless fixtures. `npm run test:package` performs an actual offline `npm pack`, installs that tarball into an isolated consumer, exercises package-name imports and checks that no source symlink or private-path import is necessary. It also evaluates the browser-facing module graph in a VM without Node/DOM globals. `npm run test:release` checks the release policy, publish workflow and fail-closed publish guard. None of these are rendered-browser acceptance tests.
@@ -36,18 +44,18 @@ PYTHONDONTWRITEBYTECODE=1 python tools/playthings/generative_visual/tests/test_m
 
 The repository contains a guarded npm release path without adding a token to GitHub. See [RELEASING.md](RELEASING.md) for the one-time registry bootstrap, npm Trusted Publisher settings and the normal VS Code release flow.
 
-The normal VS Code task is **`Tiinex: release @tiinex/playthings (auto)`**. It derives major/minor/patch from explicit release markers, breaking/feature commit intent and changes to the public package surface, then asks for confirmation before creating any release side effect. A separate preview task is read-only. Before 1.0, automatically detected breaking changes advance the minor version; 1.0.0 requires explicit major intent.
+The normal VS Code task is **`Tiinex: release @tiinex/verse-playthings (auto)`**. It derives major/minor/patch from explicit release markers, breaking/feature commit intent and changes to the public package surface, then asks for confirmation before creating any release side effect. A separate preview task is read-only. Before 1.0, automatically detected breaking changes advance the minor version; 1.0.0 requires explicit major intent.
 
-A published GitHub Release triggers `.github/workflows/publish.yml`, which verifies that `vX.Y.Z` exactly matches `package.json`, runs package qualification and publishes through npm Trusted Publishing / GitHub OIDC. No `NPM_TOKEN` is part of this workflow. The first prerelease must still be published once under the `dev` dist-tag so npm has a package to which the trusted publisher can be attached.
+A published GitHub Release triggers `.github/workflows/publish.yml`, which verifies that `vX.Y.Z` exactly matches `package.json`, runs package qualification and publishes through npm Trusted Publishing / GitHub OIDC. No `NPM_TOKEN` is part of this workflow. First-publication and subsequent release actions are governed by the Core-owned release helper and current [publication instructions](docs/NPM-PUBLISH.md); do not infer a `dev` prerelease bootstrap from older notes. This experience batch performs no publication.
 
 ## Minimal headless use
 
 After installing a local pack in a consumer:
 
 ```js
-import { createStoryPlan } from '@tiinex/playthings/story';
-import { createNavigationWorld } from '@tiinex/playthings/world';
-import { createScenePlan, createSceneStore } from '@tiinex/playthings/scene';
+import { createStoryPlan } from '@tiinex/verse-playthings/story';
+import { createNavigationWorld } from '@tiinex/verse-playthings/world';
+import { createScenePlan, createSceneStore } from '@tiinex/verse-playthings/scene';
 
 const story = createStoryPlan([
   { id: 'example', parentId: null, historicalTimeMs: 0, authors: ['A'] },

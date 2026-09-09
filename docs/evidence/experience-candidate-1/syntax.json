@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "nodeModulesChecked": 41,
+  "reactModulesChecked": [
+    "src/verses/playthings/react/viewport.mjs",
+    "src/verses/playthings/react/companions.mjs",
+    "src/verses/playthings/react/index.mjs",
+    "src/verses/playthings/react/controls.mjs"
+  ],
+  "scope": "syntax only; no React rendering claim"
+}
