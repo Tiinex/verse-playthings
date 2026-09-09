@@ -41,7 +41,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tiinex/playthings.git"
+    "url": "git+https://github.com/Tiinex/verse-playthings.git"
   },
   "scripts": {
     "test": "node tools/playthings/test-runtime.mjs",
