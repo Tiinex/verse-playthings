@@ -33,8 +33,12 @@ The layout module is a collection of primitives, **not** the final nested buildi
 
 See the local READMEs in `companions`, `world` and `scene` for the newly qualified candidate atlas mechanics, recursive demand and staged scene/store. A private npm package now exposes these modules; actual tarball installation is tested. No production-ready React/API or graphical acceptance is implied.
 
-## Next boundary
+## Current integration boundary
 
-The next joint milestone requires Refactor Anchor Turn 1: qualified Core projections and companion provenance, App Verse lifecycle and resource composition, plus the exact public package contracts. React mount, fullscreen, Root Gate switching/creation, actual asset providers, schema companion promotion, full building packing and browser-rendered visual acceptance remain pending.
+The public Core/App companion and Verse contracts are now consumed through Playthings' App adapter. The React Verse has an immersive viewport shell and Root Gate exit path, while browser Fullscreen API remains optional. Qualified spatial candidates may drive the multi-surface renderer; Root remains the fail-closed fallback.
+
+Companion/resource origin is source-neutral from Playthings' perspective. Exact artifact/schema resolution and provider precedence stay Core/App-owned, including dynamically supplied schema providers. Pre-discovered schemas may support runtime interpretation without becoming story-visible technology. Playthings deliberately has no tech-tree/skills discovery UI until the host provides an explicit qualified binding between a Workspace schema-definition artifact and the schema declaration it introduces.
+
+Dependency-equipped rendered-browser/Sigma acceptance, final atlas promotion and longer-lived live-snapshot geometry continuity remain pending.
 
 Run `node tools/playthings/test-runtime.mjs`. All fixtures run without npm installation. Node 22.16.0 is the tested environment; this is not yet a published engine-support policy.

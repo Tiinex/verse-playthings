@@ -41,7 +41,7 @@ export function sampleAppScene(model,presentationTimeMs) {
 }
 /** Package-owned definition stays dependency-free; React is loaded only on selection. */
 export function createPlaythingsVerse(options={}) {
- return Object.freeze({id:'playthings',label:options.label||'Playthings',fullscreen:false,
-  load:()=>import('../react/index.mjs'),capabilities:Object.freeze(['read-application-data','read-companions']),
-  boundary:'Experimental Playthings adapter over the App host; the Root-only scene scaffold evolves toward the qualified spatial renderer.'});
+ return Object.freeze({id:'playthings',label:options.label||'Playthings',fullscreen:true,
+  load:()=>import('../react/index.mjs'),capabilities:Object.freeze(['read-application-data','read-companions','immersive-presentation']),
+  boundary:'Playthings is an immersive presentation Verse over App-owned Tiinex projections and companion resolution. Host fullscreen/immersive controls do not create semantic authority.'});
 }

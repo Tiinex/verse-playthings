@@ -50,6 +50,23 @@ Historical presentation uses source-declared times; missing timestamps remain ex
 Snapshots remain owned by App. Viewer stays mounted, hidden while external Verse is
 shown, so returning does not recreate source state. No mutation/automation is added.
 
+
+## Immersive Verse and Root Gate
+
+The Playthings Verse descriptor now declares immersive/fullscreen presentation intent. On mount, the React Verse calls the host `setImmersive(true)` callback and restores it on unmount. The Verse itself occupies the browser viewport with a fixed presentation layer, so existing Viewer chrome and host fallback controls remain behind the Playthings surface during the experience. Browser Fullscreen API remains optional and is not required for the normal Playthings path.
+
+The visible navigation escape is the in-Verse **Root Gate**. It calls the host-owned `exitVerse()` callback to return to Viewer, where the host Verse switcher becomes available again. Playthings does not own the host registry or invent Verse ids. The Root Gate also owns presentation-only replay/pause/latest controls.
+
+This is deliberately a presentation boundary: immersive mode, viewport coverage and Root Gate navigation create no Tiinex semantic authority and do not mutate Workspace material.
+
+## Dynamic schemas, story visibility and companion source neutrality
+
+Playthings never assumes a schema or its companions live in the Playthings repository. It queries the App/Core resolver using the loaded artifact owner. App/Core remains responsible for qualified schema ancestry, exact artifact/schema specificity and provider precedence; the selected resource may therefore originate from a Workspace, deployment/provider, package or other qualified host source. Playthings only consumes the resolver result and applies its stricter exact-spatial-capability gate.
+
+Runtime schema knowledge and story knowledge are intentionally separate. Embedded/pre-discovered schemas may be used immediately for parsing/validation/ancestry/companion resolution, but that does not make a schema a discovered item in the Playthings story. A schema becomes ordinary story material only when its artifact is present in a loaded Workspace and historical sampling reaches that artifact.
+
+The current App projection does not expose a sufficiently explicit artifact-to-schema-definition identity binding for Playthings to build a truthful tech-tree/skills discovery surface. Therefore Playthings does **not** infer such a binding from filename, path, title or the fact that an ordinary artifact uses the same schema id. Tech/skills remain intentionally absent until that qualified host projection exists.
+
 ## Companion reads
 
 Portrait lookup requests playthings/portrait for the exact loaded artifact owner.
@@ -76,13 +93,7 @@ World tests cover fail-closed fallback activation, bounded nested packing, appen
 enclosure/entry placement under surface growth, real door barriers, container passages
 and multi-surface stair navigation.
 
-Pending external execution: pinned React/Vite bundle and rendered browser tests, real
-GitHub OIDC/account configuration and npm publication. No registry publication is
+Pending external execution: pinned React/Vite bundle and rendered browser tests, including the immersive viewport/Root Gate path; real GitHub OIDC/account configuration and npm publication remain independently evidenced by the release flow. No registry publication is
 claimed here. Refactor Anchor retains Turn 2; Playthings does not mutate Core/App/Site.
 
-The candidate → active multi-surface cutover is now implemented behind the strict
-qualification gate. The next renderer step is dependency-equipped rendered-browser
-acceptance plus longer-lived continuity state when a live replacement snapshot expands
-an already-settled demand footprint. The Root scaffold remains the deliberate fallback,
-not a deprecated semantic source. Final atlas approval/promotion and human visual
-acceptance remain separate gates.
+The candidate → active multi-surface cutover and first immersive Root Gate shell are now implemented behind strict qualification boundaries. The next product gate is dependency-equipped rendered-browser + Sigma experience acceptance, followed separately by longer-lived continuity state when a live replacement snapshot expands an already-settled demand footprint. The Root scaffold remains the deliberate fallback, not a deprecated semantic source. Final atlas approval/promotion and human visual acceptance remain separate gates.

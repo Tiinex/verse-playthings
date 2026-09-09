@@ -57,3 +57,11 @@ test('qualified companion chain can compile navigation geometry without reading 
  assert.equal(p.status,'ready');assert.equal(p.spatialWorld.geometryQualified,true);assert.equal(p.spatialWorld.navigationCompiled,true);
  assert.ok(p.spatialWorld.world.links.some(link=>link.kind==='stairs'));
 });
+
+
+test('exact schema capability is source-neutral and may come from a dynamically supplied provider',()=>{
+ const external=(query)=>query.owner.artifactPath==='floor-a'&&query.slot==='tiles'?{status:'resolved',resources:[resource('tiles',{kind:'schema',schemaId:'tiinex.task.v1'},{providerId:'workspace-or-remote-schema-provider'})]}:{status:'missing',resources:[]};
+ const p=qualifySpatialCapabilities({records:[records[2]],metadata,resolveCompanions:external});
+ assert.equal(p.status,'ready');assert.equal(p.records[0].capabilities.tiles,true);assert.equal(p.receipts[0].channels.tiles.basis,'exact-schema');
+ assert.equal(p.receipts[0].channels.tiles.resource.providerId,'workspace-or-remote-schema-provider');
+});
