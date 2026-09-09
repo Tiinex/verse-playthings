@@ -1,5 +1,5 @@
 {
-  "name": "@tiinex/playthings",
+  "name": "@tiinex/verse-playthings",
   "version": "0.1.0",
   "private": false,
   "description": "Experimental Tiinex Playthings runtime and React Verse adapter over App read-only contracts.",
