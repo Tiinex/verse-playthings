@@ -1,0 +1,141 @@
+{
+  "status": "blocked-before-real-browser-pass",
+  "carrier": {
+    "sha256": "3aa1c11c2e633f5590d345ae3498e4a1e00cb3debc6fe8d232f3078e3ea30238",
+    "selectedRoute": "001-18-1-1-1-handoff-pointer.trace.md",
+    "holderRole": "Prism",
+    "grounding": "grounded-to-act"
+  },
+  "sourceSet": {
+    "requiredContextEntrypoints": {
+      "verse-playthings": {
+        "workspaceEntrypoint": ".topics/.workspaces/tiinex-verse-playthings.workspace.md",
+        "sha256": "e0e353a59ab26311f851a2c5babba2d5933f4b70a0fad855390a1f402d3eb0d1",
+        "bytes": 2307
+      },
+      "app": {
+        "workspaceEntrypoint": ".topics/.workspaces/tiinex-app.workspace.md",
+        "sha256": "3217b321631aec741b491b09c824ed65e3493ea06479712303beb45f435aa3fa",
+        "bytes": 1512
+      },
+      "site": {
+        "workspaceEntrypoint": ".topics/.workspaces/tiinex-site.workspace.md",
+        "sha256": "93b4897a66f09c8233e769cac895920fb68893562cf7af7e46984354b1ff0895",
+        "bytes": 1255
+      },
+      "core": {
+        "workspaceEntrypoint": ".topics/.workspaces/tiinex-core.workspace.md",
+        "sha256": "3ee262e761c1c3a64b62608cdbc53677a52fe706ce1b1c9c31f66e6042ed65c5",
+        "bytes": 1516
+      },
+      "business": {
+        "workspaceEntrypoint": ".topics/.workspaces/tiinex-business.workspace.md",
+        "sha256": "b0f10a259949f560f5bec9ad76d5bffb9f9eb613ddc233ee2f4be8c0d9075c6f",
+        "bytes": 1131
+      }
+    },
+    "materialization": {
+      "verse-playthings": {
+        "workspaceId": "verse-playthings",
+        "fileCount": 274,
+        "totalBytes": 11618154,
+        "archivePackagePath": "001-18-verse-playthings.workspace.zip",
+        "coverage": "complete"
+      },
+      "app": {
+        "workspaceId": "app",
+        "fileCount": 660,
+        "totalBytes": 4029009,
+        "archivePackagePath": "001-3-app.workspace.zip",
+        "coverage": "complete"
+      },
+      "core": {
+        "workspaceId": "core",
+        "fileCount": 583,
+        "totalBytes": 5936139,
+        "archivePackagePath": "001-6-core.workspace.zip",
+        "coverage": "complete"
+      },
+      "site": {
+        "workspaceId": "site",
+        "fileCount": 457,
+        "totalBytes": 4615946,
+        "archivePackagePath": "001-15-site.workspace.zip",
+        "coverage": "complete"
+      }
+    },
+    "candidateHashes": {
+      "versePackageJsonSha256": "8acc2a5d1a81f17791ae1cff67a20f3676262f245c9f76906e71ef2f1030907a",
+      "versePackageLockJsonSha256": "916897fba41d48cb9ddb6128f3ba64a715443ce3a0dbe97e22cf9bce8111e3ef",
+      "appPackageJsonSha256": "af916e767436547ed47de49c248efdbf8ad55b3963a963f41e8b6ef1adcb330a",
+      "appPackageLockJsonSha256": "4ec6e51352402b7b3a159ec2ea2483896e8602d43fddd03028b30cf7931b3188",
+      "corePackageJsonSha256": "1a32809e646098c6b1eac912ffbfa47dffac36d62d5e3a82d7a753b0a2b31348",
+      "corePackageLockJsonSha256": "156c25cb7d58d29debba51762b221e1e635dbc91209773acd671eaa3638141cc",
+      "sitePackageJsonSha256": "a1ea32bb28c3bdd94748f2be484c72a09482f5a43c710c6c84ab9f675b2835ca",
+      "sitePackageLockJsonSha256": "ffa1657dca353326e95619506aa8765bffef6c13efa46e79cb8cac7971debc4c",
+      "siteBrowserSmokeSha256": "ae641953cefbb7c91c691bcb98a4e6c074916fade54bfdb99cc8cc2fb056ab3a",
+      "verseProductSurfaceFileCount": 96,
+      "verseProductSurfaceBytes": 486629,
+      "verseProductSurfaceDigest": "6d01c4da419fd37d899b5adc4738a442e9d9a84fbebdbb0a7539d2898b9fab06"
+    }
+  },
+  "technicalGates": {
+    "verseCheck": {
+      "status": "pass",
+      "runtimeTests": 219,
+      "packageQualification": "pass",
+      "packedFiles": 49,
+      "releasePolicyCases": 7,
+      "adapterTests": 22,
+      "binding": "exact carried App/Core source copied only into runtime node_modules scratch"
+    },
+    "siteNodeIntegration": {
+      "status": "pass",
+      "tests": 2,
+      "binding": "exact carried Site/App/Core/Verse source copied only into runtime node_modules scratch"
+    },
+    "systemChromiumProbe": {
+      "status": "pass",
+      "engine": "/usr/bin/chromium via Python Playwright 1.57.0",
+      "version": "Chromium 144.0.7559.96"
+    },
+    "unchangedSiteBrowserSmoke": {
+      "status": "blocked-before-vite-start",
+      "exitCode": 1,
+      "error": "Cannot find module vite/package.json"
+    }
+  },
+  "browserGate": {
+    "status": "blocked",
+    "lockedDependencyAcquisition": "registry.npmjs.org DNS resolution unavailable in host; pinned public dependency cache absent; npm ci --offline fails ENOTCACHED",
+    "playwrightDefaultBrowser": "Python Playwright 1.57.0 bundled Chromium headless-shell absent; system Chromium launches when explicitly selected",
+    "staleSiteSmokeAssumptions": [
+      "The Site smoke historical-moment text assertions target a pre-current DOM string. The current Verse exposes data-visible-moment-count and renders \u201cN visible artifacts \u00b7 M declared historical moments shown\u201d.",
+      "The Site smoke invokes Fullscreen as if the control is directly exposed. The current Verse exposes Fullscreen only after opening the Root Gate dialog.",
+      "Back-to-Viewer remains addressable through the current Verse Root Gate control; the App host-level control has accessible name Exit Verse.",
+      "These are stale Site smoke assumptions, not evidence of a Verse-local product defect. They cannot be edited under the current Handoff."
+    ],
+    "verseLocalDefectFound": false,
+    "verseLocalRepairMade": false,
+    "sigmaTestCardReady": false
+  },
+  "environment": {
+    "node": "v22.16.0",
+    "npm": "10.9.2",
+    "pythonPlaywright": "1.57.0",
+    "systemChromium": "144.0.7559.96"
+  },
+  "nextOwnerBoundary": [
+    "Execution environment / Anchor: provision the exact Site lockfile public dependencies (or an execution host with them already installed) so Vite can start.",
+    "Site owner via Anchor: reconcile tools/browser-smoke.py with the current Playthings DOM/Root Gate interaction contract and browser executable availability; Prism has no Site mutation authority in this Handoff.",
+    "After those blockers are resolved, rerun the real Site React/Vite browser path on this exact candidate before issuing any Sigma test card."
+  ],
+  "boundaries": [
+    "No App/Core/Site source mutation",
+    "No Verse product/source repair",
+    "No npm release or deployment",
+    "No remote write",
+    "No synthetic browser PASS",
+    "No Sigma readiness or acceptance claim"
+  ]
+}

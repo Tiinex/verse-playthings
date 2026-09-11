@@ -1,0 +1,19 @@
+{
+  "siteSmokeSha256": "ae641953cefbb7c91c691bcb98a4e6c074916fade54bfdb99cc8cc2fb056ab3a",
+  "observations": {
+    "siteOldMomentTextSelectorsPresent": true,
+    "verseUsesVisibleMomentDataAttribute": true,
+    "verseCurrentMomentTextShape": true,
+    "siteClicksFullscreenWithoutOpeningRootGate": true,
+    "verseFullscreenIsInsideRootGateDialog": true,
+    "siteUsesDefaultPlaywrightChromium": true,
+    "appHostExitButtonAccessibleName": "aria-label=\"Exit Verse\"",
+    "verseBackButtonAccessibleName": "Back to Viewer"
+  },
+  "reconciliation": [
+    "The Site smoke historical-moment text assertions target a pre-current DOM string. The current Verse exposes data-visible-moment-count and renders \u201cN visible artifacts \u00b7 M declared historical moments shown\u201d.",
+    "The Site smoke invokes Fullscreen as if the control is directly exposed. The current Verse exposes Fullscreen only after opening the Root Gate dialog.",
+    "Back-to-Viewer remains addressable through the current Verse Root Gate control; the App host-level control has accessible name Exit Verse.",
+    "These are stale Site smoke assumptions, not evidence of a Verse-local product defect. They cannot be edited under the current Handoff."
+  ]
+}
