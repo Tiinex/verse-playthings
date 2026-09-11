@@ -1,0 +1,58 @@
+{
+  "status": "blocked-before-full-browser-pass",
+  "candidateIdentity": {
+    "priorEvidencePackageAndLockHashesMatched": true,
+    "versePackageJsonSha256": "8acc2a5d1a81f17791ae1cff67a20f3676262f245c9f76906e71ef2f1030907a",
+    "versePackageLockSha256": "916897fba41d48cb9ddb6128f3ba64a715443ce3a0dbe97e22cf9bce8111e3ef",
+    "appPackageJsonSha256": "af916e767436547ed47de49c248efdbf8ad55b3963a963f41e8b6ef1adcb330a",
+    "appPackageLockSha256": "4ec6e51352402b7b3a159ec2ea2483896e8602d43fddd03028b30cf7931b3188",
+    "corePackageJsonSha256": "1a32809e646098c6b1eac912ffbfa47dffac36d62d5e3a82d7a753b0a2b31348",
+    "corePackageLockSha256": "156c25cb7d58d29debba51762b221e1e635dbc91209773acd671eaa3638141cc",
+    "sitePackageJsonSha256": "a1ea32bb28c3bdd94748f2be484c72a09482f5a43c710c6c84ab9f675b2835ca",
+    "sitePackageLockSha256": "ffa1657dca353326e95619506aa8765bffef6c13efa46e79cb8cac7971debc4c",
+    "siteBrowserSmokeSha256": "ae641953cefbb7c91c691bcb98a4e6c074916fade54bfdb99cc8cc2fb056ab3a"
+  },
+  "technicalGates": {
+    "verseCheck": {
+      "status": "pass",
+      "runtimeTests": 219,
+      "packageQualification": "pass",
+      "packedFiles": 49,
+      "releasePolicyCases": 7,
+      "adapterTests": 22,
+      "binding": "exact carried App/Core source copied only into runtime node_modules scratch"
+    },
+    "siteNodeIntegration": {
+      "status": "pass",
+      "tests": 2,
+      "binding": "exact carried Site/App/Core/Verse source copied only into runtime node_modules scratch"
+    },
+    "systemChromiumProbe": {
+      "status": "pass",
+      "version": "Chromium 144.0.7559.96",
+      "engine": "/usr/bin/chromium via Python Playwright 1.57.0"
+    }
+  },
+  "browserGate": {
+    "status": "blocked",
+    "unchangedSmoke": "fails before Vite startup because vite/package.json is unavailable",
+    "lockedDependencyAcquisition": "registry.npmjs.org resolution fails EAI_AGAIN; npm ci cannot materialize the Site lockfile tree in this host",
+    "playwrightDefaultBrowser": "Python Playwright 1.57.0 default Chromium executable is absent; system Chromium launches when explicitly selected",
+    "verseLocalDefectFound": false,
+    "verseLocalRepairMade": false,
+    "sigmaTestCardReady": false
+  },
+  "environment": {
+    "node": "v22.16.0",
+    "npm": "10.9.2",
+    "pythonPlaywright": "1.57.0",
+    "systemChromium": "144.0.7559.96"
+  },
+  "boundaries": [
+    "No App/Core/Site source mutation",
+    "No npm release or deployment",
+    "No remote write",
+    "No synthetic browser PASS",
+    "No Sigma acceptance claim"
+  ]
+}
