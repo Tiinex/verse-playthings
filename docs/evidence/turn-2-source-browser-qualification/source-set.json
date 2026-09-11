@@ -1,0 +1,38 @@
+{
+  "verse-playthings": {
+    "package": "@tiinex/verse-playthings",
+    "version": "0.1.0",
+    "fileCount": 261,
+    "totalBytes": 11563547,
+    "sourceSetSha256": "537c95eef58b44fa189ba0bad2fdb40c56344322819bb898ff233ead62f900c5",
+    "packageJsonSha256": "8acc2a5d1a81f17791ae1cff67a20f3676262f245c9f76906e71ef2f1030907a",
+    "packageLockSha256": "916897fba41d48cb9ddb6128f3ba64a715443ce3a0dbe97e22cf9bce8111e3ef"
+  },
+  "app": {
+    "package": "@tiinex/app",
+    "version": "0.1.1",
+    "fileCount": 659,
+    "totalBytes": 4026761,
+    "sourceSetSha256": "f128807aca70cd2d66549396223fbb3230a3b32a1abcf5aba5cf3a8c8ce0d8e6",
+    "packageJsonSha256": "af916e767436547ed47de49c248efdbf8ad55b3963a963f41e8b6ef1adcb330a",
+    "packageLockSha256": "4ec6e51352402b7b3a159ec2ea2483896e8602d43fddd03028b30cf7931b3188"
+  },
+  "core": {
+    "package": "@tiinex/core",
+    "version": "0.1.1",
+    "fileCount": 574,
+    "totalBytes": 5883322,
+    "sourceSetSha256": "fcecf3f3cc95ba7bb3e994f30947031b9c5c3755816d3b25f6facf7e1acbe514",
+    "packageJsonSha256": "1a32809e646098c6b1eac912ffbfa47dffac36d62d5e3a82d7a753b0a2b31348",
+    "packageLockSha256": "156c25cb7d58d29debba51762b221e1e635dbc91209773acd671eaa3638141cc"
+  },
+  "site": {
+    "package": "tiinex-site",
+    "version": "0.3.0-turn1.2",
+    "fileCount": 453,
+    "totalBytes": 4573744,
+    "sourceSetSha256": "7744382f3d7c8f07b7b343cb10b8d71cab7478ef86b48787eeecae397173f99f",
+    "packageJsonSha256": "a1ea32bb28c3bdd94748f2be484c72a09482f5a43c710c6c84ab9f675b2835ca",
+    "packageLockSha256": "ffa1657dca353326e95619506aa8765bffef6c13efa46e79cb8cac7971debc4c"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "status": "blocked-before-full-browser-pass",
+  "technicalGates": {
+    "verseCheck": "pass",
+    "runtimeTests": {
+      "pass": 219,
+      "fail": 0
+    },
+    "packageQualification": {
+      "status": "pass",
+      "packedFiles": 49,
+      "packedBytes": 76629,
+      "unpackedBytes": 247532,
+      "browserModuleCount": 30,
+      "installedConsumer": "pass",
+      "network": false
+    },
+    "releasePolicy": {
+      "status": "pass",
+      "policyCases": 7
+    },
+    "adapterTests": {
+      "pass": 22,
+      "fail": 0,
+      "binding": "exact carried @tiinex/app 0.1.1 + @tiinex/core 0.1.1"
+    },
+    "siteNodeIntegration": {
+      "pass": 2,
+      "fail": 0,
+      "binding": "exact carried Site + App + Core + Verse sources"
+    },
+    "chromiumLaunchProbe": "pass"
+  },
+  "browserGate": {
+    "status": "blocked",
+    "reason": "Site locked React/Vite dependency tree unavailable in npm cache and registry DNS unavailable; full Site tools/browser-smoke.py cannot resolve vite/package.json.",
+    "syntheticPassClaimed": false,
+    "sigmaTestCardReady": false
+  },
+  "environment": {
+    "node": "v22.16.0",
+    "npm": "10.9.2",
+    "chromium": "Chromium 144.0.7559.96 built on Debian GNU/Linux 13 (trixie)",
+    "pythonPlaywright": "1.57.0"
+  },
+  "sourceSetFile": "source-set.json",
+  "boundaries": [
+    "No sibling source mutation",
+    "No publication/deployment/remote write",
+    "No Sigma human acceptance claim",
+    "No full React/Vite browser PASS"
+  ]
+}
