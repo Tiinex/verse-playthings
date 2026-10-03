@@ -2,11 +2,11 @@
 
 A deterministic Tiinex lineage/story presentation engine with an experimental App/React Verse adapter, qualified spatial projection and a guarded multi-surface renderer with a bounded Root fallback.
 
-## Experience Candidate 1 — wait for Turn 2 before the Sigma test
+## Experience Candidate 1 — acceptance remains explicit
 
 The accumulated candidate adds historical disclosure/topology guards, dynamic companion/provider regression tests, shared bounded image leases, seven-channel atlas sampling, refresh continuity with explicit growth limits, and the immersive Root Gate/camera/inspector surface.
 
-Read [candidate scope and limits](docs/EXPERIENCE-CANDIDATE-1.md), [Turn-2 host requirements](docs/TURN-2-HOST-BOUNDARY.md) and [Sigma's test card](docs/SIGMA-TEST.md). The host must still genuinely hide/inert its old footer/chrome. Current schema-definition discovery and provider-revision gaps are explicit; no tech/skills UI is inferred. Genuine Chromium primitive checks are not a React/App mount or human experience acceptance.
+Read [candidate scope and limits](docs/EXPERIENCE-CANDIDATE-1.md), the historically named [Turn-2 host requirements](docs/TURN-2-HOST-BOUNDARY.md), and [Sigma's test card](docs/SIGMA-TEST.md). The host must still genuinely hide/inert its old footer/chrome. Current schema-definition discovery and provider-revision gaps are explicit; no tech/skills UI is inferred. Genuine Chromium primitive checks are not a React/App mount or human experience acceptance.
 
 ## What can I use today?
 
@@ -94,7 +94,7 @@ The [companion layer](src/verses/playthings/runtime/companions/README.md) implem
 - Playthings owns story/time/spatial presentation, choreography and optional PNG defaults.
 - Qualified providers may supply artifact-local or schema-owned Playthings companions from workspaces, deployments, packages or other host-approved sources. Playthings never treats repository location as companion authority.
 
-Source remains under `src/verses/playthings/...`. Future final PNG defaults retain the mirrored `src/schemas/...` hierarchy without copying schema authority. No `reference/`, private Core imports or required per-artifact Playthings metadata sidecars are introduced.
+Source remains under `src/verses/playthings/...`. Future promoted PNG defaults, if introduced, must bind to qualified schema identity through an explicit contract rather than implying a current `src/schemas/**` authority tree. No `reference/`, private Core imports or required per-artifact Playthings metadata sidecars are introduced.
 
 ## Distribution versus source delivery
 
@@ -102,12 +102,11 @@ The small npm tarball contains runtime modules, documentation, license/notice an
 
 **The npm tarball is not a replacement-safe source snapshot.** Source deliveries to Sigma remain full Tiinex Anchor-to-Sigma Handoff packages, including unchanged source and lineage. Dependency workspaces are read-only context, never implicit apply targets.
 
-## Planning and remaining work
+## Current source state and future work
 
-Start with the [master Task](.topics/viewer/playthings/development/runtime/001-playthings-runtime-productization-task.trace.md). Current implementation evidence is in each domain's lineage; the master is not marked complete just because headless tests pass.
+Major 017 reduced the historical Playthings execution/refactor lineage. The former runtime-productization master Task is recovery history, not a current work root; exact recovery is preserved by `.topics/reductions/workspace/010-verse-playthings-fresh-start-reduction.trace.md`. Future Playthings work starts from a new explicit bounded Task with truthful Project ancestry rather than reactivating removed lineage.
 
-The public Core/App adapter, bounded Root fallback, exact-capability → rectangular world assembly, and guarded candidate → active multi-surface renderer cutover are now present.
-The immersive viewport shell and Root Gate exit path are now implemented but still require dependency-equipped React/Vite rendered-browser and Sigma acceptance. Also pending are longer-lived continuity state for demand-footprint growth across live snapshot replacement and final atlas approval/promotion. No tech-tree/skills surface is exposed until App/Core can provide an explicit qualified binding between a Workspace schema-definition artifact and the schema declaration it introduces; pre-discovered runtime schemas are never treated as story discoveries by repository/path inference. There is no claim that generated rectangular presentation geometry is Tiinex spatial source truth.
+The source currently contains the public Core/App adapter, bounded Root fallback, exact-capability → rectangular world assembly, guarded candidate → active multi-surface renderer cutover, immersive viewport shell, and Root Gate exit path described by the implementation and qualification files in this repository. Those implementation facts do not by themselves establish an active Task, rendered-browser acceptance, Sigma acceptance, atlas promotion, or future roadmap priority. No tech-tree/skills surface should be inferred until App/Core provides an explicit qualified binding between a Workspace schema-definition artifact and the schema declaration it introduces; pre-discovered runtime schemas are never treated as story discoveries by repository/path inference. Generated rectangular presentation geometry is not Tiinex spatial source truth.
 
 The developer-only reseal helper now requires an explicit qualified integrity module via `--integrity-module`; it does not import an absent Site source file or silently copy Core. Run its `--help` for the local tooling contract.
 

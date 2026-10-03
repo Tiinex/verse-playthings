@@ -1,0 +1,12 @@
+# Tiinex/verse-playthings LLM Guide
+
+Purpose:
+First-party Playthings Verse package for Tiinex spatial/story/presentation experiments and runtime adapters.
+
+Grounding boundary:
+- Start from `.topics/.workspaces/tiinex-verse-playthings.workspace.md` (and the compatibility Workspace descriptor when relevant) plus `.topics/reductions/workspace/010-verse-playthings-fresh-start-reduction.trace.md`.
+- Major 017 reduced the old Playthings development/refactor lineage; the removed runtime-productization master Task is not current work.
+- Source/tests/docs describe current implementation capability, but they do not establish an active Task, human acceptance, publication, or roadmap priority.
+- Future Playthings work starts from a new explicit bounded Task with truthful Project ancestry.
+- Core owns Tiinex semantics/provider resolution contracts; App owns reusable Verse hosting; Site owns deployment; Playthings owns its presentation/runtime package boundary.
+- Do not infer semantic topology, schema discovery, or Project currentness from repository paths or presentation geometry.
