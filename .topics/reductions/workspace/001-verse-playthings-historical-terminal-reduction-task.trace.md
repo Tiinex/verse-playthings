@@ -4,9 +4,9 @@
 - Parent
   - Parent Schema: [tiinex.task.v1](https://github.com/Tiinex/docs/blob/053d46ce082d4ec261b82abc44ecca403d61e240/.topics/.schemas/core/task/tiinex.task.v1.schema.md)
   - Created At: 2026-09-09 15:03:22
-  - Trace: [001-turn-2-verse-playthings-integration-frontier.trace.md](../../refactor/001-turn-2-verse-playthings-integration-frontier.trace.md)
+  - Trace: [001-turn-2-verse-playthings-integration-frontier.trace.md](../../work/refactor/001-turn-2-verse-playthings-integration-frontier.trace.md)
   - Origin:
-    - [relative](../../refactor/001-turn-2-verse-playthings-integration-frontier.trace.md)
+    - [relative](../../work/refactor/001-turn-2-verse-playthings-integration-frontier.trace.md)
 - Current
   - Current Schema: [tiinex.task.v1](https://github.com/Tiinex/docs/blob/302506f90537dc23d6f88ad0bd0bb9c97c6cf9f6/.topics/.schemas/core/task/tiinex.task.v1.schema.md)
   - Created At: 2026-10-03 09:50:48
@@ -38,7 +38,7 @@ Apply the project-wide Major 015 reduction policy to the exact Verse Playthings 
 
 ## Dependencies
 
-- `verse-playthings::.topics/refactor/001-turn-2-verse-playthings-integration-frontier.trace.md`
+- `verse-playthings::.topics/work/refactor/001-turn-2-verse-playthings-integration-frontier.trace.md`
 - Business Reduction Major 001 classification evidence
 
 ---
@@ -46,9 +46,9 @@ Apply the project-wide Major 015 reduction policy to the exact Verse Playthings 
 # Continuity Integrity
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
-  - Towards: [001-turn-2-verse-playthings-integration-frontier.trace.md](../../refactor/001-turn-2-verse-playthings-integration-frontier.trace.md)
-  - Value: KdYVzxYQ8TVCFsGmJSaCMruWmd38PPE42fsuLfC4WbA
+  - Towards: [001-turn-2-verse-playthings-integration-frontier.trace.md](../../work/refactor/001-turn-2-verse-playthings-integration-frontier.trace.md)
+  - Value: eP3U2ptHRB0NWag8t_HI4N78c2Q8ICnQLJb7gZfobuQ
 
 - [sha256-base64url-c14n-v2](https://github.com/Tiinex/docs/blob/3988951208eb9a8926e84ab42625d4b42fa00c2d/.topics/.validators/sha256-base64url-c14n-v2.validator.md)
   - Towards: self
-  - Value: Tg0dVh7iB446KebTCaQ1_Cy2PhVeolc3ddZcemlxN24
+  - Value: THWHxwJHtACzu0oj-L8gGpA2ZjbEXh3Jl7jybEKWS3M
