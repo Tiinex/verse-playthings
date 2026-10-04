@@ -104,7 +104,7 @@ The small npm tarball contains runtime modules, documentation, license/notice an
 
 ## Current source state and future work
 
-Major 017 reduced the historical Playthings execution/refactor lineage. The former runtime-productization master Task is recovery history, not a current work root; exact recovery is preserved by `.topics/reductions/workspace/010-verse-playthings-fresh-start-reduction.trace.md`. Future Playthings work starts from a new explicit bounded Task with truthful Project ancestry rather than reactivating removed lineage.
+Historical Playthings execution remains recoverable through qualified Tiinex material. README does not select the current Task/frontier; use Tiinex discovery and qualified work ancestry for currentness.
 
 The source currently contains the public Core/App adapter, bounded Root fallback, exact-capability → rectangular world assembly, guarded candidate → active multi-surface renderer cutover, immersive viewport shell, and Root Gate exit path described by the implementation and qualification files in this repository. Those implementation facts do not by themselves establish an active Task, rendered-browser acceptance, Sigma acceptance, atlas promotion, or future roadmap priority. No tech-tree/skills surface should be inferred until App/Core provides an explicit qualified binding between a Workspace schema-definition artifact and the schema declaration it introduces; pre-discovered runtime schemas are never treated as story discoveries by repository/path inference. Generated rectangular presentation geometry is not Tiinex spatial source truth.
 
